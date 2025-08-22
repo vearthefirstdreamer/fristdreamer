@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edson</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(to right, #1a1a1a, #141414);
+        }
+
+            header h1 {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            header p {
+                max-width: 600px;
+                margin: 0 auto;
+                color: #ccc;
+            }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .profile {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+
+        .portrait {
+            flex: 1 1 250px;
+            background: #0d0d0d;
+            border-radius: 10px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .portrait img {
+                max-width: 100%;
+                max-height: 100%;
+                border-radius: 10px;
+            }
+
+        .bio {
+            flex: 2 1 400px;
+        }
+
+            .bio h2 {
+                margin-top: 0;
+                color: #e0e0e0;
+            }
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .fact {
+            background: #111;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+            .fact span {
+                display: block;
+                font-size: 0.9rem;
+                color: #aaa;
+            }
+
+            .fact strong {
+                display: block;
+                margin-top: 0.3rem;
+                font-size: 1.1rem;
+                color: #fff;
+            }
+
+        section {
+            margin-top: 2rem;
+        }
+
+        h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vear (Kor) — Character Profile | The First Dreamer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Small page-specific helpers (reuses your global palette) */
+        .crumb {
+            display: inline-block;
+            margin: 10px 0 6px;
+            color: var(--muted);
+            text-decoration: none
+        }
+
+            .crumb:hover {
+                color: var(--accent)
+            }
+
+        .facts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 0;
+            margin: 10px 0 0
+        }
+
+            .facts li {
+                list-style: none;
+                background: var(--panel-2);
+                border: 1px solid var(--border);
+                border-radius: 10px;
+                padding: 8px 10px
+            }
+
+        .chips {
+            margin-top: 8px
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="brand">
+            <div class="glyph" aria-hidden="true"></div>
+            <div>
+                <div class="muted smallcaps">The Kor Cycle</div>
+                <strong>Vear-The First Dreamer</strong>
+            </div>
+        </div>
+        <nav>
+            <a href="../index.html#home">Home</a>
+            <a href="../index.html#characters">Characters</a>
+            <a href="../index.html#world">Worlds</a>
+            <a href="../index.html#artifacts">Artifacts</a>
+            <a href="../index.html#time_ships">Temporal Vessals</a>
+            <a href="../index.html#timeline">Timeline</a>
+            <a href="../index.html#Temporal Law">Rule of Intent</a>
+            <a href="../index.html#comments">Comments</a>
+        </nav>
+    </header>
+
+    <section>
+        
+        <div class="hero" style="padding-top:28px">
+            <h1>Edson</h1>
+            <p class="muted">
+                “Edson, the twin-sunned world of swords and spirit,
+                now silent, yet still echoing with the legend Vear left behind.”
+            </p>
+        </div>
+    </section>
+
+    <main>
+
+        <div class="profile">
+            <div class="portrait">
+                <img src="../images/Edson.png" alt="Edson" />
+            </div>
+            <div class="bio">
+                <h2>Description</h2>
+                <p>
+                    Status: Dead World (~-900 AE)
+                </p>
+                <p>
+                    Epsilon Caedus: Edson’s solar system
+                </p>
+                <p>
+                    Suns: two suns   (Aethera and  Nyros)
+                </p>
+                <p>
+                    Moons: two moons  (Marrow and it’s smaller sister, Tessil )
+                </p>
+                <p>
+                    Edson was a forested, fertile world, home in the Middle Edsonian Era (~-1000 AE) to a high-tech
+                    society bound by ancient rites and the honor of the blade. Vear came here twice—first at age seventeen, 
+                    and again 10,000 years earlier, in an age of hand-forged weapons and simple machines. His presence 
+                    reshaped the planet’s destiny, giving birth to a legend that endured long after Edson’s unexplained fall.
+                </p>
+                <p>
+                    Notable City: Arden (ruled by King Marek during Middle Edsonian Era)
+                </p>
+                <p>
+                    Legacy: Vear's myth was born here and endures in the ruins.
+                </p>
+            </div>
+        </div>
+
+        <section>
+            <h3>Nyros’s Orbit – The Nyric Cycle</h3>
+            <p>
+                Nyros completes its long, elliptical orbit around Aethera every 312 Edsonian years. Its closest
+                approach marks a period known as the Crimson Ascension, during which Nyros dominates the sky with an ominous red glow.
+            </p>
+            <p>
+                This rare celestial alignment is central to Edsonian myth and prophecy. Temples, trials, and ancient prophecies are
+                often bound to the Nyric Cycle. Many believe that the appearance of Nyros marks moments of great change, as if the cosmos itself were watching.
+            </p>
+       
+            <p>
+                In ancient texts, it is written:
+
+                "When the Watcher burns low and red above the twin peaks, the Dreamer shall rise again, and time shall twist to his choosing."
+            </p>
+        </section>
+
+        <section>
+            <h3>Lore Explanation: The Stagnation of Ancient Edson</h3>
+            <p>
+                1. The Shattered Age
+            </p>
+            More than ten thousand years before the spacefaring future, Edson experienced a brilliant but fragile era known as the
+            Shattered Age—a time when early metallurgy and rudimentary engineering flourished, but true advanced technology
+            was still nascent. This period ended abruptly with a cataclysmic event called the Great Sundering: a combination of a devastating
+            war and a massive solar flare that wiped out nearly all advanced knowledge and critical infrastructure.
+            <p>
+                2. The Surviving Societies
+            </p>
+            In the aftermath, surviving societies fell back on traditions that had proven reliable and accessible: swords, shields,
+            and close combat.
+            <p>
+                3. The Technological Prohibition
+            </p>
+            Out of fear of repeating past destruction, Edson’s religious and cultural leaders issued the Edict of Balance—a sacred decree
+            forbidding the pursuit of technologies beyond hand-forged weapons and simple machines. The Council of Ancients, a ruling body,
+            enforced the edict with strict control of knowledge and harsh punishment for innovation, convinced that advanced technology had
+            once brought ruin. In this order, the warrior clans known as the Shieldbearers rose to prominence, upholding strict codes of honor
+            that framed swordsmanship and shield defense as sacred arts—symbols of survival and unity.
+            <p>
+                4. Resource Scarcity and Isolation
+            </p>
+            Ancient Edson’s geography changed after the Great Sundering. Valuable ores and rare minerals essential for complex machinery became scarce due to
+            seismic shifts, while vast mountain ranges and dense forests cut off trade routes. The people lived isolated, sustaining their communities with traditional crafts.
+            <p>
+                5. A Long Wait
+            </p>
+            Over millennia, the Edict and isolation fostered a cultural reverence for the old ways. Only a few whispered tales of lost wonders survived.
+            Progress was slow, largely limited to weapon craftsmanship, tactics, and social organization.
+            <p>
+                6. This Sets the Stage for Future Edson
+            </p>
+            The future Edson rediscovered or developed advanced technologies after breaking or evolving beyond the Edict’s influence. Space travel and modern tech
+            represent a renaissance or rebirth from the ashes of the Shattered Age.
+            <p></p>
+        </section>
+ 
+        <!-- FOOTER -->
+        <footer>
+            © 2025 Nick Yost · The Kor Cycle
+        </footer>
+</body>
+</html>

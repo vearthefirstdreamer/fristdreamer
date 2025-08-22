@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korranthis</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(to right, #1a1a1a, #141414);
+        }
+
+            header h1 {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            header p {
+                max-width: 600px;
+                margin: 0 auto;
+                color: #ccc;
+            }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .profile {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+
+        .portrait {
+            flex: 1 1 250px;
+            background: #0d0d0d;
+            border-radius: 10px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .portrait img {
+                max-width: 100%;
+                max-height: 100%;
+                border-radius: 10px;
+            }
+
+        .bio {
+            flex: 2 1 400px;
+        }
+
+            .bio h2 {
+                margin-top: 0;
+                color: #e0e0e0;
+            }
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .fact {
+            background: #111;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+            .fact span {
+                display: block;
+                font-size: 0.9rem;
+                color: #aaa;
+            }
+
+            .fact strong {
+                display: block;
+                margin-top: 0.3rem;
+                font-size: 1.1rem;
+                color: #fff;
+            }
+
+        section {
+            margin-top: 2rem;
+        }
+
+        h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vear (Kor) — Character Profile | The First Dreamer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Small page-specific helpers (reuses your global palette) */
+        .crumb {
+            display: inline-block;
+            margin: 10px 0 6px;
+            color: var(--muted);
+            text-decoration: none
+        }
+
+            .crumb:hover {
+                color: var(--accent)
+            }
+
+        .facts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 0;
+            margin: 10px 0 0
+        }
+
+            .facts li {
+                list-style: none;
+                background: var(--panel-2);
+                border: 1px solid var(--border);
+                border-radius: 10px;
+                padding: 8px 10px
+            }
+
+        .chips {
+            margin-top: 8px
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="brand">
+            <div class="glyph" aria-hidden="true"></div>
+            <div>
+                <div class="muted smallcaps">The Kor Cycle</div>
+                <strong>Vear-The First Dreamer</strong>
+            </div>
+        </div>
+        <nav>
+            <a href="../index.html#home">Home</a>
+            <a href="../index.html#characters">Characters</a>
+            <a href="../index.html#world">Worlds</a>
+            <a href="../index.html#artifacts">Artifacts</a>
+            <a href="../index.html#time_ships">Temporal Vessals</a>
+            <a href="../index.html#timeline">Timeline</a>
+            <a href="../index.html#Temporal Law">Rule of Intent</a>
+            <a href="../index.html#comments">Comments</a>
+        </nav>
+    </header>
+
+    <section>
+        
+        <div class="hero" style="padding-top:28px">
+            <h1>Korranthis</h1>
+            <p class="muted">
+                Korranthis, a world of venom skies and crushing weight,
+                its children forged strong—until silence fell in fire.
+            </p>
+        </div>
+    </section>
+
+    <main>
+
+        <div class="profile">
+            <div class="portrait">
+                <img src="../images/Korranthis.png" alt="Korranthis" />
+            </div>
+            <div class="bio">
+                <h2>Description</h2>
+                <p>
+                    Status: Annihilated (~-19,900 AE)
+                </p>
+                <p>
+                    Classification: High-Gravity Death World
+                </p>
+                <p>
+                    Sun: orange star
+                </p>
+                <p>
+                    Moon: none
+                </p>
+                <p>
+                    Korranthis was a hostile world where survival demanded near-supernatural adaptation.
+                    Its people evolved dense musculature, resistance to toxins, and heightened senses. 
+                    Kor—later known as Vear—was taken from this planet before its destruction.
+                    The official cause of annihilation is listed as a meteor impact. However, rumors persist of an unofficial file,
+                    Project Silent Seed—a covert Authority operation suggesting the strike was engineered. This remains doubtful, as
+                    such an act would violate the Rule of Intent.
+                </p>
+            </div>
+        </div>
+
+        <section>
+            <h3>The sky above Kor’s world was never blue.</h3>
+            <p>
+                Instead, it burned with the deep, living glow of amber, as if the air itself had been poured from molten sap.
+                Sunlight filtered down from a distant orange star, thick and low in the heavens, casting everything in tones of
+                honeyed gold and rusted bronze. The light was not soft—it had weight, pressing against the land like a slow breath.
+            </p>
+            <p>
+                The atmosphere shimmered with fine iron-rich dust suspended in the air, catching the light like powdered fire. Windstorms,
+                common and sweeping, whipped the dust into rolling curtains that shimmered in warm tones—orange, umber, copper—never quite
+                settling. Even shadows weren’t truly dark here; they were just duller shades of gold.
+            </p>
+            <p>
+                The terrain matched the sky—jagged outcroppings of oxidized stone, ridged with red veins, sloped across the land like the
+                bones of ancient titans. Cracked, sun-blasted valleys stretched for miles, littered with glinting crystals and rust-colored
+                sand that glowed softly even in twilight.
+            </p>
+            <p>
+                In the distance, towering rock spires punched upward into the haze, their silhouettes haloed by the amber glow. And above all,
+                that ever-present sky—a warm, suffocating dome of color, both beautiful and inescapable.
+            </p>
+            <p>
+                To Kor, it was home
+            </p>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            © 2025 Nick Yost · The Kor Cycle
+        </footer>
+</body>
+</html>
