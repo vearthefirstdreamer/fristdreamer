@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vear: The First Dreamer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+  .crumb {
+    display: inline-block;
+    margin: 10px 0 14px;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .crumb:hover { color: var(--accent); }
+
+  .prologue-header {
+    padding: 28px 0 10px;
+    text-align: center;
+  }
+  .prologue-header h1 {
+    margin: 0;
+  }
+  .byline {
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  .reading {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left; /* Force left justification */
+  }
+  .reading p {
+    margin: 1.1rem 0;
+    line-height: 1.6;
+  }
+  .reading p + p {
+    text-indent: 1.25em;
+  }
+  .dropcap:first-letter {
+    float: left;
+    font-family: Cinzel, serif;
+    font-size: 2.8rem;
+    line-height: 2rem;
+    padding-right: .35rem;
+    color: var(--accent);
+  }
+</style>
+</head>
+
+nav a {
+  margin-left: 1.5rem;
+  color: #9be7c4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('banner.png') center/cover no-repeat;
+    text-align: center;
+    padding: 5rem 2rem;
+}
+
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  color: #9be7c4;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background-color: #9be7c4;
+  color: #0b0e1a;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0.5rem;
+}
+
+section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: #9be7c4;
+  margin-bottom: 1rem;
+}
+
+.character-grid, .world-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: #151b2b;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #1a1f33;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid #1a1f33;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+
+:root {
+  --bg: #0b0e1a;
+  --panel: #12172a;
+  --panel-2: #0f1426;
+  --ink: #e7ecef;
+  --muted: #9fb0c0;
+  --accent: #41e2a6;
+  --accent-2: #91ffd6;
+  --border: #1a2340;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 5%;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand .glyph {
+  width: 36px;
+  height: 36px;
+  background: radial-gradient(circle at 30% 30%, var(--accent-2), transparent 40%),
+              linear-gradient(135deg, rgba(65,226,166,0.25), rgba(65,226,166,0) 60%),
+              var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 0 22px rgba(65,226,166,0.18) inset;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.smallcaps {
+  font-size: 12px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  margin-left: 16px;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 5%;
+  background: radial-gradient(1200px 600px at 70% -10%, rgba(65,226,166,0.15), transparent 65%);
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(28px, 3.2vw, 44px);
+  color: var(--accent);
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.btn {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--accent-2);
+}
+
+section {
+  padding: 40px 5%;
+}
+
+h2 {
+  font-family: 'Cinzel', serif;
+  color: var(--accent);
+}
+
+.character-grid, .grid {
+  display: grid;
+  gap: 20px;
+}
+
+.character-grid {
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
+.grid {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.card {
+  text-align: left;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: left;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+form {
+  display: grid;
+  gap: 12px;
+  max-width: 400px;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--ink);
+}
+
+button[type="submit"] {
+  background: var(--accent);
+  color: #000;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+button[type="submit"]:hover {
+  background: var(--accent-2);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--muted);
+  font-size: 14px;
+}
