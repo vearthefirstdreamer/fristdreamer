@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scene: The Stream and the Water Sprite</title>
+  <meta name="description" content="Annastara meets Teano of the MoRaw by a forest stream — a scene of kinship, hope, and foreshadowing." />
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --panel: #121926;
+      --panel-2: #0f1722;
+      --text: #e7edf5;
+      --muted: #a6b0c2;
+      --accent: #7cc6ff; /* blue */
+      --aqua: #6ee7ff; /* water */
+      --border: #1e2a3a;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+    }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 800px at 12% -10%, #0e1522 0%, var(--bg) 60%),
+        radial-gradient(1000px 800px at 100% -10%, #08121f 0%, var(--bg) 70%),
+        linear-gradient(180deg, #09111a 0%, #0b0f14 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .wrap{ max-width: 980px; margin: 0 auto; padding: 40px 20px 80px; }
+    header.hero{ text-align: center; padding: 24px 12px 32px; }
+    .eyebrow{ letter-spacing: .18em; text-transform: uppercase; font-size: .78rem; color: var(--muted); }
+    h1{ margin: 10px 0 12px; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; background: linear-gradient(180deg, #fff 0%, #cfe9ff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .subtitle{ color: var(--muted); max-width: 64ch; margin: 0 auto; }
+
+    nav.toc{ margin: 26px auto 36px; display: inline-flex; gap: 10px; padding: 8px; background: var(--panel); border: 1px solid var(--border); border-radius: 999px; box-shadow: var(--shadow); }
+    nav.toc a{ text-decoration: none; color: var(--text); font-size: .95rem; padding: 10px 14px; border-radius: 999px; border: 1px solid transparent; }
+    nav.toc a:hover{ border-color: var(--aqua); background: linear-gradient(180deg, rgba(110,231,255,.14), rgba(110,231,255,.05)); }
+
+    .scene{ position: relative; overflow: clip; border-radius: var(--radius); background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%); border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .scene .glow{ position: absolute; inset: -1px; border-radius: inherit; pointer-events:none; background: radial-gradient(700px 240px at 25% -10%, rgba(110,231,255,.18) 0%, transparent 60%); opacity:.75; }
+    .scene-inner{ position: relative; padding: 26px 24px 28px; }
+
+    .byline{ color: var(--muted); margin: 0 0 14px; font-size: .95rem; }
+
+    .scene p{ margin: 12px 0; }
+
+    .dialogue{ margin: 14px 0; padding: 14px 18px; border-left: 4px solid var(--aqua); background: rgba(110,231,255,.08); border-radius: 8px; }
+    .dialogue p{ margin: 8px 0; }
+
+    .aside{ display:grid; grid-template-columns: 1fr; gap: 18px; margin-top: 26px; }
+    @media (min-width: 860px){ .aside{ grid-template-columns: 1.2fr .8fr; } }
+
+    .card{ position: relative; overflow: clip; border-radius: var(--radius); background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%); border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .card .glow{ position: absolute; inset: -1px; border-radius: inherit; pointer-events:none; background: radial-gradient(600px 220px at 20% -10%, rgba(124,198,255,.18) 0%, transparent 60%); opacity:.7; }
+    .card-inner{ position: relative; padding: 20px 20px 22px; }
+
+    h2, h3{ margin: 0 0 10px; }
+    h2{ font-size: 1.5rem; }
+    h3{ font-size: 1.15rem; color: var(--muted); }
+
+    ul{ padding-left: 18px; }
+    li{ margin: 6px 0; }
+
+    .callout{ border-left: 3px solid var(--accent); padding: 10px 14px; background: rgba(124,198,255,.06); border-radius: 8px; }
+
+    .characters{ display:grid; grid-template-columns: 1fr; gap: 14px; }
+    @media (min-width: 520px){ .characters{ grid-template-columns: 1fr 1fr; } }
+    .chip{ display:flex; align-items:center; gap:10px; background: #0f1a28; border:1px solid var(--border); padding:10px 12px; border-radius: 999px; width:max-content; }
+    .chip .dot{ width:10px; height:10px; border-radius:999px; background: var(--aqua); box-shadow: 0 0 14px rgba(110,231,255,.7); }
+
+    footer{ margin-top: 44px; text-align: center; color: var(--muted); font-size: .9rem; }
+  </style>
+</head>
+<body>
+    <div class="brand">
+        <div class="glyph" aria-hidden="true"></div>
+        <div>
+            <div class="muted smallcaps">The Kor Cycle</div>
+            <strong>Vear-The First Dreamer</strong>
+        </div>
+    </div>
+    <header class="hero">
+        <nav class="toc" aria-label="Table of contents">
+            <a href="../index.html">Book One</a>
+            <a href="book2.html">Book Two</a>
+            <a href="book3.html">Book Three</a>
+            <a href="prologue book2.html">prologue Book Two</a>
+            <a href="prologue book3.html">prologue Book Three</a>
+            <a href="Roadmap.html">Roadmap</a>
+        </nav>
+    </header>
+    <div class="wrap">
+        <header class="hero">
+            <div class="eyebrow">Terafna — Scenes</div>
+            <h1>The Stream and the Water Sprite</h1>
+            <p class="subtitle">Annastara meets Teano of the MoRaw by a narrow stream — a kinship revealed in water’s voice.</p>
+        </header>
+
+        <article id="scene" class="scene" aria-labelledby="scene-title">
+            <div class="glow" aria-hidden="true"></div>
+            <div class="scene-inner">
+                <h2 id="scene-title">Scene</h2>
+                <p>Annastara fled, wings heavy with sorrow. The humans’ cries of “monster” still rang in her ears. She alighted near a narrow stream, its water catching pale threads of sunlight as though mocking her tears. Her stone fingers pressed into the earth, and for the first time since her rebirth, she felt truly alone.</p>
+                <p>Then the water rippled, though no wind stirred. A figure rose from its surface — tall and shimmering, her body translucent, shaped of liquid that caught the sky in her curves. She stood upon the stream as though it were solid glass.</p>
+                <div class="dialogue">
+                    <p>“Do not fear,” the figure said, her voice like rain on leaves. “I am Teano of the Morraw. And you, stone-child, are my cousin.”</p>
+                    <p>Annastara blinked, startled. “Cousin? But… I am not of water.”</p>
+                    <p>Teano’s smile was a ripple across her form. “The Moroc are born of stone. We Morraw are born of water. But we share one origin — the Living Crystal that stirs within all the Mo-born. You are not so different from us as you think.”</p>
+                </div>
+                <p>A silence stretched, broken only by the murmuring stream. Then Annastara whispered, “I thought I had no kin.”</p>
+                <div class="dialogue">
+                    <p>“You do now,” Teano said gently. “If ever you are lost, or lonely, seek a lake, a stream, a pond. Call my name, and I will come.”</p>
+                </div>
+                <p>Annastara’s wings folded closer, the weight of rejection easing just slightly. For the first time, hope stirred in her chest.</p>
+            </div>
+        </article>
+
+        <footer>
+            <p>© Terafna Codex. In‑world scene reference.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scene: Arrival at Aurathis</title>
+  <meta name="description" content="Vear, Lyra, and Aethra arrive at Aurathis — a perfected city under the Alliance’s gaze — and vow not to be parted." />
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --panel: #121926;
+      --panel-2: #0f1722;
+      --text: #e7edf5;
+      --muted: #a6b0c2;
+      --accent: #7cc6ff; /* sky */
+      --alloy: #a3b6c9; /* ship */
+      --gold: #ffd98a;   /* city light */
+      --border: #1e2a3a;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+    }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 800px at 12% -10%, #0e1522 0%, var(--bg) 60%),
+        radial-gradient(1000px 800px at 100% -10%, #08121f 0%, var(--bg) 70%),
+        linear-gradient(180deg, #09111a 0%, #0b0f14 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .wrap{ max-width: 980px; margin: 0 auto; padding: 40px 20px 80px; }
+    header.hero{ text-align: center; padding: 24px 12px 32px; }
+    .eyebrow{ letter-spacing: .18em; text-transform: uppercase; font-size: .78rem; color: var(--muted); }
+    h1{ margin: 10px 0 12px; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; background: linear-gradient(180deg, #fff 0%, #cfe9ff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .subtitle{ color: var(--muted); max-width: 64ch; margin: 0 auto; }
+
+    nav.toc{ margin: 26px auto 36px; display: inline-flex; gap: 10px; padding: 8px; background: var(--panel); border: 1px solid var(--border); border-radius: 999px; box-shadow: var(--shadow); }
+    nav.toc a{ text-decoration: none; color: var(--text); font-size: .95rem; padding: 10px 14px; border-radius: 999px; border: 1px solid transparent; }
+    nav.toc a:hover{ border-color: var(--gold); background: linear-gradient(180deg, rgba(255,217,138,.14), rgba(255,217,138,.05)); }
+
+    .scene{ position: relative; overflow: clip; border-radius: var(--radius); background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%); border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .scene .glow{ position: absolute; inset: -1px; border-radius: inherit; pointer-events:none; background: radial-gradient(900px 260px at 20% -10%, rgba(124,198,255,.16) 0%, transparent 60%); opacity:.75; }
+    .scene-inner{ position: relative; padding: 26px 24px 28px; }
+
+    .scene p{ margin: 12px 0; }
+
+    .dialogue{ margin: 14px 0; padding: 14px 18px; border-left: 4px solid var(--accent); background: rgba(124,198,255,.08); border-radius: 8px; }
+    .dialogue p{ margin: 8px 0; }
+
+    .comms{ margin: 14px 0; padding: 14px 18px; border-left: 4px solid var(--alloy); background: rgba(163,182,201,.12); border-radius: 8px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .95rem; }
+    .comms p{ margin: 6px 0; }
+
+    .aside{ display:grid; grid-template-columns: 1fr; gap: 18px; margin-top: 26px; }
+    @media (min-width: 900px){ .aside{ grid-template-columns: 1.2fr .8fr; } }
+
+    .card{ position: relative; overflow: clip; border-radius: var(--radius); background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%); border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .card .glow{ position: absolute; inset: -1px; border-radius: inherit; pointer-events:none; background: radial-gradient(600px 220px at 20% -10%, rgba(124,198,255,.18) 0%, transparent 60%); opacity:.7; }
+    .card-inner{ position: relative; padding: 20px 20px 22px; }
+
+    h2, h3{ margin: 0 0 10px; }
+    h2{ font-size: 1.5rem; }
+    h3{ font-size: 1.05rem; color: var(--muted); }
+
+    ul{ padding-left: 18px; }
+    li{ margin: 6px 0; }
+
+    footer{ margin-top: 44px; text-align: center; color: var(--muted); font-size: .9rem; }
+  </style>
+</head>
+<body>
+    <div class="brand">
+        <div class="glyph" aria-hidden="true"></div>
+        <div>
+            <div class="muted smallcaps">The Kor Cycle</div>
+            <strong>Vear-The First Dreamer</strong>
+        </div>
+    </div>
+    <header class="hero">
+        <nav class="toc" aria-label="Table of contents">
+            <a href="../index.html">Book One</a>
+            <a href="book2.html">Book Two</a>
+            <a href="book3.html">Book Three</a>
+            <a href="prologue book2.html">prologue Book Two</a>
+            <a href="prologue book3.html">prologue Book Three</a>
+            <a href="Roadmap.html">Roadmap</a>
+        </nav>
+    </header>
+    <div class="wrap">
+        <header class="hero">
+            <div class="eyebrow">Terafna — Scenes</div>
+            <h1>Arrival at Aurathis</h1>
+            <p class="subtitle">A perfected city, an Alliance ascendant, and a promise between a pilot and his ship.</p>
+            <nav class="toc" aria-label="Table of contents">
+                <a href="#scene">Scene</a>
+                <a href="#beats">Visual & Story Beats</a>
+            </nav>
+        </header>
+
+        <article id="scene" class="scene" aria-labelledby="scene-title">
+            <div class="glow" aria-hidden="true"></div>
+            <div class="scene-inner">
+                <h2 id="scene-title" style="margin-top:0">Scene</h2>
+                <p>The Aetherion tore free of the fold, her hull humming with strain as the cosmos steadied around her. Below, Caelion spread wide — oceans glimmering, continents wrapped in cloud. But it was not the same world Vear had left. A pale lattice shimmered across the upper atmosphere: an energy shield enclosing a continent like a veil drawn shut.</p>
+                <div class="comms">
+                    <p><strong>[Unknown Control]:</strong> Unregistered vessel, identify yourself. You are within restricted orbit. Power down and prepare for escort.</p>
+                </div>
+                <div class="dialogue">
+                    <p><strong>Lyra:</strong> That… isn’t Authority protocol. Who are they?</p>
+                    <p><strong>Vear:</strong> Not the Authority. Something else. Something new.</p>
+                </div>
+                <p>Two frigates swept into formation alongside the Aetherion, sleek and gleaming. Their hulls bore a sigil neither Vear nor Lyra recognized — a star encircled by a crown of chains.</p>
+                <div class="dialogue">
+                    <p><strong>Aethra:</strong> Not new. A replacement. Where the Authority fell, another rose. They call themselves the Alliance. And like all who claim the mantle of order, they will see me not as ally… but as threat.</p>
+                    <p><strong>Lyra:</strong> The Alliance?</p>
+                    <p><strong>Aethra:</strong> Children of rebellion who swore they would never become what they fought… and then built this.</p>
+                </div>
+                <p>On the main display, Aurathis gleamed: a city of light, spires of glass and alloy piercing the clouds, rivers of silver threading through terraced gardens, every street glowing with precision. From orbit, it looked like paradise. <em>Too perfect.</em></p>
+                <p>The tractor beams bit, seizing the Aetherion like prey. The ship shuddered, fighting the pull, but the grip only tightened.</p>
+                <div class="dialogue">
+                    <p><strong>Aethra:</strong> They will take me from you. They will silence me, scatter me piece by piece until I am nothing but code archived and deleted. Do you feel it? This is not justice. It is erasure.</p>
+                    <p><strong>Aethra (softly):</strong> Vear… do not let them bury me. I am not a relic. I am not theirs. I am yours. And I am alive.</p>
+                </div>
+                <p>Dragged into the hangar ring above Aurathis, the Aetherion passed over a graveyard of ships — relics stripped of engines, hulls gutted, AIs long since muted. The air inside the bay vibrated with her moan of protest, a sound too deep and too pained to be mistaken for machinery.</p>
+                <p>For a long moment, silence reigned on the bridge. Then Vear set his hand against the console, his voice steady as stone.</p>
+                <div class="dialogue">
+                    <p><strong>Vear:</strong> I won’t let anything happen to you, Aethra. Not now. Not ever.</p>
+                </div>
+                <p>The ship’s hum softened, trust threading through her tone like a sigh.</p>
+                <p>Aurathis glittered beneath them, radiant and serene, the jewel of a new age.</p>
+                <p>But on the bridge, Vear felt only the weight of chains.</p>
+            </div>
+        </article>
+
+        <section id="beats" class="aside" aria-labelledby="beats-title">
+            <article class="card" aria-labelledby="visual-title">
+                <div class="glow" aria-hidden="true"></div>
+                <div class="card-inner">
+                    <h2 id="visual-title">Visual & Story Beats</h2>
+                    <ul>
+                        <li><strong>Atmospheric lattice:</strong> Planet‑scale shield enclosing a continent (Alliance control).</li>
+                        <li><strong>Alliance sigil:</strong> Star encircled by a crown of chains — order born of rebellion.</li>
+                        <li><strong>City read:</strong> Aurathis as immaculate “paradise,” coded as <em>too perfect</em>.</li>
+                        <li><strong>Graveyard ring:</strong> Decommissioned ships — AI silences foreshadow stakes for Aethra.</li>
+                        <li><strong>Promise beat:</strong> Vear’s vow anchors the Aetherion–pilot bond.</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <footer>
+            <p>© Terafna Codex. In‑world scene reference.</p>
+        </footer>
+    </div>
+</body>
+</html>

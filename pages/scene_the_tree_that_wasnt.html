@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scene: The Tree That Wasn’t</title>
+  <meta name="description" content="Annastara encounters a MoRem shapeshifter who emerges from a tree and challenges her place among the Mo‑born." />
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --panel: #121926;
+      --panel-2: #0f1722;
+      --text: #e7edf5;
+      --muted: #a6b0c2;
+      --accent: #7cc6ff; /* sky */
+      --leaf: #6fe7a1;   /* forest */
+      --border: #1e2a3a;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+    }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 800px at 12% -10%, #0e1522 0%, var(--bg) 60%),
+        radial-gradient(1000px 800px at 100% -10%, #08121f 0%, var(--bg) 70%),
+        linear-gradient(180deg, #09111a 0%, #0b0f14 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .wrap{ max-width: 980px; margin: 0 auto; padding: 40px 20px 80px; }
+    header.hero{ text-align: center; padding: 24px 12px 32px; }
+    .eyebrow{ letter-spacing: .18em; text-transform: uppercase; font-size: .78rem; color: var(--muted); }
+    h1{ margin: 10px 0 12px; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; background: linear-gradient(180deg, #fff 0%, #cfe9ff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .subtitle{ color: var(--muted); max-width: 64ch; margin: 0 auto; }
+
+    nav.toc{ margin: 26px auto 36px; display: inline-flex; gap: 10px; padding: 8px; background: var(--panel); border: 1px solid var(--border); border-radius: 999px; box-shadow: var(--shadow); }
+    nav.toc a{ text-decoration: none; color: var(--text); font-size: .95rem; padding: 10px 14px; border-radius: 999px; border: 1px solid transparent; }
+    nav.toc a:hover{ border-color: var(--leaf); background: linear-gradient(180deg, rgba(111,231,161,.14), rgba(111,231,161,.05)); }
+
+    .scene{ position: relative; overflow: clip; border-radius: var(--radius); background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%); border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .scene .glow{ position: absolute; inset: -1px; border-radius: inherit; pointer-events:none; background: radial-gradient(700px 240px at 25% -10%, rgba(111,231,161,.18) 0%, transparent 60%); opacity:.75; }
+    .scene-inner{ position: relative; padding: 26px 24px 28px; }
+
+    .scene p{ margin: 12px 0; }
+
+    .dialogue{ margin: 14px 0; padding: 14px 18px; border-left: 4px solid var(--leaf); background: rgba(111,231,161,.08); border-radius: 8px; }
+    .dialogue p{ margin: 8px 0; }
+
+    .aside{ display:grid; grid-template-columns: 1fr; gap: 18px; margin-top: 26px; }
+    @media (min-width: 860px){ .aside{ grid-template-columns: 1.2fr .8fr; } }
+
+    .card{ position: relative; overflow: clip; border-radius: var(--radius); background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%); border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .card .glow{ position: absolute; inset: -1px; border-radius: inherit; pointer-events:none; background: radial-gradient(600px 220px at 20% -10%, rgba(124,198,255,.18) 0%, transparent 60%); opacity:.7; }
+    .card-inner{ position: relative; padding: 20px 20px 22px; }
+
+    h2, h3{ margin: 0 0 10px; }
+    h2{ font-size: 1.5rem; }
+    h3{ font-size: 1.15rem; color: var(--muted); }
+
+    ul{ padding-left: 18px; }
+    li{ margin: 6px 0; }
+
+    .callout{ border-left: 3px solid var(--accent); padding: 10px 14px; background: rgba(124,198,255,.06); border-radius: 8px; }
+
+    footer{ margin-top: 44px; text-align: center; color: var(--muted); font-size: .9rem; }
+  </style>
+</head>
+<body>
+    <div class="brand">
+        <div class="glyph" aria-hidden="true"></div>
+        <div>
+            <div class="muted smallcaps">The Kor Cycle</div>
+            <strong>Vear-The First Dreamer</strong>
+        </div>
+    </div>
+    <header class="hero">
+        <nav class="toc" aria-label="Table of contents">
+            <a href="../index.html">Book One</a>
+            <a href="book2.html">Book Two</a>
+            <a href="book3.html">Book Three</a>
+            <a href="prologue book2.html">prologue Book Two</a>
+            <a href="prologue book3.html">prologue Book Three</a>
+            <a href="Roadmap.html">Roadmap</a>
+        </nav>
+    </header>
+    <div class="wrap">
+        <header class="hero">
+            <div class="eyebrow">Terafna — Scenes</div>
+            <h1>The Tree That Wasn’t</h1>
+            <p class="subtitle">A MoRem shapeshifter reveals himself and challenges Annastara’s place among the Mo‑born.</p>
+        </header>
+
+        <article id="scene" class="scene" aria-labelledby="scene-title">
+            <div class="glow" aria-hidden="true"></div>
+            <div class="scene-inner">
+                <h2 id="scene-title">Scene</h2>
+                <p>Annastara wandered deeper into Terafna’s wilds, her stone wings folded close, her mind echoing with Teano’s kindness. She paused beside a tall, twisting tree, its bark dark as iron. Something about it felt… watching.</p>
+                <p>Then the bark rippled. The trunk bent forward, stretching, reshaping — until a tall figure stepped free of its own disguise. His skin bore the color of moss and bark, eyes green as forest shadow.</p>
+                <div class="dialogue">
+                    <p>“You are not welcome here,” he said curtly, voice like creaking wood.</p>
+                </div>
+                <p>“Are you like the Moroc? Or the Morraw?” Annastara asked, hopeful.</p>
+                <div class="dialogue">
+                    <p>“I am Morem. Born of the land, not of stone nor water. We are no kin.”</p>
+                </div>
+                <p>Before she could speak further, his form blurred. The man became a hawk, wings snapping wide. He leapt skyward with a sharp cry.</p>
+                <p>But Annastara’s stone wings spread with a thunderous beat. She surged upward after him, cutting through the air with impossible strength. The hawk twisted mid-flight, startled, nearly tumbling from the sky.</p>
+                <div class="dialogue">
+                    <p>“You—” his voice rasped, half-human as his form wavered. “A Moroc… who flies?”</p>
+                </div>
+                <p>For the first time, curiosity gleamed in his eyes. The dismissal in his tone faltered, replaced by something else: interest.</p>
+            </div>
+        </article>
+
+        <footer>
+            <p>© Terafna Codex. In‑world scene reference.</p>
+        </footer>
+    </div>
+</body>
+</html>

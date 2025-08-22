@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Elemental Kin of Terafna</title>
+  <meta name="description" content="MoRoc, MoRaw, and MoRem — the Elemental Kin of Terafna: stone, water, and life." />
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --panel: #121926;
+      --panel-2: #0f1722;
+      --text: #e7edf5;
+      --muted: #a6b0c2;
+      --accent: #86e1ff;
+      --accent-2: #66c2ff;
+      --border: #1e2a3a;
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --radius: 16px;
+    }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 10% 0%, #0e1522 0%, var(--bg) 50%), radial-gradient(1200px 800px at 100% 0%, #0a1220 0%, var(--bg) 60%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap{ max-width: 980px; margin: 0 auto; padding: 40px 20px 80px; }
+    header.hero{
+      text-align: center;
+      padding: 24px 12px 32px;
+    }
+    .eyebrow{ letter-spacing: .18em; text-transform: uppercase; font-size: .78rem; color: var(--muted); }
+    h1{
+      margin: 10px 0 12px; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1;
+      background: linear-gradient(180deg, #fff 0%, #cfe9ff 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .subtitle{ color: var(--muted); max-width: 56ch; margin: 0 auto; }
+
+    nav.toc{ margin: 28px auto 36px; display: inline-flex; gap: 10px; padding: 8px; background: var(--panel); border: 1px solid var(--border); border-radius: 999px; box-shadow: var(--shadow); }
+    nav.toc a{ text-decoration: none; color: var(--text); font-size: .95rem; padding: 10px 14px; border-radius: 999px; border: 1px solid transparent; }
+    nav.toc a:hover{ border-color: var(--accent-2); background: linear-gradient(180deg, rgba(134,225,255,.12), rgba(134,225,255,.04)); }
+
+    .grid{ display: grid; grid-template-columns: 1fr; gap: 18px; }
+    @media (min-width: 800px){ .grid{ grid-template-columns: 1fr 1fr; } }
+
+    .card{
+      position: relative; overflow: clip; border-radius: var(--radius);
+      background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+    }
+    .card .glow{ position: absolute; inset: -1px; border-radius: inherit; pointer-events:none; background: radial-gradient(600px 220px at 20% -10%, rgba(134,225,255,.18) 0%, transparent 60%); opacity:.7; }
+    .card-inner{ position: relative; padding: 22px 22px 24px; }
+
+    h2{ margin: 0 0 6px; font-size: 1.5rem; }
+    .tagline{ color: var(--muted); margin: 0 0 14px; }
+
+    .badge{ display:inline-flex; align-items:center; gap:8px; font-size:.86rem; color:#0b1220; background: linear-gradient(180deg, var(--accent), var(--accent-2)); padding:6px 10px; border-radius:999px; font-weight:600; }
+    .badge small{ opacity:.85; }
+
+    dl{ margin: 14px 0 0; }
+    dt{ font-weight: 700; margin-top: 12px; }
+    dd{ margin: 4px 0 0 0; color: var(--text); }
+
+    .emoji{ font-size: 1.4rem; margin-right: 8px; }
+
+    section.shared{ margin-top: 36px; padding: 22px; border-radius: var(--radius); background: linear-gradient(180deg, rgba(102,194,255,.10), rgba(102,194,255,.03)); border: 1px solid var(--border); box-shadow: var(--shadow); }
+    section.shared h3{ margin-top: 0; font-size: 1.2rem; }
+
+    ul.map{ list-style: none; padding: 0; margin: 8px 0 0; }
+    ul.map li{ padding: 6px 0; }
+    ul.map b{ font-weight: 700; }
+
+    footer{ margin-top: 44px; text-align: center; color: var(--muted); font-size: .9rem; }
+    a.anchor{ color: inherit; text-decoration: none; }
+  </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="brand">
+        <div class="glyph" aria-hidden="true"></div>
+        <div>
+            <div class="muted smallcaps">The Kor Cycle</div>
+            <strong>Vear-The First Dreamer</strong>
+        </div>
+    </div>
+    <header class="hero">
+        <nav class="toc" aria-label="Table of contents">
+            <a href="../index.html">Book One</a>
+            <a href="book2.html">Book Two</a>
+            <a href="book3.html">Book Three</a>
+            <a href="prologue book2.html">prologue Book Two</a>
+            <a href="prologue book3.html">prologue Book Three</a>
+            <a href="Roadmap.html">Roadmap</a>
+        </nav>
+    </header>
+    <div class="wrap">
+        <header class="hero">
+            <div class="eyebrow">Terafna — Lore Compendium</div>
+            <h1>The Elemental Kin of Terafna</h1>
+            <p class="subtitle">Three kindreds woven into one world: stone that endures, water that flows, and life that changes. Humans fear them by many names, yet old tales call them the guardians of balance.</p>
+            <nav class="toc" aria-label="Table of contents">
+                <a href="#moroc">MoRoc</a>
+                <a href="#moraw">MoRaw</a>
+                <a href="#morem">MoRem</a>
+                <a href="#shared-origin">Shared Origin</a>
+            </nav>
+        </header>
+
+        <main class="grid">
+            <!-- MoRoc -->
+            <article id="moroc" class="card" aria-labelledby="moroc-title">
+                <div class="glow" aria-hidden="true"></div>
+                <div class="card-inner">
+                    <h2 id="moroc-title"><span class="emoji" role="img" aria-label="stone">🪨</span> The MoRoc <small>(Stoneborn)</small></h2>
+                    <p class="tagline">Bodies of living stone, patient and enduring.</p>
+                    <div class="badge" title="Human Name"><small>Human Name</small> Gargoyles</div>
+
+                    <dl>
+                        <dt>Nature</dt>
+                        <dd>Bodies of living stone, patient and enduring.</dd>
+
+                        <dt>Domain</dt>
+                        <dd>Mountains, caverns, and cliffside strongholds.</dd>
+
+                        <dt>Cycle</dt>
+                        <dd>At dawn they harden into statues of cold stone, immobile and indistinguishable from carved gargoyles. At dusk they awaken, their forms cracking with life as they walk under the stars.</dd>
+
+                        <dt>Traits</dt>
+                        <dd>Immensely strong, nearly indestructible at night. By day, vulnerable but indistinguishable from carved rock.</dd>
+
+                        <dt>Human Name</dt>
+                        <dd>Gargoyles — villagers whisper that they guard ancient places, but also curse them as omens of misfortune.</dd>
+                    </dl>
+                </div>
+            </article>
+
+            <!-- MoRaw -->
+            <article id="moraw" class="card" aria-labelledby="moraw-title">
+                <div class="glow" aria-hidden="true"></div>
+                <div class="card-inner">
+                    <h2 id="moraw-title"><span class="emoji" role="img" aria-label="water">💧</span> The MoRaw <small>(Waterborn)</small></h2>
+                    <p class="tagline">Living water given form — bodies that ripple, translucent and ever‑shifting.</p>
+                    <div class="badge" title="Human Name"><small>Human Name</small> Water Sprites</div>
+
+                    <dl>
+                        <dt>Nature</dt>
+                        <dd>Living water given form — their bodies ripple, translucent, ever-shifting.</dd>
+
+                        <dt>Domain</dt>
+                        <dd>Rivers, lakes, misted waterfalls.</dd>
+
+                        <dt>Kinship</dt>
+                        <dd>Cousins of the MoRoc; stone gives shape, water gives flow.</dd>
+
+                        <dt>Traits</dt>
+                        <dd>Merge with rivers, dissolve into mist, or take temporary shape of human outline. Known to heal parched land… or drown it when angered.</dd>
+
+                        <dt>Human Name</dt>
+                        <dd>Water Sprites — seen as mischievous, sometimes dangerous.</dd>
+                    </dl>
+                </div>
+            </article>
+
+            <!-- MoRem -->
+            <article id="morem" class="card" aria-labelledby="morem-title">
+                <div class="glow" aria-hidden="true"></div>
+                <div class="card-inner">
+                    <h2 id="morem-title"><span class="emoji" role="img" aria-label="leaf">🌿</span> The MoRem <small>(Lifeborn)</small></h2>
+                    <p class="tagline">The living essence of the land — shapeshifters of bark, vine, and root.</p>
+                    <div class="badge" title="Human Name"><small>Human Name</small> Changelings</div>
+
+                    <dl>
+                        <dt>Nature</dt>
+                        <dd>The living essence of the land, shapeshifters of bark, vine, and root.</dd>
+
+                        <dt>Domain</dt>
+                        <dd>Forests, meadows, fertile plains.</dd>
+
+                        <dt>Traits</dt>
+                        <dd>Can encourage crops and growth, or wither them in vengeance. Some walk openly among humans, others vanish into groves, becoming indistinguishable from trees.</dd>
+
+                        <dt>Human Name</dt>
+                        <dd>Changelings — feared for their ability to take human form, causing suspicion of impostors in villages.</dd>
+                    </dl>
+                </div>
+            </article>
+        </main>
+
+        <section id="shared-origin" class="shared" aria-labelledby="shared-title">
+            <h3 id="shared-title">Shared Origin — The Elemental Kin</h3>
+            <p>The three are known in myth as the <em>Elemental Kin</em>:</p>
+            <ul class="map">
+                <li><b>MoRoc</b> — stone <em>(endurance)</em></li>
+                <li><b>MoRaw</b> — water <em>(flow)</em></li>
+                <li><b>MoRem</b> — life <em>(change)</em></li>
+            </ul>
+            <p>Humans fear them, giving them names of suspicion: gargoyles, sprites, changelings. Yet in ancient tales, they are guardians of Terafna’s balance.</p>
+            <p style="margin-top: 10px;"><a class="anchor" href="#top" aria-label="Back to top">↑ Back to top</a></p>
+        </section>
+
+        <footer>
+            <p>© Terafna Codex. This page presents in-world lore for fiction and world‑building.</p>
+        </footer>
+    </div>
+</body>
+</html>

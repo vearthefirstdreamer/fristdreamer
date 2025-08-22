@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vel Tharuun’s Perspective</title>
+    <meta name="description" content="How Vel Tharuun interprets Annastara, the Living Stone, and the path to a new Black Crystal." />
+    <style>
+        :root {
+            --bg: #0b0f14;
+            --panel: #121926;
+            --panel-2: #0f1722;
+            --text: #e7edf5;
+            --muted: #a6b0c2;
+            --accent: #7cc6ff; /* blue */
+            --accent-2: #4fb1ff;
+            --crimson: #ff5a7a; /* menace */
+            --border: #1e2a3a;
+            --shadow: 0 10px 30px rgba(0,0,0,.35);
+            --radius: 16px;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            background: radial-gradient(1200px 800px at 10% 0%, #0e1522 0%, var(--bg) 50%), radial-gradient(1200px 800px at 100% 0%, #0a1220 0%, var(--bg) 60%);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .wrap {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+
+        header.hero {
+            text-align: center;
+            padding: 24px 12px 32px;
+        }
+
+        .eyebrow {
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            font-size: .78rem;
+            color: var(--muted);
+        }
+
+        h1 {
+            margin: 10px 0 12px;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            line-height: 1.1;
+            background: linear-gradient(180deg, #fff 0%, #cfe9ff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            max-width: 62ch;
+            margin: 0 auto;
+        }
+
+        nav.toc {
+            margin: 28px auto 36px;
+            display: inline-flex;
+            gap: 10px;
+            padding: 8px;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            box-shadow: var(--shadow);
+        }
+
+            nav.toc a {
+                text-decoration: none;
+                color: var(--text);
+                font-size: .95rem;
+                padding: 10px 14px;
+                border-radius: 999px;
+                border: 1px solid transparent;
+            }
+
+                nav.toc a:hover {
+                    border-color: var(--accent-2);
+                    background: linear-gradient(180deg, rgba(124,198,255,.14), rgba(124,198,255,.05));
+                }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+
+        @media (min-width: 800px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            position: relative;
+            overflow: clip;
+            border-radius: var(--radius);
+            background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+            .card .glow {
+                position: absolute;
+                inset: -1px;
+                border-radius: inherit;
+                pointer-events: none;
+                background: radial-gradient(600px 220px at 20% -10%, rgba(124,198,255,.18) 0%, transparent 60%);
+                opacity: .7;
+            }
+
+        .card-inner {
+            position: relative;
+            padding: 22px 22px 24px;
+        }
+
+        h2 {
+            margin: 0 0 6px;
+            font-size: 1.5rem;
+        }
+
+        .tagline {
+            color: var(--muted);
+            margin: 0 0 14px;
+        }
+
+        section.block {
+            margin-top: 28px;
+            padding: 22px;
+            border-radius: var(--radius);
+            background: linear-gradient(180deg, rgba(124,198,255,.10), rgba(124,198,255,.03));
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+            section.block h3 {
+                margin-top: 0;
+                font-size: 1.2rem;
+            }
+
+        .callout {
+            border-left: 3px solid var(--crimson);
+            padding: 10px 14px;
+            background: rgba(255,90,122,.06);
+            border-radius: 8px;
+        }
+
+        blockquote {
+            margin: 14px 0;
+            padding: 14px 18px;
+            border-left: 4px solid var(--crimson);
+            background: rgba(255,90,122,.08);
+            border-radius: 6px;
+            font-style: italic;
+        }
+
+        ul {
+            padding-left: 18px;
+        }
+
+            ul li {
+                margin: 6px 0;
+            }
+
+        footer {
+            margin-top: 44px;
+            text-align: center;
+            color: var(--muted);
+            font-size: .9rem;
+        }
+
+        a.anchor {
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="brand">
+            <div class="glyph" aria-hidden="true"></div>
+            <div>
+                <div class="muted smallcaps">The Kor Cycle</div>
+                <strong>Vear-The First Dreamer</strong>
+            </div>
+        </div>
+        <header class="hero">
+            <nav class="toc" aria-label="Table of contents">
+                <a href="../index.html">Book One</a>
+                <a href="book2.html">Book Two</a>
+                <a href="book3.html">Book Three</a>
+                <a href="prologue book2.html">prologue Book Two</a>
+                <a href="prologue book3.html">prologue Book Three</a>
+                <a href="Roadmap.html">Roadmap</a>
+            </nav>
+        </header>
+    </header>
+    <div class="wrap">
+        <header class="hero">
+            <div class="eyebrow">Terafna — Lore Compendium</div>
+            <h1>Vel Tharuun’s Perspective</h1>
+            <p class="subtitle">The void‑bound mind that seeks the Black Crystal finds a signal in Annastara — a path to rebirth through living stone and will‑colored crystal.</p>
+            <nav class="toc" aria-label="Table of contents">
+                <a href="#imprisonment">Imprisonment</a>
+                <a href="#black-crystal">Nature of the Black Crystal</a>
+                <a href="#living-stone">Living Stone</a>
+                <a href="#annastara">Sensing Annastara</a>
+                <a href="#proof">Proof & Intent</a>
+                <a href="#narrative">Narrative Implications</a>
+            </nav>
+        </header>
+
+        <main class="grid">
+            <!-- Imprisonment -->
+            <article id="imprisonment" class="card" aria-labelledby="imprisonment-title">
+                <div class="glow" aria-hidden="true"></div>
+                <div class="card-inner">
+                    <h2 id="imprisonment-title">Imprisonment in the Void</h2>
+                    <p class="tagline">Silenced by the Council — but not ended.</p>
+                    <div class="callout">
+                        <p>Vel Tharuun was bound to the void by Elias and the Council of Higher Minds for his obsession with the Black Crystal.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Nature of the Black Crystal -->
+            <article id="black-crystal" class="card" aria-labelledby="black-title">
+                <div class="glow" aria-hidden="true"></div>
+                <div class="card-inner">
+                    <h2 id="black-title">Nature of the Black Crystal</h2>
+                    <p class="tagline">Not an object alone — a fusion.</p>
+                    <ul>
+                        <li>More than matter: a union of crystal and mind.</li>
+                        <li>Clear crystal becomes black when shaped by a will strong enough to bend time.</li>
+                    </ul>
+                </div>
+            </article>
+        </main>
+
+        <!-- Living Stone -->
+        <section id="living-stone" class="block" aria-labelledby="living-title">
+            <h3 id="living-title">The Living Stone of Terafna</h3>
+            <p>Within it lie countless dormant clear crystals, waiting to resonate with a mind powerful enough to shape them.</p>
+        </section>
+
+        <!-- Annastara sensed -->
+        <section id="annastara" class="block" aria-labelledby="annastara-title">
+            <h3 id="annastara-title">Sensing Annastara</h3>
+            <p>When Annastara fuses with the Living Stone, Vel Tharuun senses the event instantly — her will, carrying Vear’s bloodline, awakens the stone and turns its clear veins blue.</p>
+        </section>
+
+        <!-- Proof & Intent -->
+        <section id="proof" class="block" aria-labelledby="proof-title">
+            <h3 id="proof-title">Proof & Intent</h3>
+            <p>To Vel Tharuun, the blue is proof: Annastara is the <em>seed</em> of a new Black Crystal — a vessel in which crystal and mind may again become one.</p>
+        </section>
+
+        <!-- Narrative Implications -->
+        <section id="narrative" class="block" aria-labelledby="narrative-title">
+            <h3 id="narrative-title">Narrative Implications</h3>
+            <ul>
+                <li><strong>MoRoc & Humans:</strong> They see only strangeness and fear.</li>
+                <li><strong>Vel Tharuun:</strong> He sees a chance to recreate the Black Crystal within her and free himself from the void.</li>
+                <li><strong>Annastara’s Flight:</strong> No mere power, but a signpost — the vessel he has awaited.</li>
+                <li><strong>Whispered Influence:</strong> His shadow slips into her dreams, shaping her toward a living Black Crystal.</li>
+            </ul>
+            <blockquote>
+                “To the MoRoc: a sister set apart. To humans: a monster unnatural. To me: destiny — the key.” — <strong>Vel Tharuun</strong>
+            </blockquote>
+            <p style="margin-top: 10px;"><a class="anchor" href="#top" aria-label="Back to top">↑ Back to top</a></p>
+        </section>
+
+        <footer>
+            <p>© Terafna Codex. In‑world lore reference.</p>
+        </footer>
+    </div>
+</body>
+</html>

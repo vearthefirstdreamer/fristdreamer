@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scene: Before the King of Kaeithar</title>
+  <meta name="description" content="Annastara stands before the throne of Kaeithar — a court divided, a queen’s mercy, and a child who declares her own name." />
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --panel: #121926;
+      --panel-2: #0f1722;
+      --text: #e7edf5;
+      --muted: #a6b0c2;
+      --accent: #7cc6ff; /* sky */
+      --gold: #ffd98a;   /* torch / crown */
+      --crimson: #ff6b7a; /* tension */
+      --border: #1e2a3a;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+    }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 800px at 12% -10%, #0e1522 0%, var(--bg) 60%),
+        radial-gradient(1000px 800px at 100% -10%, #08121f 0%, var(--bg) 70%),
+        linear-gradient(180deg, #09111a 0%, #0b0f14 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .wrap{ max-width: 980px; margin: 0 auto; padding: 40px 20px 80px; }
+    header.hero{ text-align: center; padding: 24px 12px 32px; }
+    .eyebrow{ letter-spacing: .18em; text-transform: uppercase; font-size: .78rem; color: var(--muted); }
+    h1{ margin: 10px 0 12px; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; background: linear-gradient(180deg, #fff 0%, #cfe9ff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .subtitle{ color: var(--muted); max-width: 64ch; margin: 0 auto; }
+
+    nav.toc{ margin: 26px auto 36px; display: inline-flex; gap: 10px; padding: 8px; background: var(--panel); border: 1px solid var(--border); border-radius: 999px; box-shadow: var(--shadow); }
+    nav.toc a{ text-decoration: none; color: var(--text); font-size: .95rem; padding: 10px 14px; border-radius: 999px; border: 1px solid transparent; }
+    nav.toc a:hover{ border-color: var(--gold); background: linear-gradient(180deg, rgba(255,217,138,.14), rgba(255,217,138,.05)); }
+
+    .scene{ position: relative; overflow: clip; border-radius: var(--radius); background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%); border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .scene .glow{ position: absolute; inset: -1px; border-radius: inherit; pointer-events:none; background: radial-gradient(900px 260px at 20% -10%, rgba(255,217,138,.16) 0%, transparent 60%); opacity:.75; }
+    .scene-inner{ position: relative; padding: 26px 24px 28px; }
+
+    .scene p{ margin: 12px 0; }
+
+    .dialogue{ margin: 14px 0; padding: 14px 18px; border-left: 4px solid var(--accent); background: rgba(124,198,255,.08); border-radius: 8px; }
+    .dialogue p{ margin: 8px 0; }
+
+    .crowd{ margin: 18px 0; padding: 14px 18px; border-left: 4px solid var(--gold); background: rgba(255,217,138,.10); border-radius: 8px; }
+    .crowd p{ margin: 8px 0; }
+
+    .tension{ border-left: 4px solid var(--crimson); background: rgba(255,107,122,.08); }
+
+    .aside{ display:grid; grid-template-columns: 1fr; gap: 18px; margin-top: 26px; }
+    @media (min-width: 900px){ .aside{ grid-template-columns: 1.2fr .8fr; } }
+
+    .card{ position: relative; overflow: clip; border-radius: var(--radius); background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%); border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .card .glow{ position: absolute; inset: -1px; border-radius: inherit; pointer-events:none; background: radial-gradient(600px 220px at 20% -10%, rgba(124,198,255,.18) 0%, transparent 60%); opacity:.7; }
+    .card-inner{ position: relative; padding: 20px 20px 22px; }
+
+    h2, h3{ margin: 0 0 10px; }
+    h2{ font-size: 1.5rem; }
+    h3{ font-size: 1.05rem; color: var(--muted); }
+
+    ul{ padding-left: 18px; }
+    li{ margin: 6px 0; }
+
+    footer{ margin-top: 44px; text-align: center; color: var(--muted); font-size: .9rem; }
+  </style>
+</head>
+<body>
+    <div class="brand">
+        <div class="glyph" aria-hidden="true"></div>
+        <div>
+            <div class="muted smallcaps">The Kor Cycle</div>
+            <strong>Vear-The First Dreamer</strong>
+        </div>
+    </div>
+    <header class="hero">
+        <nav class="toc" aria-label="Table of contents">
+            <a href="../index.html">Book One</a>
+            <a href="book2.html">Book Two</a>
+            <a href="book3.html">Book Three</a>
+            <a href="prologue book2.html">prologue Book Two</a>
+            <a href="prologue book3.html">prologue Book Three</a>
+            <a href="Roadmap.html">Roadmap</a>
+        </nav>
+    </header>
+    <div class="wrap">
+        <header class="hero">
+            <div class="eyebrow">Terafna — Scenes</div>
+            <h1>Before the King of Kaeithar</h1>
+            <p class="subtitle">Chains, a shattered guise, and a queen’s mercy divide the court of Kaeithar.</p>
+        </header>
+
+        <article id="scene" class="scene" aria-labelledby="scene-title">
+            <div class="glow" aria-hidden="true"></div>
+            <div class="scene-inner">
+                <h2 id="scene-title" style="margin-top:0">Scene</h2>
+                <p>Chains clattered as Annastara was dragged into the throne hall of Kaeithar. Shadows leaned across soaring pillars, torchlight dancing against a mural behind the throne. Though faded by centuries, the figure painted there still loomed: a warrior haloed in fire, blade raised high — the Starborn.</p>
+                <p>Annastara’s gaze lingered, unease stirring. The image was familiar, yet cloaked in fog she could not pierce.</p>
+                <p>The guards forced her forward. Her body gleamed with stone, jagged wings scraping the floor, the chains biting deep into her wrists. Courtiers gasped and whispered from the gallery.</p>
+                <div class="crowd">
+                    <p>“Moroc!” one spat.</p>
+                    <p>“No — a Morem, surely.”</p>
+                    <p>“She is neither. She is omen.”</p>
+                </div>
+                <p>The king rose. His steps struck the stone like judgment itself as he descended from his throne. His presence filled the chamber, cold and imperious.</p>
+                <p>Then Annastara let it happen. The shimmer, the fracture, the shedding. Stone cracked away, dissolving into dust as flesh bloomed in its place. Her chains slipped loose, falling useless at her feet. Wings folded and fell away in shards of granite.</p>
+                <p>Gasps rippled through the hall.</p>
+                <div class="dialogue">
+                    <p>The king halted, eyes burning with disbelief. His voice cut through the silence:<br><strong>“Tell me, child. Are you Moroc… or Morem?”</strong></p>
+                </div>
+                <div class="dialogue">
+                    <p>Annastara stood, trembling, but raised her chin.<br><strong>“I am neither. I am my own being.”</strong></p>
+                </div>
+                <p>Murmurs erupted like a tide. Some crossed themselves, others muttered curses.</p>
+                <p>The queen rose from her seat, descending the dais with quiet grace. Where the king was iron, she was warmth. She stopped before Annastara, her eyes soft with pity and resolve.</p>
+                <div class="dialogue">
+                    <p><strong>“She is a child,”</strong> the queen said. <strong>“And she suffers. That is reason enough for mercy.”</strong></p>
+                </div>
+                <div class="dialogue tension">
+                    <p><strong>“Mercy?”</strong> the king’s voice thundered. <strong>“This creature is an aberration — no kin to us! And you would shelter her in these halls?”</strong></p>
+                </div>
+                <div class="dialogue">
+                    <p><strong>“She is not aberration,”</strong> the queen answered, steel beneath velvet. <strong>“If we name ourselves rulers, we cannot be only judges. We must also be guardians.”</strong></p>
+                </div>
+                <p>The court erupted — half shouting their assent to the queen, half echoing the king’s wrath. Factions formed in a heartbeat: some nobles bowed their heads toward the queen, pledging compassion, while others barked that weakness would doom Kaeithar.</p>
+                <p>The king raised a hand to silence them. His jaw tightened, but he did not strike down his queen’s words. For in the eyes of his divided court, her stance had already won more than his fury could undo.</p>
+                <p>At last he spoke, each word like a stone dropped into still water.<br><strong>“Very well. The child may stay. But remember, my queen — if she proves a danger, her blood will be on your hands.”</strong></p>
+                <p>The courtiers murmured, the divide not healed but sharpened.</p>
+                <p>Annastara, still trembling, looked to the queen — and for the first time saw a human face that did not condemn her.</p>
+            </div>
+        </article>
+
+
+        <footer>
+            <p>© Terafna Codex. In‑world scene reference.</p>
+        </footer>
+    </div>
+</body>
+</html>
