@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vear’s Visor</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(to right, #1a1a1a, #141414);
+        }
+
+            header h1 {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            header p {
+                max-width: 600px;
+                margin: 0 auto;
+                color: #ccc;
+            }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .profile {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+
+        .portrait {
+            flex: 1 1 250px;
+            background: #0d0d0d;
+            border-radius: 10px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .portrait img {
+                max-width: 100%;
+                max-height: 100%;
+                border-radius: 10px;
+            }
+
+        .bio {
+            flex: 2 1 400px;
+        }
+
+            .bio h2 {
+                margin-top: 0;
+                color: #e0e0e0;
+            }
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .fact {
+            background: #111;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+            .fact span {
+                display: block;
+                font-size: 0.9rem;
+                color: #aaa;
+            }
+
+            .fact strong {
+                display: block;
+                margin-top: 0.3rem;
+                font-size: 1.1rem;
+                color: #fff;
+            }
+
+        section {
+            margin-top: 2rem;
+        }
+
+        h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vear (Kor) — Character Profile | The First Dreamer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Small page-specific helpers (reuses your global palette) */
+        .crumb {
+            display: inline-block;
+            margin: 10px 0 6px;
+            color: var(--muted);
+            text-decoration: none
+        }
+
+            .crumb:hover {
+                color: var(--accent)
+            }
+
+        .facts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 0;
+            margin: 10px 0 0
+        }
+
+            .facts li {
+                list-style: none;
+                background: var(--panel-2);
+                border: 1px solid var(--border);
+                border-radius: 10px;
+                padding: 8px 10px
+            }
+
+        .chips {
+            margin-top: 8px
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="brand">
+            <div class="glyph" aria-hidden="true"></div>
+            <div>
+                <div class="muted smallcaps">The Kor Cycle</div>
+                <strong>Vear-The First Dreamer</strong>
+            </div>
+        </div>
+        <nav>
+            <a href="../index.html#home">Home</a>
+            <a href="../index.html#characters">Characters</a>
+            <a href="../index.html#world">Worlds</a>
+            <a href="../index.html#artifacts">Artifacts</a>
+            <a href="../index.html#time_ships">Temporal Vessals</a>
+            <a href="../index.html#timeline">Timeline</a>
+            <a href="../index.html#comments">Comments</a>
+        </nav>
+    </header>
+
+    <section>
+        
+        <div class="hero" style="padding-top:28px">
+            <h1>Vear’s Visor</h1>
+            <p class="muted">
+                Forged of iron, bronze, and gold reborn,
+                its green crystal pulses—turning blindness into sight, and scars into a crown
+            </p>
+        </div>
+    </section>
+
+    <main>
+
+        <div class="profile">
+            <div class="portrait">
+                <img src="../images/Vear’s Visor.png" alt="Vear’s Visor" />
+            </div>
+            <div class="bio">
+                <h2>Description</h2>
+                <p>
+                    • Artifact Name: The Ember Crown (informally referred to as “the visor”)
+                </p>
+                <p>Type: Symbolic and practical facial covering</p>
+                <p>Era of Origin: Ancient Edson, ~-10,000 AE</p>
+                <p>Crafted by: Thomel, the village ironsmith, with contributions from the villagers</p>
+                <p>
+                    The visor is a masterwork of traditional Edsonian craftsmanship—hand-forged from a base of
+                    burnished iron and fitted bronze, giving it both strength and an earthy, grounded tone. Fine
+                    veins of inlaid gold trace across its surface, drawn from old keepsakes melted down and recast
+                    as delicate filigree. At its heart, set between the bridge of the nose and the brow, lies the green
+                    crystal—alive with a slow, inner pulse. Through it, Vear perceives not with eyes, but with a mind
+                    sharpened beyond flesh. It is not merely protection.
+                </p>
+                <p>
+                    The design is both elegant and utilitarian. The inner lining is padded with soft leather for long wear, 
+                    while the outer curvature is molded to wrap smoothly around the upper face, fully covering Vear’s damaged 
+                    eyes and the bandages beneath. The structure serves as both protective mask and symbolic crown, intentionally 
+                    crafted to transform injury into authority. The villagers’ workmanship ensured the visor would sit securely, 
+                    even during battle, movement, or intense exertion.
+                </p>
+            </div>
+        </div>
+
+        <section>
+            <h3>Functional Role</h3>
+            <p>
+                Though Vear sees without physical eyes—perceiving the world through heightened senses and mental acuity—the visor serves two important purposes:
+            </p>
+            <ul>
+                <li>
+                    Social Protection: It shields others from the discomfort of staring into Vear’s damaged or sightless gaze, easing tension in gatherings or moments of leadership.
+                </li>
+                <li>
+                    Symbol of Unity: Every piece of the visor came from someone in the village—gold, stones, labor—making it a shared act of hope and allegiance.
+                    It is a crown of the people, not inherited but earned.
+                </li>
+        </section>
+     
+        <section>
+            <h3>Cultural Meaning</h3>
+            <p>
+                Among the villagers and rebels of ancient Edson, the visor becomes a mythic object, inseparable from the image of Vear. Over time, it’s remembered not
+                just as a mask, but as a mark of transformation—the moment a blind exile became a leader, a whisper of rebellion became a movement, and hope found a face.
+            </p>
+        </section>
+
+        <section>
+            <h3>Origin Story (Summary)</h3>
+            <p>
+                Vear lost his sight during a violent battle with Agent Thalos aboard a The Beta-Class Space/Time Ship, in orbit over Edson during the Middle Edsonian \
+                Era (~-1000 AE). Gravely injured but alive, Vear escaped aboard the Aetherion, flinging himself deeper into the past—10,000 years earlier. Now stranded
+                in ancient Edson and learning to live without physical vision, he became a symbol to the people he protected. The villagers, led by
+                Thomel, gift him the visor as a tribute and sign of trust.
+            </p>
+        </section>
+        <p> </p>
+        <!-- FOOTER -->
+        <footer>
+            © 2025 Nick Yost · The Kor Cycle
+        </footer>
+</body>
+</html>

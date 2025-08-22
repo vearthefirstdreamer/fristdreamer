@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Sword</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(to right, #1a1a1a, #141414);
+        }
+
+            header h1 {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            header p {
+                max-width: 600px;
+                margin: 0 auto;
+                color: #ccc;
+            }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .profile {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+
+        .portrait {
+            flex: 1 1 90px;
+            background: #0d0d0d;
+            border-radius: 10px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .portrait img {
+                max-width: 100%;
+                max-height: 100%;
+                border-radius: 10px;
+            }
+
+        .bio {
+            flex: 2 1 400px;
+        }
+
+            .bio h2 {
+                margin-top: 0;
+                color: #e0e0e0;
+            }
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .fact {
+            background: #111;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+            .fact span {
+                display: block;
+                font-size: 0.9rem;
+                color: #aaa;
+            }
+
+            .fact strong {
+                display: block;
+                margin-top: 0.3rem;
+                font-size: 1.1rem;
+                color: #fff;
+            }
+
+        section {
+            margin-top: 2rem;
+        }
+
+        h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vear (Kor) — Character Profile | The First Dreamer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Small page-specific helpers (reuses your global palette) */
+        .crumb {
+            display: inline-block;
+            margin: 10px 0 6px;
+            color: var(--muted);
+            text-decoration: none
+        }
+
+            .crumb:hover {
+                color: var(--accent)
+            }
+
+        .facts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 0;
+            margin: 10px 0 0
+        }
+
+            .facts li {
+                list-style: none;
+                background: var(--panel-2);
+                border: 1px solid var(--border);
+                border-radius: 10px;
+                padding: 8px 10px
+            }
+
+        .chips {
+            margin-top: 8px
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="brand">
+            <div class="glyph" aria-hidden="true"></div>
+            <div>
+                <div class="muted smallcaps">The Kor Cycle</div>
+                <strong>Vear-The First Dreamer</strong>
+            </div>
+        </div>
+        <nav>
+            <a href="../index.html#home">Home</a>
+            <a href="../index.html#characters">Characters</a>
+            <a href="../index.html#world">Worlds</a>
+            <a href="../index.html#artifacts">Artifacts</a>
+            <a href="../index.html#time_ships">Temporal Vessals</a>
+            <a href="../index.html#timeline">Timeline</a>
+            <a href="../index.html#Temporal Law">Rule of Intent</a>
+            <a href="../index.html#comments">Comments</a>
+        </nav>
+    </header>
+
+    <section>
+        
+        <div class="hero" style="padding-top:28px">
+            <h1>Star Sword</h1>
+            <p class="muted">
+                “The Star Sword does not cut for conquest, but for truth—
+                a blade of resonance that awakens the memory of the universe.”
+            </p>
+        </div>
+    </section>
+
+    <main>
+
+        <div class="profile">
+            <div class="portrait">
+                <img src="../images/Star Swored.png" alt="Star Swored" />
+            </div>
+            <div class="bio">
+                <h2>Description</h2>
+                <p>
+                    (Also known as: the Blade of Echoes, the Celestial Fang, the Singing Steel, the Sword That Waits)
+                </p>
+                <p>
+                    To most, the Star Sword is just a myth—a poetic legend passed down from ancient Edsonian texts, half-buried in
+                    crumbling glyphs and pre-contact oral traditions. It is said to lie dormant in stone, bound by an invisible resonance,
+                    awaiting the one whose soul carries the tone of truth.
+                </p>
+                <p>
+                    But Elias knows the truth. He always has.
+                </p>
+                <p>
+                    The Star Sword was not born of Edson. It was forged beyond the reach of time by an ancient, ascendant species known as the Rulie—a race of pure intellect and harmonic mastery who wielded the precise power of the Blue Crystals.
+                    Unlike most relics of power, the sword was never meant as a weapon of conquest. It was a tool of balance. A blade that could cut through false timelines, resonate with universal memory, and awaken dormant truths. It was created through a process called Resonant Compression, in which Blue Crystals were folded inward upon themselves through intention and harmonic convergence—binding energy to form.
+                    To wield the Star Sword is not to hold power, but to become in tune with the universe itself.
+                </p>
+            </div>
+        </div>
+
+        <section>
+            <h3>Elias’s Hidden Truth</h3>
+            <p>
+                Elias, once a shepherd of the Echo Cycle, helped seed the legion of the blade beneath Edson's surface—embedding it in a
+                stone in a chamber hidden beneath the sands of Edson to wait for the Dreamer whose soul carried the right tone.
+                That mind, the First Dreamer, would not draw the sword for war—but to awaken balance across the timelines.
+            </p>
+        </section>
+
+        <section>
+            <h3>Authority Record (Dismissed Fragment)</h3>
+            <p>
+                ​Authority Record (Dismissed Fragment)
+            </p>
+            <p>
+                Entry: Myth Reference — "Star Sword"
+            </p>
+            Origin: Oral folklore, Edsonic cultures
+            </p>
+            <p>
+                Status: Unverified; culturally symbolic
+            </p>
+            <p>
+                Notes: Cross-referenced with "Blade of Echoes" and "Celestial Fang" in 37 historical fragments. No physical evidence recovered.
+                Recommendation: No further action.
+                Despite over three dozen appearances in unrelated cultural texts, the Authority never investigated the legend. It was filed
+                alongside tales of fire-wolves, dream-songs, and gods who carved rivers with their breath.
+            </p>
+            <p>
+                Just another myth.
+            </p>
+            <p>
+                And so, the sword was left untouched, forgotten—waiting.
+            </p>
+        </section>
+        <section>
+            <h3>The Star Sword Song</h3>
+            <p>
+                Bound in stone, the star-born flame,
+                Forged in wrath, without a name.
+                Hands of men shall tug in vainl,
+                For strength alone shall earn no gain.
+            </p>
+            <p>
+                Only the soul who walks the storm,
+                With heart made fire and spirit torn,
+                Shall stir the blade and break the seal,
+                When truth is found and wounds shall heal.
+            </p>
+            <p>
+                Eyes veiled dark, yet vision wide, 
+                He comes with silence as his guide. 
+                Not born of time, nor bound by fate— He wakes the sword, and opens the gate. “
+            </p>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            © 2025 Nick Yost · The Kor Cycle
+        </footer>
+</body>
+</html>
