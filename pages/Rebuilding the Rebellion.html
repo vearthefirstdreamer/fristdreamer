@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scene: The Throne Room</title>
+    <meta name="description" content="Vear refuses the crown yet takes the mantle — a promise of order, a bridge, and a petitioner who hasn't aged in decades." />
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        :root {
+            --bg: #0b0f14;
+            --panel: #121926;
+            --panel-2: #0f1722;
+            --text: #e7edf5;
+            --muted: #a6b0c2;
+            --accent: #7cc6ff; /* cool light */
+            --gold: #ffd98a; /* candle / crown */
+            --crimson: #ff6b7a; /* tension */
+            --border: #1e2a3a;
+            --shadow: 0 10px 30px rgba(0,0,0,.35);
+            --radius: 16px;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            background: radial-gradient(1200px 800px at 12% -10%, #0e1522 0%, var(--bg) 60%), radial-gradient(1000px 800px at 100% -10%, #08121f 0%, var(--bg) 70%), linear-gradient(180deg, #09111a 0%, #0b0f14 100%);
+            color: var(--text);
+            line-height: 1.65;
+        }
+
+        .wrap {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+
+        header.hero {
+            text-align: center;
+            padding: 24px 12px 32px;
+        }
+
+        .eyebrow {
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            font-size: .78rem;
+            color: var(--muted);
+        }
+
+        h1 {
+            margin: 10px 0 12px;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            line-height: 1.1;
+            background: linear-gradient(180deg, #fff 0%, #cfe9ff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            max-width: 64ch;
+            margin: 0 auto;
+        }
+
+        nav.toc {
+            margin: 26px auto 36px;
+            display: inline-flex;
+            gap: 10px;
+            padding: 8px;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            box-shadow: var(--shadow);
+        }
+
+            nav.toc a {
+                text-decoration: none;
+                color: var(--text);
+                font-size: .95rem;
+                padding: 10px 14px;
+                border-radius: 999px;
+                border: 1px solid transparent;
+            }
+
+                nav.toc a:hover {
+                    border-color: var(--gold);
+                    background: linear-gradient(180deg, rgba(255,217,138,.14), rgba(255,217,138,.05));
+                }
+
+        .scene {
+            position: relative;
+            overflow: clip;
+            border-radius: var(--radius);
+            background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+            .scene .glow {
+                position: absolute;
+                inset: -1px;
+                border-radius: inherit;
+                pointer-events: none;
+                background: radial-gradient(900px 260px at 20% -10%, rgba(255,217,138,.16) 0%, transparent 60%);
+                opacity: .75;
+            }
+
+        .scene-inner {
+            position: relative;
+            padding: 26px 24px 28px;
+        }
+
+        .scene p {
+            margin: 12px 0;
+        }
+
+        .dialogue {
+            margin: 14px 0;
+            padding: 14px 18px;
+            border-left: 4px solid var(--accent);
+            background: rgba(124,198,255,.08);
+            border-radius: 8px;
+        }
+
+            .dialogue p {
+                margin: 8px 0;
+            }
+
+        .crowd {
+            margin: 18px 0;
+            padding: 14px 18px;
+            border-left: 4px solid var(--gold);
+            background: rgba(255,217,138,.10);
+            border-radius: 8px;
+        }
+
+            .crowd p {
+                margin: 8px 0;
+            }
+
+        .aside {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+            margin-top: 26px;
+        }
+
+        @media (min-width: 900px) {
+            .aside {
+                grid-template-columns: 1.2fr .8fr;
+            }
+        }
+
+        .card {
+            position: relative;
+            overflow: clip;
+            border-radius: var(--radius);
+            background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+            .card .glow {
+                position: absolute;
+                inset: -1px;
+                border-radius: inherit;
+                pointer-events: none;
+                background: radial-gradient(600px 220px at 20% -10%, rgba(124,198,255,.18) 0%, transparent 60%);
+                opacity: .7;
+            }
+
+        .card-inner {
+            position: relative;
+            padding: 20px 20px 22px;
+        }
+
+        h2, h3 {
+            margin: 0 0 10px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            color: var(--muted);
+        }
+
+        ul {
+            padding-left: 18px;
+        }
+
+        li {
+            margin: 6px 0;
+        }
+
+        footer {
+            margin-top: 44px;
+            text-align: center;
+            color: var(--muted);
+            font-size: .9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="brand">
+        <div class="glyph" aria-hidden="true"></div>
+        <div>
+            <div class="muted smallcaps">The Kor Cycle</div>
+            <strong>Vear-The First Dreamer</strong>
+        </div>
+    </div>
+    <header class="hero">
+        <nav class="toc" aria-label="Table of contents">
+            <a href="../index.html#Bonus Content">Bonus Content</a>
+        </nav>
+    </header>
+    <div class="wrap">
+        <header class="hero">
+            <div class="eyebrow">Deleted — Scenes</div>
+            <h1>Rebuilding the Rebellion</h1>
+            <p class="subtitle">
+                This scene was intended to occur after Lyra encounters the remnants of the rebellion. The concept was to present it as a
+                parallel narrative to Vear's adventure in the past on Edson. However, I concluded that this would complicate the story too much for the
+                reader to follow and decided to focus only on Vear instead.
+            </p>
+            <nav class="toc" aria-label="Table of contents">
+                <a href="#scene">Scene</a>
+                <a href="#notes">Notes</a>
+            </nav>
+        </header>
+
+        <article id="scene" class="scene" aria-labelledby="scene-title">
+            <div class="glow" aria-hidden="true"></div>
+            <div class="scene-inner">
+                <h2 id="scene-title" style="margin-top:0">Scene</h2>
+                <div class="scene-label">Underground Hideout • Sublevel Freight Junction</div>
+                <h2 class="highlight">“This is where we start.”</h2>
+                <p class="lede dropcap">
+                    The hideout was nothing more than a gutted storage chamber buried beneath layers of rusted plating and concrete. Dust clung to every surface,
+                    and water dripped steadily from a cracked pipe in the ceiling. Once, it had been a freight junction—now, it was theirs.
+                </p>
+
+                <p>
+                    Lyra pulled a ragged tarp from the corner, revealing a terminal half-buried under debris. Its screen flickered faintly, a ghost of old circuitry. She pressed her
+                    hand to the console, and for a moment nothing happened. Then, with a spark and a groan, it came alive.
+                </p>
+                <div class="dialogue">
+                    <p>“This is where we start,” she said.</p>
+                </div>
+
+                <p>
+                    Kera crouched beside her, already stripping wires, splicing new connections with practiced ease. Renna kept watch near the tunnel entrance, rifle balanced
+                    against her shoulder, while the others sorted through weapons and gear with quiet efficiency.
+                </p>
+
+                <p>It wasn’t an army. It wasn’t even a unit. But it was something.</p>
+
+                <div class="rule"></div>
+
+                <p>
+                    Lyra looked at them—not their scars, not their exhaustion, but the fire that still lingered in their eyes.
+                    <div class="dialogue">
+                        “The Authority thinks they’ve crushed us.
+                        They think we’re shadows clinging to cracks in their walls. But shadows move. Shadows spread. And together—” she tapped the console as the first fragments of
+                        data began to pulse across the screen “—we’ll make them choke on their own silence.”
+                    </div>
+                </p>
+
+                <div class="dialogue">
+                    <p>“So, what’s first?” Kera asked, a wire clenched in her teeth.</p>
+                </div>
+                <div class="dialogue">
+                    <p>Lyra leaned forward. Her voice was quiet, but it carried like steel: “Maps. Names. Every hidden cell that still breathes. We’re not rebuilding. We’re reconnecting.”</p>
+                </div>
+
+                <p> The terminal hummed louder, its lines of static sharpening into faint fragments of encrypted coordinates—like embers reigniting in ash.</p>
+
+                <p>And in that moment, the rebellion began to breathe again.</p>
+            </div>
+           
+    </article>
+
+    <section id="notes" class="aside" aria-labelledby="notes-title">
+        <article class="card" aria-labelledby="beat-title">
+            <div class="glow" aria-hidden="true"></div>
+            <div class="card-inner">
+                <h2 id="beat-title">Notes</h2>
+                <ul>
+                    <li><strong>Theme:</strong> Restoring what has been lost.</li>
+                    <li><strong>Stakes:</strong> The Authority acts according to its desires without facing any opposition.</li>
+                    <li><strong>Foreshadow:</strong> The moment, the rebellion began to breathe again.</li>
+                </ul>
+            </div>
+        </article>
+    </section>
+ 
+    <footer>
+        &copy; 2025 Nick Yost | All Rights Reserved
+    </footer>
+    </div>
+</body>
+</html>
