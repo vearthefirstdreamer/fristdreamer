@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scene: Arrival at Aurathis</title>
+  <meta name="description" content="Vear, Lyra, and Aethra arrive at Aurathis — a perfected city under the Alliance’s gaze — and vow not to be parted." />
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --panel: #121926;
+      --panel-2: #0f1722;
+      --text: #e7edf5;
+      --muted: #a6b0c2;
+      --accent: #7cc6ff; /* sky */
+      --alloy: #a3b6c9; /* ship */
+      --gold: #ffd98a;   /* city light */
+      --border: #1e2a3a;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+    }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 800px at 12% -10%, #0e1522 0%, var(--bg) 60%),
+        radial-gradient(1000px 800px at 100% -10%, #08121f 0%, var(--bg) 70%),
+        linear-gradient(180deg, #09111a 0%, #0b0f14 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .wrap{ max-width: 980px; margin: 0 auto; padding: 40px 20px 80px; }
+    header.hero{ text-align: center; padding: 24px 12px 32px; }
+    .eyebrow{ letter-spacing: .18em; text-transform: uppercase; font-size: .78rem; color: var(--muted); }
+    h1{ margin: 10px 0 12px; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; background: linear-gradient(180deg, #fff 0%, #cfe9ff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .subtitle{ color: var(--muted); max-width: 64ch; margin: 0 auto; }
+
+    nav.toc{ margin: 26px auto 36px; display: inline-flex; gap: 10px; padding: 8px; background: var(--panel); border: 1px solid var(--border); border-radius: 999px; box-shadow: var(--shadow); }
+    nav.toc a{ text-decoration: none; color: var(--text); font-size: .95rem; padding: 10px 14px; border-radius: 999px; border: 1px solid transparent; }
+    nav.toc a:hover{ border-color: var(--gold); background: linear-gradient(180deg, rgba(255,217,138,.14), rgba(255,217,138,.05)); }
+
+    .scene{ position: relative; overflow: clip; border-radius: var(--radius); background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%); border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .scene .glow{ position: absolute; inset: -1px; border-radius: inherit; pointer-events:none; background: radial-gradient(900px 260px at 20% -10%, rgba(124,198,255,.16) 0%, transparent 60%); opacity:.75; }
+    .scene-inner{ position: relative; padding: 26px 24px 28px; }
+
+    .scene p{ margin: 12px 0; }
+
+    .dialogue{ margin: 14px 0; padding: 14px 18px; border-left: 4px solid var(--accent); background: rgba(124,198,255,.08); border-radius: 8px; }
+    .dialogue p{ margin: 8px 0; }
+
+    .comms{ margin: 14px 0; padding: 14px 18px; border-left: 4px solid var(--alloy); background: rgba(163,182,201,.12); border-radius: 8px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .95rem; }
+    .comms p{ margin: 6px 0; }
+
+    .aside{ display:grid; grid-template-columns: 1fr; gap: 18px; margin-top: 26px; }
+    @media (min-width: 900px){ .aside{ grid-template-columns: 1.2fr .8fr; } }
+
+    .card{ position: relative; overflow: clip; border-radius: var(--radius); background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%); border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .card .glow{ position: absolute; inset: -1px; border-radius: inherit; pointer-events:none; background: radial-gradient(600px 220px at 20% -10%, rgba(124,198,255,.18) 0%, transparent 60%); opacity:.7; }
+    .card-inner{ position: relative; padding: 20px 20px 22px; }
+
+    h2, h3{ margin: 0 0 10px; }
+    h2{ font-size: 1.5rem; }
+    h3{ font-size: 1.05rem; color: var(--muted); }
+
+    ul{ padding-left: 18px; }
+    li{ margin: 6px 0; }
+
+    footer{ margin-top: 44px; text-align: center; color: var(--muted); font-size: .9rem; }
+  </style>
+</head>
+<body>
+    <div class="brand">
+        <div class="glyph" aria-hidden="true"></div>
+        <div>
+            <div class="muted smallcaps">The Kor Cycle</div>
+            <strong>Vear-The First Dreamer</strong>
+        </div>
+    </div>
+    <header class="hero">
+        <nav class="toc" aria-label="Table of contents">
+            <a href="../index.html">Book One</a>
+            <a href="book2.html">Book Two</a>
+            <a href="book3.html">Book Three</a>
+            <a href="prologue book2.html">prologue Book Two</a>
+            <a href="prologue book3.html">prologue Book Three</a>
+            <a href="Roadmap.html">Roadmap</a>
+        </nav>
+    </header>
+    <div class="wrap">
+        <header class="hero">
+            <div class="eyebrow">Elias — Scenes</div>
+            <h1>The Last Queen of Arden</h1>
+            <p class="subtitle">Bridge of the Aetherion — The Last Queen of Arden</p>
+            <nav class="toc" aria-label="Table of contents">
+                <a href="#scene">Scene</a>
+                <a href="#beats">Visual & Story Beats</a>
+            </nav>
+        </header>
+
+        <article id="scene" class="scene" aria-labelledby="scene-title">
+            <div class="glow" aria-hidden="true"></div>
+            <div class="scene-inner">
+                <h2 id="scene-title" style="margin-top:0">Scene</h2>
+                <p>
+                    Elias stood on the bridge of the Aetherion, the soft glow of starlight spilling through the forward viewport. His
+                    hands rested behind his back, posture composed yet heavy with something unspoken. Aethra’s holographic form shimmered
+                    faintly to his left, her translucent eyes shifting between Elias and Vear. Behind them, in the shadow of the command dais,
+                    a child lingered—Vear’s daughter, no more than six years old, her gaze fixed on her father with the quiet intensity only
+                    children possess.
+                </p>
+                <div class="dialogue">
+                    <p>“You carry a weight that is not yours,” Elias said at last, his voice low, steady. “The ruin of Edson was never your doing.”</p>
+                </div>
+                <div class="dialogue">
+                    <p>
+                        Vear’s jaw tightened, his hands curling into fists at his sides. “Then whose? I was there. I failed them.”
+                    </p>
+                </div>
+                <div class="dialogue">
+                    <p>
+                        Elias shook his head. “No. Edson’s fall began long before you drew breath. The Black Crystal has been sought before—always by
+                        those who believed they could bend its power to salvation. The last was a Shieldbearer. He swore he could protect Edson with it.
+                        Instead…” Elias’s eyes narrowed, distant. “Instead, he brought about its ruin.”
+                    </p>
+                </div>
+
+                <p>
+                    The words settled over the bridge like ash. Aethra flickered, as though the ship itself shuddered at the memory.
+                </p>
+                <div class="dialogue">
+                    <p>
+                        Elias drew a slow breath. His right hand rose to the gray crystal that hung from his neck, the facets pulsing faintly with inner
+                        light. With his left hand, he reached out and set it firmly on Vear’s shoulder. “You must understand. See what I have seen.”
+                    </p>
+                </div>
+                <p>
+                    The Aetherion dissolved around Vear. In an instant, he was no longer on the bridge but standing beside Elias in the vaulted halls of Castle Arden.
+                    Sunlight streamed through high, stained-glass windows, casting fractured rainbows across polished stone.
+                    At the center of the hall lay a bier draped in silken banners: King Marek, still and regal, his crown resting upon his chest.
+                </p>
+                <p>
+                    Alara stood vigil at his side, her belly heavy with child, her face pale with both grief and resolve.
+                </p>
+
+                <div class="dialogue">
+                    <p>
+                        “This was the end of the last great stand,” Elias murmured. “Marek led the charge against the Authority’s remnants. They prevailed—but the king did not survive the victory.”
+                    </p>
+                </div>
+                <p>
+                    Vear’s breath caught as the scene shifted.
+                </p>
+                <p>
+                    Now Alara sat upon the high seat, clad in the raiment of a queen. At her feet, a dark-haired child of two years stacked wooden blocks,
+                    giggling softly. Mirael, her loyal handmaiden, stood near, a gentle watchful presence.
+                </p>
+                <div class="dialogue">
+                    <p>
+                        The doors groaned open. A cluster of nobles entered, their expressions stricken. One stepped forward, voice trembling. “Your Grace—something is happening in the north.
+                        A wall of destruction. The land itself is unraveling, turning to wasteland. It moves steadily southward. Nothing halts it.”
+                    </p>
+                </div>
+                <div class="dialogue">
+                    <p>
+                        “What should we do?” another asked, voice cracking under the weight of fear.
+                    </p>
+                </div>
+
+                <p>
+                    Alara’s gaze swept the hall, settling at last on her child playing at her feet. She straightened, her voice ringing with the weight of command.
+                </p>
+                <div class="dialogue">
+                    <p>
+                        “Then we will save as many as we can. If the north is lost, then every ship, every cart, every willing hand must be turned to flight. No family
+                        abandoned, no child left to the wasteland without a fight. Arden will not die in silence.”
+                    </p>
+                </div>
+                <p>
+                    The vision blurred and shifted again.
+                </p>
+                <p>
+                    Now the air reeked of smoke and panic. Drop-ships loomed on a windswept landing field, their ramps crowded with desperate faces. Families clutched
+                    what little they could carry. Guards shouted orders over the din. Engines thrummed, readying for flight.
+                </p>
+                <p>
+                    At the foot of one ship, Alara stood tall, cloak snapping in the wind. Mirael clutched Annastara, who cried out, arms outstretched for her mother.
+                </p>
+                <div class="dialogue">
+                    <p>
+                        Alara knelt, pressing her forehead to her daughter’s. Her voice was a whisper, fierce and tender. “You must go. You must live.”
+                    </p>
+                </div>
+                <div class="dialogue">
+                    <p>
+                        “My queen,” Mirael pleaded, eyes wet. “You must come. There is space enough for you.”
+                    </p>
+                </div>
+                <div class="dialogue">
+                    <p>
+                        Alara shook her head, her gaze steady even as her lips trembled. “I will not abandon my people. Take her. Protect her.”
+                    </p>
+                </div>
+                <p>
+                    She pressed Annastara into Mirael’s arms. The child wailed as Mirael carried her up the ramp, twisting to reach back toward her mother.
+                    Alara did not follow. She stood rooted as the engines roared, her face uplifted to the heavens, unyielding.
+                </p>
+                <p>
+                    From the viewport of the rising ship, Mirael saw her queen diminish to a single figure amidst the sea of those left behind. Beyond her, the horizon cracked.
+                    A wave of annihilation thundered across Edson, forests and mountains collapsing into wasteland. The light consumed all.
+                </p>
+                <p>
+                    Mirael held Annastara close, tears streaming as the ship pierced the upper atmosphere. The world below was swallowed whole.
+                </p>
+                <p>
+                    The vision shattered.
+                </p>
+                <p>
+                    Vear stumbled, breath ragged, as the Aetherion returned around him. His fists shook, his heart still thundering with the echoes of Alara’s last stand.
+                </p>
+                <div class="dialogue">
+                    <p>
+                        Elias stood unmoved, though the gray crystal at his chest dimmed, its light nearly spent. “Do you see now? The dream that destroyed Edson was never yours.
+                        Do not make it so. Leave the Black Crystal buried, or it will claim you as it claimed him.”
+                    </p>
+                </div>
+                <div class="dialogue">
+                    <p>
+                        Vear’s eyes burned with grief and fury. “And if it is the only way?”
+                    </p>
+                </div>
+                <div class="dialogue">
+                    <p>
+                        “Then you must choose whether you will be savior… or destroyer. For no one has ever grasped the Black Crystal and remained unchanged.”
+                    </p>
+                </div>
+                <div class="dialogue">
+                    <p>
+                        Vear’s anger flared. He stepped closer, voice sharp. “If you saw all this—if you knew what would come—why did you not stop it? Why let Edson burn?”
+                    </p>
+                </div>
+                <div class="dialogue">
+                    <p>
+                        For the first time, Elias’s expression faltered, shadow crossing his features. His voice was quiet, but steady. “Because I am bound. The Rule of Intent governs all
+                        who walk the threads of time. I cannot act upon what is not my own purpose. To interfere would be to break the design itself. I could only witness… and remember.”
+                    </p>
+                </div>
+                <div class="dialogue">
+                    <p>
+                        Vear’s voice broke into a snarl. “Bound? And yet you’ve stood at every turn of my path—guiding, whispering, setting choices before me. Do not tell me you
+                        could not interfere. You already have.
+                    </p>
+                </div>
+                <div class="dialogue">
+                    <p>
+                        Elias’s eyes darkened with something between sorrow and weariness. “You believe I’ve guided your destiny. That every step has been mine. But no, Vear. I have
+                        never written your path. I have only revealed the forks in the road. The choice has always been yours.”
+                    </p>
+                </div>
+                <div class="dialogue">
+                    <p>
+                        Vear’s fists trembled, his voice raw. “And yet every choice leads me deeper into your web. If not you, then whose hand binds me?
+                    </p>
+                </div>
+                <p>
+                    Silence pressed heavy on the bridge, broken only by the low hum of the ship’s core. At last, Elias spoke.
+                </p>
+                <div class="dialogue">
+                    <p>
+                        “The Rule of Intent is older than you, older than me, older even than Edson’s fall. It binds all who walk the currents of time. I can show you
+                        what was, I can whisper of what might be—but I cannot compel what will. You mistake my presence for command. It is not so.”
+                    </p>
+                </div>
+                <div class="dialogue">
+                    <p>
+                        His gaze softened, though his tone carried the weight of millennia. “You are not the Shieldbearer, Vear. You are not the hand that broke Edson. Y
+                        our destiny is yours—even if you refuse to see it.”
+                    </p>
+                </div>
+                <p>
+                    Behind them, Aethra flickered faintly, her expression unreadable. Vear’s daughter pressed her small hand into the folds of his cloak, anchoring him in the present.
+                    For a moment, all the fury, grief, and doubt coiled inside him could not eclipse the fragile weight of that touch.
+                </p>
+            </div>
+</article>
+
+        <section id="beats" class="aside" aria-labelledby="beats-title">
+            <article class="card" aria-labelledby="visual-title">
+                <div class="glow" aria-hidden="true"></div>
+                <div class="card-inner">
+                    <h2 id="visual-title">Visual & Story Beats</h2>
+                    <ul>
+                        <li>✨ <strong>Opening Visual:</strong> Starlight spilling through the viewport of the Aetherion; Elias stands calm, Aethra flickers.</li>
+                        <li>⚔️ <strong>Inciting Beat:</strong> Elias reveals Edson’s ruin came from a Shieldbearer and the Black Crystal, not Vear.</li>
+                        <li>🏰 <strong>Vision Shift:</strong> Castle Arden — King Marek lies in state; Alara, pregnant, keeps vigil.</li>
+                        <li>📢 <strong>Rising Tension:</strong> Nobles report the encroaching wall of destruction from the north; Alara commands evacuation.</li>
+                        <li>🚀 <strong>Climactic Visual:</strong> Drop-ships roar as Alara gives Annastara to Mirael; she refuses to abandon her people.</li>
+                        <li>🌌 <strong>Falling Action:</strong> From orbit, Mirael watches Edson consumed by annihilation.</li>
+                        <li>🔮 <strong>Return Beat:</strong> Vision shatters; Elias warns Vear against the Black Crystal.</li>
+                        <li>🔥 <strong>Confrontation:</strong> Vear demands answers; Elias admits he is bound by the Rule of Intent.</li>
+                        <li>🤲 <strong>Closing Visual:</strong> Vear’s daughter grasps his cloak, a fragile anchor amid grief and fury.</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+            <footer>© 2025 Nick Yost · The Kor Cycle</footer>
+    </div>
+</body>
+</html>
