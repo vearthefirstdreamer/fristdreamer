@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(to right, #1a1a1a, #141414);
+        }
+
+            header h1 {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            header p {
+                max-width: 600px;
+                margin: 0 auto;
+                color: #ccc;
+            }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .profile {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+
+        .portrait {
+            flex: 1 1 3000px;
+            background: #0d0d0d;
+            border-radius: 10px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .portrait img {
+                max-width: 100%;
+                max-height: 100%;
+                border-radius: 10px;
+            }
+
+        .bio {
+            flex: 2 1 400px;
+        }
+
+            .bio h2 {
+                margin-top: 0;
+                color: #e0e0e0;
+            }
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .fact {
+            background: #111;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+            .fact span {
+                display: block;
+                font-size: 0.9rem;
+                color: #aaa;
+            }
+
+            .fact strong {
+                display: block;
+                margin-top: 0.3rem;
+                font-size: 1.1rem;
+                color: #fff;
+            }
+
+        section {
+            margin-top: 2rem;
+        }
+
+        h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Beasts of Aether and Void | The First Dreamer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Small page-specific helpers (reuses your global palette) */
+        .crumb {
+            display: inline-block;
+            margin: 10px 0 6px;
+            color: var(--muted);
+            text-decoration: none
+        }
+
+            .crumb:hover {
+                color: var(--accent)
+            }
+
+        .facts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 0;
+            margin: 10px 0 0
+        }
+
+            .facts li {
+                list-style: none;
+                background: var(--panel-2);
+                border: 1px solid var(--border);
+                border-radius: 10px;
+                padding: 8px 10px
+            }
+
+        .chips {
+            margin-top: 8px
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="brand">
+            <div class="glyph" aria-hidden="true"></div>
+            <div>
+                <div class="muted smallcaps">The Kor Cycle</div>
+                <strong>Vear-The First Dreamer</strong>
+            </div>
+        </div>
+        <nav>
+            <a href="../index.html#home">Home</a>
+            <a href="../index.html#characters">Characters</a>
+            <a href="../index.html#world">Worlds</a>
+            <a href="../index.html#artifacts">Artifacts</a>
+            <a href="../index.html#time_ships">Temporal Vessals</a>
+            <a href="../index.html#timeline">Timeline</a>
+            <a href="../index.html#Temporal Law">Rule of Intent</a>
+            <a href="../index.html#comments">Comments</a>
+        </nav>
+    </header>
+
+    <section>
+        
+        <div class="hero" style="padding-top:28px">
+            <h1>Structures and Devices of the Dreamer's Age</h1>
+            <p class="muted">
+                In the universe of Vear, castles embody heritage, fortresses embody survival, and citadels embody transcendence—together forming monuments to memory, defiance, and mastery.
+            </p>
+        </div>
+    </section>
+
+    <main>
+
+        <div class="profile">
+            <div class="portrait">
+                <img src="../images/The Crystal Citadel.png" alt="The Crystal Citadel" />
+            </div>
+            <div class="bio">
+                <h2>The Crystal Citadel.</h2>
+
+                <p>
+                    Beyond the jagged white peaks lies a frozen basin where even the wind dares not stir. The snow there is ancient, untouched,
+                    and the ice glitters like glass across the plain. From this stillness rises the Crystal Citadel, a shard of the world itself
+                    thrust skyward. It is no fortress of walls or battlements, but a living monument of crystal—towers spiraling upward in jagged
+                    elegance, refracting pale light into fractured rainbows. At its heart, the central spire glows faintly, pulsing with a cyan radiance like the beat of a sleeping heart.
+                </p>
+                <p>
+                    The Citadel is the last surviving relic of the Shattered Age, a time when Edson blazed with brilliance. Its people, the descendants of Earth, carried fragments of an older
+                    legacy across the stars. From those fragments they forged marvels: cities suspended on lattices of crystal and light, engines that bent gravity itself, networks of energy
+                    coursing across continents. They spoke through the air, traversed oceans in heartbeats, and shaped matter as easily as clay.
+                </p>
+                <p>
+                    All else has fallen into ruin.
+                </p>
+                <p>
+                    But still the Citadel endures—
+                </p>
+                <p>
+                    a solitary monument to mastery,
+                </p>
+                <p>
+                    a silent witness of an age that once blazed brighter than the suns.
+                </p>
+            </div>
+        </div>
+        <p></p>
+        <div class="profile">
+              <div class="portrait">
+                    <img src="../images/The Hidden Chamber.png" alt="The Hidden Chamber" />
+                </div>
+                <div class="bio">
+                    <h2>The Hidden Chamber</h2>
+                    <p>
+                        Beneath the radiant towers of the Crystal Citadel, deeper than stone or memory, lies a chamber older than 
+                        the Citadel itself. It is a vast, circular vault, its walls alive with crystal veined in violet and white. 
+                        These veins pulse in slow rhythm, like the steady breath of some unseen colossus slumbering in the dark.
+                    </p>
+                    <p>
+                        At the center stands a monolith of black stone—immovable, eternal, its surface marked by inscriptions so 
+                        eroded that their language has been swallowed by time. No scholar has unraveled them, no sage dared to claim 
+                        their meaning. Yet all agree the stone itself radiates a gravity of presence, as though it remembers truths 
+                        the world has long forgotten.
+                    </p>
+                    <p>
+                        Upon the summit of the monolith rests a solitary crystal, no larger than a clenched fist. Its heart glows with a 
+                        golden core, but not with ordinary light. This is the Yellow Crystal—Insight. It does not shine outward like a lamp; 
+                        rather, it turns sight inward, unveiling currents that do not belong to the one who gazes within.
+                    </p>
+                    <p>Those who dare to look into its depths speak of fleeting visions: half-formed memories, thoughts that are not their own, 
+                       faces and places glimpsed for an instant before dissolving into nothing. Truths twist into lies, and lies into deeper deceits, 
+                       until the boundary between what is seen and what is believed collapses.</p>
+                    <p>The chamber is silent. Yet in that silence, the Yellow Crystal whispers—not with sound, but with revelation. And revelation is 
+                       a dangerous thing.</p>
+                </div>
+            </div>
+        </div>
+        <p></p>
+        <div id="Green_Crystal" class="profile">
+            <div class="portrait">
+                <img src="../images/Weyrnhouse Stronghold.png" alt="Weyrnhouse Stronghold" />
+            </div>
+            <div class="bio">
+                <h2>Weyrnhouse Stronghold</h2>
+                <p>
+                    The high-walled Weyrnhouse Stronghold looms against the cliffside like the fossil of some petrified beast. Its shattered towers jut outward 
+                    like broken vertebrae, remnants of a spine too stubborn to collapse entirely into ruin.
+                </p>
+                <p>
+                    Hewn directly from the jagged flanks of the Blackfang Mountains, Weyrnhouse was born of basalt and blood. Its corridors carry the weight of 
+                    ancient slaughter, every stone darkened by memory. Outside, the wind howls endlessly over the cliffs; within, silence clings close, broken 
+                    only by the faint crackle of fire—as though the stronghold itself draws breath but refuses to release it.
+                </p>
+                <p>
+                    At the far end of the courtyard stands its most enduring feature: the ancient gates of Weyrnhouse. Twin slabs of charred iron, forged in a 
+                    forgotten age, they remain sealed each night and opened each dawn, their hinges groaning with the memory of centuries. Legends claim they 
+                    have endured fire, siege, and the fury of mountain tremors without faltering. To the scattered folk who dwell beneath the Blackfang peaks, 
+                    the gates are eternal—unbreakable as the mountains themselves.
+                </p>
+                <p>
+                    Thus Weyrnhouse endures, brooding beneath the jagged crowns of stone, its decaying towers clinging to the mountainside like the skeletal 
+                    remains of a long-dead giant. Not merely a fortress, but a grave monument to defiance carved into the bones of the world.
+                </p>
+            </div>
+        </div>
+        <p></p>
+        <div id="Green_Crystal" class="profile">
+            <div class="portrait">
+                <img src="../images/Castle of Durnhal.png" alt="Castle of Durnhal" />
+            </div>
+            <div class="bio">
+                <h2>Castle of Durnhal</h2>
+                <p>
+                    The Castle of Durnhal rises from the cliffs of Mount Rael, a monumental relic of an age when power was carved directly into stone. Its spires 
+                    and terraces are not built upon the mountain but hewn from it, as though the peak itself had been shaped by the will of forgotten architects. 
+                    Cold, immense, and unyielding, it stands in stark contrast to the crude dwellings of the outlands, embodying a mastery of design that whispers 
+                    of civilizations long past.
+                </p>
+                <p>
+                    From the heart of the mountain, a great wall unfurls outward, enclosing not only the fortress but the entire town of Durnhal within its shadow. 
+                    The wall’s black stone face is scarred by centuries of storms and sieges, yet it endures, wrapping the town like the ribs of some colossal beast. 
+                    Within, the narrow streets and clustered homes bend toward the looming citadel above, as if the people themselves live beneath its dominion.
+                </p>
+                <p>
+                    Durnhal is no mere seat of lords. It is a statement of control—mountain, town, and fortress bound together into a single entity of stone and 
+                    sovereignty. Where other castles serve kings, Durnhal proclaims itself as one.
+                </p>
+            </div>
+        </div>
+        <p></p>
+        <div id="Gray_Crystal" class="profile">
+            <div class="bio">
+                <div class="portrait">
+                    <img src="../images/The Automaton.png" alt="The Automaton" />
+                </div>
+                <div class="bio">
+                    <h2>The Automaton</h2>
+                    <p>
+                        The scrape of metal against stone heralds its presence—a sentinel born of a forgotten war. The 
+                        Automaton is no mere machine, but a relic of the Great Sundering, when the Skybound and the Earthborn 
+                        clashed in a cataclysm that sundered nations and reshaped the world during the time remembered as the Shattered Age.
+                    </p>
+                    <p>
+                        Its frame, though rusted with centuries of neglect, still carries the weight of its makers’ ambition. Cold blue 
+                        fire smolders in its eyes, an echo of the arcane engines that once guided it. Bronze plating encases its bipedal 
+                        form, pitted and scarred by battle, yet its movements remain unnervingly precise—too smooth for something so ancient, 
+                        too deliberate for something so broken.
+                    </p>
+                    <p>
+                        From its back unfurl four weapon-arms: curved blades honed by corrosion, serrated hooks designed to rend armor, and 
+                        a hammerhead forged for shattering stone and steel alike. Each drips with oil and spits stray sparks of plasma, as 
+                        though the machine itself bleeds the remnants of its power.
+                    </p>
+                    <p>
+                        The Automaton is a paradox: too old to endure, yet too dangerous to dismiss. It embodies a legacy of blood between sky 
+                        and earth—a relic of a war that ended in ruin, yet left its scars etched into every stone. To encounter one is to stand before 
+                        the last witness of an age when mortals wielded machines of gods.
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <p></p>
+        <div class="profile">
+            <div class="bio">
+                <div class="portrait">
+                    <img src="../images/Castle Arden.png" alt="Castle Arden" />
+                </div>
+                <div class="bio">
+                    <h2>Castle Arden</h2>
+                    <p>
+                        At the heart of the kingdom rises Castle Arden, a fortress that is more than a keep—it is a city within walls. Its battlements 
+                        tower like relics of an older age, their stonework carved for sieges and storms, yet inside pulses a living metropolis. Conduits 
+                        of energy run like glowing veins across the inner structures, carrying light through streets and courtyards. Skybridges stretch 
+                        between high towers, casting shifting patterns across markets and plazas etched with ancient sigils.
+                    </p>
+                    <p>
+                        Within Arden’s walls, homes, workshops, temples, and halls cluster beneath the looming citadel, their lives tied inexorably to 
+                        its presence. It is a contradiction made manifest: a medieval bastion fused seamlessly with technology that whispers of the stars. 
+                        A walled city and a fortress both, Arden is not merely the seat of kings but the heart of a people—ancient in intent, eternal in ambition..
+                    </p>
+                    <p>
+                        To stand before Arden is to feel both history and destiny pressing close, for no other fortress so fully embodies the 
+                        struggle between what must be preserved and what must be transformed.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <p></p>
+        <div class="profile">
+            <div class="bio">
+                <div class="portrait">
+                    <img src="../images/The Space Elevator of Caelion.png" alt="The Space Elevator of Caelion" />
+                </div>
+                <div class="bio">
+                    <h2>The Space Elevator of Caelion </h2>
+                    <p>
+                        The Space Elevator of Caelion is not merely a tower, but a tether between worlds. From the planet’s surface, its colossal 
+                        column of shimmering alloys and quantum-stabilized cables stretches upward through cloud, sky, and atmosphere, vanishing 
+                        into the void where it anchors to an orbital docking station.
+                    </p>
+                    <p>
+                        At its crown, the orbital hub functions as a vast docking array, a ring-shaped citadel in space where fleets converge. 
+                        Freighters, passenger vessels, and Authority warships cycle through its bays, guided with mechanical precision. Thousands 
+                        of craft arrive and depart each day, their movements orchestrated by the Authority’s ever-watchful systems.
+                    </p>
+                    <p>
+                        From the surface, the structure appears impossible—an unbroken span of alloy and light connecting earth to the stars. At 
+                        its base lies the planet’s busiest port, a sprawling nexus of trade and control, while above, the orbital station gleams 
+                        like a second city suspended against the black.
+                    </p>
+                    <p>
+                        The space elevator is more than infrastructure—it is Caelion’s gateway to the cosmos, a visible declaration that the 
+                        Authority holds dominion not only over the planet below but over the heavens themselves.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <p></p>
+        <div class="profile">
+            <div class="bio">
+                <div class="portrait">
+                    <img src="../images/The Morphogenic Re-sequencer.png" alt="The Morphogenic Re-sequencer" />
+                </div>
+                <div class="bio">
+                    <h2>The Morphogenic Re-sequencer</h2>
+                    <p>
+                        The Morphogenic Re-sequencer predates the Authority, a relic from an age of makers long vanished. It is a machine of unsettling 
+                        beauty—sleek, monolithic, and dust-veiled—resting at the center of a circular platform. From its base arc skeletal support arms, 
+                        dormant until called to life, unfolding with insect-like precision.
+                    </p>
+                    <p>
+                        When awakened, rings of light rise and fall across the subject, mapping every contour of bone, sinew, and scar. Then comes the 
+                        swarm: a cascade of nanites, tiny motes of living light that descend like embers in a storm. They burrow into flesh and bone, 
+                        weaving, rewriting, unmaking and remaking.
+                    </p>
+                    <p>
+                        The sensation is neither pain nor relief, but something far deeper—as if every cell remembers what it once was and is commanded 
+                        to forget. The re-sequencer does not mend the broken; it redefines the living. Flesh can be reshaped, bloodlines rewritten, entire 
+                        physiologies transformed.
+                    </p>
+                    <p>
+                        Forgotten by the world, hidden from history, it waited in silence. In rediscovering it, Vear stood upon its threshold—the first to 
+                        awaken its power in ages—and learned that transformation always comes at the price of never being the same again.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <p></p>
+        <div class="profile">
+            <div class="bio">
+                <div class="portrait">
+                    <img src="../images/Elisa’s House in the Woods.png" alt="Elisa’s House in the Woods" />
+                </div>
+                <div class="bio">
+                    <h2>Elisa’s House in the Woods</h2>
+                    <p>
+                        Nestled deep in the wilds of ancient Edson, Elisa’s dwelling is less a house than a living sculpture shaped by time and intent. It 
+                        rises seamlessly from the hillside, as if the land itself conspired to shelter him. Gnarled tree roots twist through stone, curving 
+                        into arched supports that hold the structure aloft, while branches interlace above the doorway to form natural ribs. In twilight, the 
+                        house glows faintly from within, its warm light spilling outward like a hearth that belongs to another world.
+                    </p>
+                    <p>
+                        The path leading to the entrance is lined with totems, each carved from obsidian. Their faces bear a haunting duality—some serene, 
+                        others contorted in anguish, yet all strikingly human. These silent watchers give the dwelling a sacred, unsettling air, as though 
+                        it stands at the threshold of memory and dream.
+                    </p>
+                    <p>
+                        To the villagers of Edson, Elisa’s house is spoken of in hushed tones: a place where the forest bends, where the line between the 
+                        natural and the otherworldly is blurred. To those who enter, it feels less like stepping into a home and more like crossing into a living spirit’s sanctuary.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <p></p>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            © 2025 Nick Yost · The Kor Cycle
+        </footer>
+</body>
+</html>
