@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scene: Arrival at Aurathis</title>
+  <meta name="description" content="Vear, Lyra, and Aethra arrive at Aurathis — a perfected city under the Alliance’s gaze — and vow not to be parted." />
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --panel: #121926;
+      --panel-2: #0f1722;
+      --text: #e7edf5;
+      --muted: #a6b0c2;
+      --accent: #7cc6ff; /* sky */
+      --alloy: #a3b6c9; /* ship */
+      --gold: #ffd98a;   /* city light */
+      --border: #1e2a3a;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+    }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 800px at 12% -10%, #0e1522 0%, var(--bg) 60%),
+        radial-gradient(1000px 800px at 100% -10%, #08121f 0%, var(--bg) 70%),
+        linear-gradient(180deg, #09111a 0%, #0b0f14 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .wrap{ max-width: 980px; margin: 0 auto; padding: 40px 20px 80px; }
+    header.hero{ text-align: center; padding: 24px 12px 32px; }
+    .eyebrow{ letter-spacing: .18em; text-transform: uppercase; font-size: .78rem; color: var(--muted); }
+    h1{ margin: 10px 0 12px; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; background: linear-gradient(180deg, #fff 0%, #cfe9ff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .subtitle{ color: var(--muted); max-width: 64ch; margin: 0 auto; }
+
+    nav.toc{ margin: 26px auto 36px; display: inline-flex; gap: 10px; padding: 8px; background: var(--panel); border: 1px solid var(--border); border-radius: 999px; box-shadow: var(--shadow); }
+    nav.toc a{ text-decoration: none; color: var(--text); font-size: .95rem; padding: 10px 14px; border-radius: 999px; border: 1px solid transparent; }
+    nav.toc a:hover{ border-color: var(--gold); background: linear-gradient(180deg, rgba(255,217,138,.14), rgba(255,217,138,.05)); }
+
+    .scene{ position: relative; overflow: clip; border-radius: var(--radius); background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%); border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .scene .glow{ position: absolute; inset: -1px; border-radius: inherit; pointer-events:none; background: radial-gradient(900px 260px at 20% -10%, rgba(124,198,255,.16) 0%, transparent 60%); opacity:.75; }
+    .scene-inner{ position: relative; padding: 26px 24px 28px; }
+
+    .scene p{ margin: 12px 0; }
+
+    .dialogue{ margin: 14px 0; padding: 14px 18px; border-left: 4px solid var(--accent); background: rgba(124,198,255,.08); border-radius: 8px; }
+    .dialogue p{ margin: 8px 0; }
+
+    .comms{ margin: 14px 0; padding: 14px 18px; border-left: 4px solid var(--alloy); background: rgba(163,182,201,.12); border-radius: 8px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .95rem; }
+    .comms p{ margin: 6px 0; }
+
+    .aside{ display:grid; grid-template-columns: 1fr; gap: 18px; margin-top: 26px; }
+    @media (min-width: 900px){ .aside{ grid-template-columns: 1.2fr .8fr; } }
+
+    .card{ position: relative; overflow: clip; border-radius: var(--radius); background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%); border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .card .glow{ position: absolute; inset: -1px; border-radius: inherit; pointer-events:none; background: radial-gradient(600px 220px at 20% -10%, rgba(124,198,255,.18) 0%, transparent 60%); opacity:.7; }
+    .card-inner{ position: relative; padding: 20px 20px 22px; }
+
+    h2, h3{ margin: 0 0 10px; }
+    h2{ font-size: 1.5rem; }
+    h3{ font-size: 1.05rem; color: var(--muted); }
+
+    ul{ padding-left: 18px; }
+    li{ margin: 6px 0; }
+
+    footer{ margin-top: 44px; text-align: center; color: var(--muted); font-size: .9rem; }
+  </style>
+</head>
+<body>
+    <div class="brand">
+        <div class="glyph" aria-hidden="true"></div>
+        <div>
+            <div class="muted smallcaps">The Kor Cycle</div>
+            <strong>Vear-The Odyssey of the Dreamer</strong>
+        </div>
+    </div>
+    <header class="hero">
+        <nav class="toc" aria-label="Table of contents">
+            <a href="../index.html">Book One</a>
+            <a href="book2.html">Book Two</a>
+            <a href="book3.html">Book Three</a>
+            <a href="prologue book2.html">prologue Book Two</a>
+            <a href="prologue book3.html">prologue Book Three</a>
+            <a href="Roadmap.html">Roadmap</a>
+        </nav>
+    </header>
+    <div class="wrap">
+        <header class="hero">
+            <div class="eyebrow">Edson — Scenes</div>
+            <h1>Ashes of Edson</h1>
+            <p class="subtitle">Vear returns to a dead Edson, haunted by guilt and bound by the Rule of Intent, yet defies time itself as he sets course for Nyra in search of what still remains.</p>
+            <nav class="toc" aria-label="Table of contents">
+                <a href="#scene">Scene</a>
+                <a href="#beats">Visual & Story Beats</a>
+            </nav>
+        </header>
+
+        <article id="scene" class="scene" aria-labelledby="scene-title">
+            <div class="glow" aria-hidden="true"></div>
+            <div class="scene-inner">
+                <section>
+                    <h2 id="scene-title" style="margin-top:0">Scene</h2>
+
+                    <p>
+                        “A father may shape a child,<br>
+                        a choice may shape an age.<br>
+                        But to shape what was—<br>
+                        that is the most dangerous dream.”
+                    </p>
+
+                    <p class="muted">— Fragment from the Gray Veil Oracles</p>
+                </section>
+            <p class="dropcap">The sky above Edson was no longer blue. It was a pall of drifting gray, a lifeless shroud that dimmed the light of Aethera into a muted glow. What had once been forests of crystal-barked trees and fields of iron-hued grass were now blackened plains stretching to the horizon. Where rivers had carved valleys, there was only ash and silence.</p>
+
+            <p>Through his visor, Vear perceived the emptiness. Sight had long been denied to him, but the green crystal embedded in the visor carried the world into his mind: ridges of stone collapsed into dust, winds threading through barren canyons, the hollow absence where once there had been life. Even the crystal found little to reveal. Edson was empty—no heartbeats, no breath, no future.</p>
+
+            <p>He knelt and closed his hand around a fistful of ash. The powder sifted between his fingers and drifted away on the wind. For him, twenty years had passed in the Ancient Era. For this age, only six. And in those six, the world had died.</p>
+
+            <p>Above, the stars cut through the haze in pale sharpness. Among them glimmered Nyros, no more than a bright red ember, far from the fullness of its Ascension. Distant. Diminished. Watching.</p>
+
+            <p>
+                The visor pulsed faintly, and with it came the voice of Aethra, the Aetherion’s AI, carried across the link between them. Calm. Inescapable.<br>
+                “You think this was your doing.”
+            </p>
+
+            <p>“I fought to save them,” Vear said, his jaw tight. “And I returned to nothing. If I had chosen differently—”</p>
+
+            <p>“If you had chosen differently, you would not be here at all.”</p>
+
+            <p>
+                Her voice fell across his thoughts like steel.<br>
+                “The Rule of Intent is unbreakable. If a traveler alters the event that sent him on his journey, the new path erases the cause. The future unravels, and the traveler is lost in paradox. You cannot save what birthed your exile.”
+            </p>
+
+            <p>The crystal flared briefly, a muted green glow across the smooth surface of the visor, as if answering her defiance with his own.</p>
+
+            <p>“I will find a way,” Vear said, low and rough. “If time itself bars me, I’ll break its gates.”</p>
+
+            <p>“Every traveler who thought the same has perished in silence,” Aethra replied. “But you… you will not listen.”</p>
+
+            <p>The ash stirred around him in gray veils. He rose and turned toward the hidden vessel. The Aetherion unshrouded itself at his approach, its reflective cloak dissolving into the air.</p>
+
+            <p>Inside, the ship stirred to life. Systems awakened. Consoles cast pale light that caught the edge of his visor and burned in the crystal like a waiting flame.</p>
+
+            <p>“Orbital scans show traces of evacuation traffic in the first days of the Cataclysm,” Aethra said. “Projected arcs intersect the Nyros corridor. Survivors may have sought refuge on Nyra.”</p>
+
+            <p>The visor flared, overlaying her words in threads of green light across his mind. Far in the void, Nyros gleamed faintly, an ember against the night.</p>
+
+            <p>“Nyra,” Vear murmured.</p>
+
+            <p>“Tidally locked,” Aethra confirmed. “Nightside frozen, dayside scorched. Only the twilight band is habitable. No Authority presence in recent cycles.”</p>
+
+            <p>“Then that’s where they’ll be,” he said.</p>
+
+            <p>“Vear.” Her tone softened, almost human. “The Rule of Intent still binds you. Even if you find them, you cannot unmake what has been.”</p>
+
+            <p>The crystal in his visor pulsed steadily, defiant.</p>
+
+            <p>“I’m not here to unmake,” he said. “I’m here to find who remains.”</p>
+
+            <p>The Aetherion rose from the ruined earth. Edson shrank behind him—gray, broken, and silent. Ahead, Nyros gleamed faint in the night, and along its narrow twilight ring, possibility still waited.</p>
+
+            <p><em>Toward Nyra. Toward what remained. Toward what still might be saved.</em></p>
+        </article>
+
+        <section id="beats" class="aside" aria-labelledby="beats-title">
+            <article class="card" aria-labelledby="visual-title">
+                <div class="glow" aria-hidden="true"></div>
+                <div class="card-inner">
+                    <h2 id="visual-title">Visual & Story Beats – “The Rule of Intent”</h2>
+                    <ul>
+
+
+                        <li>
+                            🌫 Opening Visual:
+                            A gray pall replaces Edson’s once-blue sky; Aethera’s light struggles through drifting ash as the world lies silent and burned.
+                        </li>
+
+                        <li>
+                            🪞 Perception Beat:
+                            Through his green-crystal visor, Vear “sees” without eyes—mapping a dead world through echoes of energy; no life, no sound, only memory.
+                        </li>
+
+                        <li>
+                            🕰 Temporal Beat:
+                            He kneels, ash slipping through his fingers. Twenty years for him, six for this world—and in those six, everything has died.
+                        </li>
+
+                        <li>
+                            💭 Reflection Beat:
+                            Aethra’s voice hums through the visor, calm and metallic: “You think this was your doing.” The guilt sharpens into self-condemnation.
+                        </li>
+
+                        <li>
+                            ⚖️ Philosophical Beat:
+                            Aethra invokes the Rule of Intent—a paradox that forbids altering one’s cause. “Change the event that made you, and you erase yourself.”
+                        </li>
+
+                        <li>
+                            🔥 Defiance Beat:
+                            The visor flares green against the gray; ash stirs as Vear rises. “If time itself bars me, I’ll break its gates.” The hero’s vow rekindles purpose.
+                        </li>
+
+                        <li>
+                            🚪 Revelation Beat:
+                            The air shimmers; the Aetherion uncloaks—its reflective skin dissolving like mist. The dead world mirrors across its hull as systems awaken.
+                        </li>
+
+                        <li>
+                            🛰 Mission Beat:
+                            Aethra’s scans reveal faint traces of evacuation. All vectors lead toward Nyros’s orbit—toward the twilight world of Nyra.
+                        </li>
+
+                        <li>
+                            🌗 Resolve Beat:
+                            “Tidally locked,” Aethra warns. “Frozen and scorched.”
+                            Vear answers, calm and resolute: “Then that’s where they’ll be.”
+                        </li>
+
+                        <li>
+                            🚀 Closing Visual:
+                            The Aetherion ascends through swirling ash. Below, Edson fades into ruin. Ahead, Nyros burns red against the void—its ember light guiding him toward what remains, and what might still be saved.
+
+        </section>
+
+        <footer>
+            <p>© 2025 Nick Yost </p>
+        </footer>
+        </div>
+</body>
+</html>
