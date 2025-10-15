@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Council of Higher Minds — Lore Compendium</title>
+    <meta name="description" content="Definition and lore entry for the Council of Higher Minds and the Crystal Wielders." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        :root {
+            --bg: #0b0d10;
+            --panel: #11151a;
+            --ink: #e7ecf2;
+            --muted: #9fb0c2;
+            --accent: #53d3d1;
+            --gold: #ffcd66;
+            --green: #7be495;
+            --red: #ff6b6b;
+            --blue: #7aa7ff;
+            --gray: #c7c7d1;
+            --ring: #1c222b;
+            --shadow: 0 20px 50px rgba(0,0,0,.45);
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html, body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            background: radial-gradient(1200px 800px at 75% -10%, #10151c, var(--bg)) fixed;
+            color: var(--ink);
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 64px auto;
+            padding: 0 24px 80px;
+        }
+
+        header {
+            background: linear-gradient(180deg, #121821, #0e141b);
+            border: 1px solid #1b2230;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 32px 28px;
+            position: relative;
+            overflow: hidden;
+        }
+
+            header::after {
+                content: "";
+                position: absolute;
+                inset: -2px;
+                background: radial-gradient(600px 140px at 15% -20%, rgba(83,211,209,.12), transparent 60%), radial-gradient(600px 180px at 85% 120%, rgba(255,205,102,.08), transparent 60%);
+                pointer-events: none;
+                border-radius: inherit;
+                mix-blend-mode: screen;
+            }
+
+        h1 {
+            font-family: "Crimson Pro", serif;
+            font-weight: 700;
+            font-size: clamp(28px, 4vw, 44px);
+            letter-spacing: .2px;
+            margin: 0 0 6px;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            font-weight: 600;
+            letter-spacing: .4px;
+            margin-top: 6px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #0c1218;
+            border: 1px solid #1a2230;
+            padding: 6px 12px;
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 12px;
+            letter-spacing: .4px;
+            text-transform: uppercase;
+        }
+
+        .panel {
+            background: var(--panel);
+            border: 1px solid #171e29;
+            border-radius: var(--radius);
+            padding: 22px 22px;
+            margin-top: 22px;
+            box-shadow: var(--shadow);
+        }
+
+        h2 {
+            font-family: "Crimson Pro", serif;
+            font-weight: 700;
+            font-size: clamp(22px, 3vw, 28px);
+            margin: 0 0 10px;
+            letter-spacing: .2px;
+        }
+
+        p {
+            margin: 10px 0 14px;
+            color: var(--ink)
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        .grid {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            margin-top: 12px;
+        }
+
+        .crystal {
+            background: #0e141b;
+            border: 1px solid #1b2330;
+            border-radius: 14px;
+            padding: 16px;
+        }
+
+            .crystal h3 {
+                margin: 0 0 6px;
+                font-family: "Crimson Pro",serif;
+                font-weight: 700;
+                letter-spacing: .2px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+        .chip {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 11px;
+            letter-spacing: .3px;
+            text-transform: uppercase;
+            color: #0b0d10;
+            background: var(--accent);
+        }
+
+            .chip.blue {
+                background: var(--blue);
+            }
+
+            .chip.yellow {
+                background: var(--gold);
+            }
+
+            .chip.green {
+                background: var(--green);
+            }
+
+            .chip.red {
+                background: var(--red);
+                color: #1a0d0d;
+            }
+
+            .chip.gray {
+                background: var(--gray);
+                color: #0b0d10;
+            }
+
+        .rule {
+            border-left: 3px solid var(--accent);
+            padding-left: 14px;
+            margin: 14px 0;
+            color: var(--muted);
+        }
+
+        .footer {
+            margin-top: 28px;
+            color: var(--muted);
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .rings {
+            position: absolute;
+            right: -60px;
+            top: -60px;
+            width: 240px;
+            height: 240px;
+            opacity: .16;
+        }
+
+            .rings svg {
+                width: 100%;
+                height: 100%
+            }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #1b2230, transparent);
+            margin: 22px 0;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none
+        }
+
+            a:hover {
+                text-decoration: underline
+            }
+
+        .crumb {
+            display: inline-block;
+            margin: 10px 0 6px;
+            color: var(--muted);
+            text-decoration: none
+        }
+
+            .crumb:hover {
+                color: var(--accent)
+            }
+
+        .facts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 0;
+            margin: 10px 0 0
+        }
+
+            .facts li {
+                list-style: none;
+                background: var(--panel-2);
+                border: 1px solid var(--border);
+                border-radius: 10px;
+                padding: 8px 10px
+            }
+
+        .chips {
+            margin-top: 8px
+        }
+    </style>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="brand">
+            <div class="glyph" aria-hidden="true"></div>
+            <div>
+                <div class="muted smallcaps">The Kor Cycle</div>
+                <strong>Vear – The Odyssey of the Dreamer</strong>
+            </div>
+        </div>
+        <nav>
+            <a href="../index.html#home">Home</a>
+            <a href="../index.html#characters">Characters</a>
+            <a href="../index.html#world">Worlds</a>
+            <a href="../index.html#artifacts">Artifacts</a>
+            <a href="../index.html#time_ships">Temporal Vessals</a>
+            <a href="../index.html#timeline">Timeline</a>
+            <a href="../index.html#Temporal Law">Rule of Intent</a>
+            <a href="../index.html#comments">Comments</a>
+        </nav>
+    </header>
+    <div class="wrap">
+        <header>
+            <div class="rings" aria-hidden="true">
+                <svg viewBox="0 0 120 120" fill="none">
+                    <circle cx="60" cy="60" r="58" stroke="#53d3d1" stroke-width="0.6" />
+                    <circle cx="60" cy="60" r="44" stroke="#ffcd66" stroke-width="0.5" />
+                    <circle cx="60" cy="60" r="30" stroke="#7aa7ff" stroke-width="0.5" />
+                </svg>
+            </div>
+            <div class="tag">Lore Compendium • Temporal Cosmology</div>
+            <h1>The Council of Higher Minds</h1>
+            <div class="subtitle">Guardians of the Temporal Realm • Keepers of the Crystalline Law</div>
+        </header>
+
+        <section class="panel">
+            <h2>Definition</h2>
+            <p>
+                The <strong>Council of Higher Minds</strong> is an ancient collective of post-physical intelligences,
+                dwelling within the <em>Temporal Continuum</em> where cause and consequence can be observed and safeguarded.
+                They are architects of equilibrium—preserving the balance between <strong>Creation</strong>, <strong>Continuity</strong>, and <strong>Choice</strong>.
+            </p>
+            <p class="rule">
+                When worlds tip toward paradox or annihilation, the Council appoints envoys—<strong>Crystal Wielders</strong>—to act within matter and time.
+            </p>
+        </section>
+
+        <section class="panel">
+            <h2>The Crystal Wielders</h2>
+            <p class="muted">Chosen envoys attuned to primordial principles. Each bears a crystal of distinct resonance.</p>
+            <div class="grid">
+                <div class="crystal">
+                    <h3><span class="chip blue">Blue</span> Breath of the Void (Rulie)</h3>
+                    <p>Stewardship of stillness and the quiet between stars; the restful pause that frames creation.</p>
+                </div>
+                <div class="crystal">
+                    <h3><span class="chip yellow">Yellow</span> Insight</h3>
+                    <p>Revelation of thought, truth, and deception; the mind’s lens, polished to discernment.</p>
+                </div>
+                <div class="crystal">
+                    <h3><span class="chip green">Green</span> Clarity</h3>
+                    <p>Harmony between life and time; perception of threads that bind destinies together.</p>
+                </div>
+                <div class="crystal">
+                    <h3><span class="chip red">Red</span> Dominion of the Void</h3>
+                    <p>Mastery over entropy and endings—the lawful dissolution that all things owe the dark.</p>
+                </div>
+                <div class="crystal">
+                    <h3><span class="chip gray">Gray</span> Paradox (Rare)</h3>
+                    <p>The most feared resonance; bends causality at a price. To wield it is to gamble with reality.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Edict & Withdrawal</h2>
+            <p>
+                In ages past, the Wielders descended as <strong>educators and architects</strong>, gifting fledgling civilizations
+                with tools to lift them from fear. But ambition twisted wonder into weaponry—engines that
+                <em>consumed suns</em> and <em>split the heavens</em>.
+            </p>
+            <div class="divider"></div>
+            <p class="rule">
+                The Council withdrew beyond time and proclaimed the <strong>Edict of Non-Intervention</strong>:
+                no Wielder may shape the course of primitive minds or alter the sovereign evolution of sentient worlds.
+                Violations are punished by severance from the Continuum—name erased, essence scattered.
+            </p>
+            <p class="muted">And yet, not all obeyed. Some names linger only as shadows in forbidden histories.</p>
+        </section>
+
+        <section class="panel">
+            <h2>Purpose & Doctrine</h2>
+            <p>
+                The Council’s mandate is not dominion but balance. They answer three questions before any act:
+            </p>
+            <ul>
+                <li><strong>Creation</strong> — Will this intervention seed flourishing, or merely power?</li>
+                <li><strong>Continuity</strong> — Does it preserve coherent futures, or fracture them into paradox?</li>
+                <li><strong>Choice</strong> — Does it honor the agency of those who must live the consequence?</li>
+            </ul>
+            <p class="muted">Only when all three align may a Wielder be loosed upon the stream of time.</p>
+        </section>
+
+        <footer class="footer">
+            <p>Excerpted from the <em>Chronicle of the Continuum</em> • Compiled for archival use</p>
+            <p>© Your World &amp; Setting</p>
+        </footer>
+    </div>
+</body>
+</html>
