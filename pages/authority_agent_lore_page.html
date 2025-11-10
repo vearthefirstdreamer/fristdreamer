@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Authority Agent — The First Dreamer Lore</title>
+  <meta name="description" content="Definition and overview of an Authority Agent, with a profile of Agent Thalos." />
+  <style>
+    :root{
+      --bg: #0b0d10;
+      --panel: #11141a;
+      --text: #e6ecf2;
+      --muted: #9fb0c0;
+      --accent: #9d78ff;
+      --accent-2: #6bc1ff;
+      --border: #1e2630;
+      --shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.02);
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #fbfcfe;
+        --panel: #ffffff;
+        --text: #0f1720;
+        --muted: #4b5b6b;
+        --accent: #5e3aff;
+        --accent-2: #005c99;
+        --border: #e7eef6;
+        --shadow: 0 6px 18px rgba(0,0,0,.08), inset 0 1px 0 rgba(255,255,255,.4);
+      }
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(157,120,255,.10), transparent 60%),
+                  radial-gradient(1000px 500px at -10% 110%, rgba(107,193,255,.10), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      line-height:1.6;
+    }
+    .wrap{max-width: 900px; margin: 0 auto; padding: 32px 20px 56px}
+    header.site{position:sticky; top:0; z-index:10; backdrop-filter:saturate(1.2) blur(8px); background: color-mix(in oklab, var(--bg), transparent 70%); border-bottom:1px solid var(--border)}
+    header.site .inner{max-width: 900px; margin:0 auto; padding:12px 20px; display:flex; align-items:center; gap:12px}
+    .badge{display:inline-flex; align-items:center; gap:8px; font-size:.85rem; padding:6px 10px; border:1px solid var(--border); border-radius:999px; box-shadow: var(--shadow); background:var(--panel)}
+    .badge .dot{width:8px;height:8px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+    .title{font-size: clamp(1.4rem, 1rem + 2vw, 2rem); font-weight:800; letter-spacing:.2px}
+    .subtitle{color:var(--muted); font-size:.95rem}
+    nav.breadcrumbs{font-size:.9rem; margin-top:6px}
+    nav.breadcrumbs a{color:var(--muted); text-decoration:none}
+    nav.breadcrumbs a:hover{color:var(--text)}
+    .hero{margin-top:28px; padding:22px; border:1px solid var(--border); border-radius:20px; background: linear-gradient(180deg, color-mix(in oklab, var(--panel), transparent 10%), color-mix(in oklab, var(--panel), transparent 0%)); box-shadow: var(--shadow)}
+    h1{margin:0 0 6px}
+    .actions{margin-top:18px; display:flex; gap:10px; flex-wrap:wrap}
+    .btn{cursor:pointer; display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid var(--border); background:var(--panel); color:var(--text); text-decoration:none; box-shadow: var(--shadow)}
+    .btn:hover{transform: translateY(-1px)}
+    .grid{display:grid; gap:18px; grid-template-columns: 1fr; margin-top:26px}
+    @media (min-width: 860px){ .grid{grid-template-columns: 1fr 1fr}}
+    section.card{padding:18px 18px 20px; border:1px solid var(--border); border-radius:18px; background:var(--panel); box-shadow: var(--shadow)}
+    section.card h2{margin:0 0 10px; font-size:1.1rem}
+    section.card p{margin:0 0 10px}
+    ul{margin:10px 0 0 1.1rem}
+    li+li{margin-top:6px}
+    .callout{margin-top:22px; border:1px dashed var(--border); border-radius:16px; padding:14px 16px; color:var(--muted)}
+    footer{margin-top:36px; padding-top:18px; border-top:1px solid var(--border); color:var(--muted); font-size:.9rem}
+    code.inline{padding:2px 6px; border-radius:8px; background: color-mix(in oklab, var(--text), transparent 92%); color: var(--text)}
+  </style>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+</head>
+<body>
+  <header class="site">
+    <div class="inner">
+      <span class="badge" title="Lore Entry">
+        <span class="dot"></span>
+        Lore Entry
+      </span>
+      <div>
+        <div class="title">Authority Agent</div>
+        <div class="subtitle">Elite operatives of the Central Authority — profile: Thalos</div>
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="#" onclick="history.back(); return false;">← Back</a>
+          <span aria-hidden="true"> · </span>
+          <a href="#definition">Definition</a>
+          <span aria-hidden="true"> · </span>
+          <a href="#role">Role &amp; Function</a>
+          <span aria-hidden="true"> · </span>
+          <a href="#training">Training &amp; Augmentation</a>
+          <span aria-hidden="true"> · </span>
+          <a href="#psychology">Psychological Conditioning</a>
+          <span aria-hidden="true"> · </span>
+          <a href="#thalos">Agent Thalos</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="definition">
+      <h1>Definition</h1>
+      <p>An <strong>Authority Agent</strong> is an elite operative serving the Authority’s intelligence and enforcement arms—authorized to act beyond standard legal constraints to preserve systemic stability. Agents blend human precision with synthetic augmentation and are conditioned to absolute obedience and resilience.</p>
+    </section>
+
+    <section class="card" id="role">
+      <h2>Role &amp; Function</h2>
+      <ul>
+        <li><strong>Divisions:</strong> Office of Internal Security; Cognitive Regulation Bureau (chains of command intentionally obscured).</li>
+        <li><strong>Jurisdiction:</strong> Planetary, interstellar, and temporal; supersedes governors and military during destabilization events.</li>
+        <li><strong>Mandate:</strong> Neutralize subversion, enforce cognitive compliance, retrieve or contain unauthorized technology.</li>
+        <li><strong>Operational Latitude:</strong> Agents interpret intent as law—investigators and executioners in one.</li>
+      </ul>
+    </section>
+
+    <div class="grid">
+      <section class="card" id="training">
+        <h2>Training &amp; Augmentation</h2>
+        <ul>
+          <li><strong>Neural Reprogramming:</strong> dampens empathy and hesitation; installs mission-priority schemas.</li>
+          <li><strong>Augmented Reflex Systems:</strong> kinetic dampeners and enhanced sensory arrays for near-instant threat response.</li>
+          <li><strong>Adaptive Armor:</strong> sealed exo-helmets regulate emotion, block psychic intrusion, and obscure identity.</li>
+          <li><strong>Cognitive Identifier Mask:</strong> a hardened digital persona that allows operation as an extension of Authority will.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="psychology">
+        <h2>Psychological Conditioning</h2>
+        <ul>
+          <li><strong>Layer Revisions:</strong> selective memory pruning preserves tactics while removing conflicting moral associations.</li>
+          <li><strong>Compliance Loops:</strong> biofeedback routines reward mission alignment and penalize deviation.</li>
+          <li><strong>Public Effect:</strong> the presence of an Agent induces predictive compliance in civilians and officials alike.</li>
+        </ul>
+        <div class="callout" role="note">To most citizens, an Agent embodies the Authority’s invisible will—calm, efficient, and relentless.</div>
+      </section>
+    </div>
+
+    <section class="card" id="thalos">
+      <h2>Agent Thalos</h2>
+      <p><strong>Thalos</strong> is among the most feared of his order. His armor—featureless, black—conceals the void left by successive mental revisions. Unlike most, Thalos exhibits flashes of independent reasoning, suggesting partial resistance to his conditioning.</p>
+      <ul>
+        <li><strong>Target Profile:</strong> Classifies Kor (later Vear) as a destabilizing anomaly to lawful reality, not merely a fugitive.</li>
+        <li><strong>Tactical Signature:</strong> patient pursuit, surgical escalation, intolerance for collateral unpredictability.</li>
+        <li><strong>Psychological Vector:</strong> pursuit borders on obsession—a personal proof that order can overcome chaos.</li>
+      </ul>
+      <div class="callout" role="note">
+        Cross-link suggestions: <code class="inline">Office of Internal Security</code>, <code class="inline">Cognitive Regulation Bureau</code>, <code class="inline">Cognitive Identifier Mask</code>, <code class="inline">Authority Civilian</code>, <code class="inline">Rebel Sympathizer</code>.
+      </div>
+    </section>
+
+    <div class="actions">
+      <a class="btn" href="#" onclick="history.back(); return false;" aria-label="Go back to previous page">⟵ Go Back</a>
+      <a class="btn" href="#top" aria-label="Jump to top">↑ Back to Top</a>
+    </div>
+
+    <footer>
+      <p><strong>The First Dreamer — Lore Archive</strong><br/>
+      This page is part of the worldbook for <em>The First Dreamer</em>. © Your Name. All rights reserved.</p>
+    </footer>
+  </main>
+</body>
+</html>
