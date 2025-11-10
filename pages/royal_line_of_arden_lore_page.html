@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Royal Line of Arden — The First Dreamer Lore</title>
+  <meta name="description" content="Definition and overview of the Royal Line of Arden: King Marek, Princess Alara Thalen, Lord Harin, and the secret marriage to Vear." />
+  <style>
+    :root{
+      --bg: #0b0d10;
+      --panel: #11141a;
+      --text: #e6ecf2;
+      --muted: #9fb0c0;
+      --accent: #ffd36b; /* star-gold */
+      --accent-2: #6bc1ff; /* sky-light */
+      --border: #1e2630;
+      --shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.02);
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #fbfcfe;
+        --panel: #ffffff;
+        --text: #0f1720;
+        --muted: #4b5b6b;
+        --accent: #b38700;
+        --accent-2: #005c99;
+        --border: #e7eef6;
+        --shadow: 0 6px 18px rgba(0,0,0,.08), inset 0 1px 0 rgba(255,255,255,.4);
+      }
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(255,211,107,.10), transparent 60%),
+                  radial-gradient(1000px 500px at -10% 110%, rgba(107,193,255,.10), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      line-height:1.6;
+    }
+    .wrap{max-width: 900px; margin: 0 auto; padding: 32px 20px 56px}
+    header.site{position:sticky; top:0; z-index:10; backdrop-filter:saturate(1.2) blur(8px); background: color-mix(in oklab, var(--bg), transparent 70%); border-bottom:1px solid var(--border)}
+    header.site .inner{max-width: 900px; margin:0 auto; padding:12px 20px; display:flex; align-items:center; gap:12px}
+    .badge{display:inline-flex; align-items:center; gap:8px; font-size:.85rem; padding:6px 10px; border:1px solid var(--border); border-radius:999px; box-shadow: var(--shadow); background:var(--panel)}
+    .badge .dot{width:8px;height:8px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+    .title{font-size: clamp(1.4rem, 1rem + 2vw, 2rem); font-weight:800; letter-spacing:.2px}
+    .subtitle{color:var(--muted); font-size:.95rem}
+    nav.breadcrumbs{font-size:.9rem; margin-top:6px}
+    nav.breadcrumbs a{color:var(--muted); text-decoration:none}
+    nav.breadcrumbs a:hover{color:var(--text)}
+    .hero{margin-top:28px; padding:22px; border:1px solid var(--border); border-radius:20px; background: linear-gradient(180deg, color-mix(in oklab, var(--panel), transparent 10%), color-mix(in oklab, var(--panel), transparent 0%)); box-shadow: var(--shadow)}
+    h1{margin:0 0 6px}
+    .actions{margin-top:18px; display:flex; gap:10px; flex-wrap:wrap}
+    .btn{cursor:pointer; display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid var(--border); background:var(--panel); color:var(--text); text-decoration:none; box-shadow: var(--shadow)}
+    .btn:hover{transform: translateY(-1px)}
+    .grid{display:grid; gap:18px; grid-template-columns: 1fr; margin-top:26px}
+    @media (min-width: 860px){ .grid{grid-template-columns: 1fr 1fr}}
+    section.card{padding:18px 18px 20px; border:1px solid var(--border); border-radius:18px; background:var(--panel); box-shadow: var(--shadow)}
+    section.card h2{margin:0 0 10px; font-size:1.1rem}
+    section.card p{margin:0 0 10px}
+    ul{margin:10px 0 0 1.1rem}
+    li+li{margin-top:6px}
+    .callout{margin-top:22px; border:1px dashed var(--border); border-radius:16px; padding:14px 16px; color:var(--muted)}
+    footer{margin-top:36px; padding-top:18px; border-top:1px solid var(--border); color:var(--muted); font-size:.9rem}
+    code.inline{padding:2px 6px; border-radius:8px; background: color-mix(in oklab, var(--text), transparent 92%); color: var(--text)}
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="inner">
+      <span class="badge" title="Lore Entry">
+        <span class="dot"></span>
+        Lore Entry
+      </span>
+      <div>
+        <div class="title">Royal Line of Arden</div>
+        <div class="subtitle">Blood of the Crown · Burden of the Stars</div>
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="#" onclick="history.back(); return false;">← Back</a>
+          <span aria-hidden="true"> · </span>
+          <a href="#definition">Definition</a>
+          <span aria-hidden="true"> · </span>
+          <a href="#marek">King Marek</a>
+          <span aria-hidden="true"> · </span>
+          <a href="#alara">Princess Alara Thalen</a>
+          <span aria-hidden="true"> · </span>
+          <a href="#marriages">Marriages & Betrayal</a>
+          <span aria-hidden="true"> · </span>
+          <a href="#forbidden">The Secret Marriage</a>
+          <span aria-hidden="true"> · </span>
+          <a href="#acceptance">Acceptance & Council</a>
+          <span aria-hidden="true"> · </span>
+          <a href="#legacy">Legacy of the Line</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="definition">
+      <h1>Definition</h1>
+      <p>The <strong>Royal Line of Arden</strong> traces its lineage to the kingdom's founding—an unbroken chain of monarchs bound by covenant rather than privilege. To rule is to preserve the realm's legacy and its balance between earth and sky. The throne’s authority flows through blood; its burden lies in duty.</p>
+    </section>
+
+    <section class="card" id="marek">
+      <h2>King Marek</h2>
+      <p><strong>King Marek</strong>, current sovereign of Arden, is shaped by responsibility more than ambition. A warrior-reformer, he upholds the ancient codes while preparing the realm for a new age. His stern restraint hides a profound conviction: power must serve a purpose greater than itself.</p>
+    </section>
+
+    <section class="card" id="alara">
+      <h2>Princess Alara Thalen — Heir & Sword</h2>
+      <p><strong>Alara Thalen</strong>, heir to the crown, is sworn to the sword. She trained beside the royal guard, earning soldiers’ loyalty and councilors’ unease. To the High Council she was born to sit; to herself she was born to stand.</p>
+    </section>
+
+    <div class="grid">
+      <section class="card" id="marriages">
+        <h2>Marriages & Betrayal</h2>
+        <p>Alara’s first marriage—an arrangement forged by the High Council—bound her to <strong>Lord Harin</strong> for political gain. Harin conspired to <em>assassinate</em> her, shattering the alliance and her trust in courtly obedience. His fall marked the end of her compliance with tradition.</p>
+      </section>
+
+      <section class="card" id="forbidden">
+        <h2>The Secret Marriage — Alara & Vear</h2>
+        <p>Later, Alara married <strong>Vear</strong> in secret. She feared her father and the High Council would never accept the union. “You are royal blood,” they would say. “He is a commoner—worse, an alien.” Yet to Alara, Vear was her equal, not her inferior.</p>
+      </section>
+    </div>
+
+    <section class="card" id="acceptance">
+      <h2>Acceptance & Council</h2>
+      <p>When the truth arrived at the throne, it was not met with anger, but rather with revelation. Marek perceives in Vear not a danger to the crown, but the ancient Arden truth: worth is determined by what one endures. The king <strong>accepts Vear</strong> as warrior and son-in-law.</p>
+    </section>
+
+    <section class="card" id="legacy">
+      <h2>Legacy of the Line</h2>
+      <p>Through <strong>Alara and Vear</strong>, the royal blood intertwined with that of the stars—bringing together earth and sky in a heritage poised to change the fate of the Galaxy.</p>
+      <blockquote class="callout">“The crown is not the weight of gold; it is the weight of those we dare to love.” — attributed to King Marek</blockquote>
+    </section>
+
+    <div class="actions">
+      <a class="btn" href="#" onclick="history.back(); return false;" aria-label="Go back to previous page">⟵ Go Back</a>
+      <a class="btn" href="#top" aria-label="Jump to top">↑ Back to Top</a>
+    </div>
+
+    <footer>
+      <p><strong>The First Dreamer — Lore Archive</strong><br/>
+      This page is part of the worldbook for <em>The First Dreamer</em>. © Your Name. All rights reserved.</p>
+    </footer>
+  </main>
+</body>
+</html>
