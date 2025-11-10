@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Authority Student — The First Dreamer Lore</title>
+  <meta name="description" content="Definition and overview of an Authority Student in The First Dreamer universe, with context for Lyra at age ten." />
+  <style>
+    :root{
+      --bg: #0b0d10;
+      --panel: #11141a;
+      --text: #e6ecf2;
+      --muted: #9fb0c0;
+      --accent: #6bc1ff;
+      --accent-2: #9d78ff;
+      --border: #1e2630;
+      --shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.02);
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #fbfcfe;
+        --panel: #ffffff;
+        --text: #0f1720;
+        --muted: #4b5b6b;
+        --accent: #005c99;
+        --accent-2: #5e3aff;
+        --border: #e7eef6;
+        --shadow: 0 6px 18px rgba(0,0,0,.08), inset 0 1px 0 rgba(255,255,255,.4);
+      }
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(107,193,255,.10), transparent 60%),
+                  radial-gradient(1000px 500px at -10% 110%, rgba(157,120,255,.10), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      line-height:1.6;
+    }
+    .wrap{max-width: 900px; margin: 0 auto; padding: 32px 20px 56px}
+    header.site{position:sticky; top:0; z-index:10; backdrop-filter:saturate(1.2) blur(8px); background: color-mix(in oklab, var(--bg), transparent 70%); border-bottom:1px solid var(--border)}
+    header.site .inner{max-width: 900px; margin:0 auto; padding:12px 20px; display:flex; align-items:center; gap:12px}
+    .badge{display:inline-flex; align-items:center; gap:8px; font-size:.85rem; padding:6px 10px; border:1px solid var(--border); border-radius:999px; box-shadow: var(--shadow); background:var(--panel)}
+    .badge .dot{width:8px;height:8px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+    .title{font-size: clamp(1.4rem, 1rem + 2vw, 2rem); font-weight:800; letter-spacing:.2px}
+    .subtitle{color:var(--muted); font-size:.95rem}
+    nav.breadcrumbs{font-size:.9rem; margin-top:6px}
+    nav.breadcrumbs a{color:var(--muted); text-decoration:none}
+    nav.breadcrumbs a:hover{color:var(--text)}
+    .hero{margin-top:28px; padding:22px; border:1px solid var(--border); border-radius:20px; background: linear-gradient(180deg, color-mix(in oklab, var(--panel), transparent 10%), color-mix(in oklab, var(--panel), transparent 0%)); box-shadow: var(--shadow)}
+    h1{margin:0 0 6px}
+    .meta{display:flex; gap:14px; color:var(--muted); font-size:.9rem}
+    .actions{margin-top:18px; display:flex; gap:10px; flex-wrap:wrap}
+    .btn{cursor:pointer; display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid var(--border); background:var(--panel); color:var(--text); text-decoration:none; box-shadow: var(--shadow)}
+    .btn:hover{transform: translateY(-1px)}
+    .grid{display:grid; gap:18px; grid-template-columns: 1fr; margin-top:26px}
+    @media (min-width: 860px){ .grid{grid-template-columns: 1fr 1fr}}
+    section.card{padding:18px 18px 20px; border:1px solid var(--border); border-radius:18px; background:var(--panel); box-shadow: var(--shadow)}
+    section.card h2{margin:0 0 10px; font-size:1.1rem}
+    section.card p{margin:0 0 10px}
+    ul{margin:10px 0 0 1.1rem}
+    li+li{margin-top:6px}
+    .callout{margin-top:22px; border:1px dashed var(--border); border-radius:16px; padding:14px 16px; color:var(--muted)}
+    footer{margin-top:36px; padding-top:18px; border-top:1px solid var(--border); color:var(--muted); font-size:.9rem}
+    code.inline{padding:2px 6px; border-radius:8px; background: color-mix(in oklab, var(--text), transparent 92%); color: var(--text)}
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="inner">
+      <span class="badge" title="Lore Entry">
+        <span class="dot"></span>
+        Lore Entry
+      </span>
+      <div>
+        <div class="title">Authority Student</div>
+        <div class="subtitle">Children shaped for conformity, efficiency, and loyalty</div>
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="#" onclick="history.back(); return false;">← Back</a>
+          <span aria-hidden="true"> · </span>
+          <a href="#definition">Definition</a>
+          <span aria-hidden="true"> · </span>
+          <a href="#system">Education System</a>
+          <span aria-hidden="true"> · </span>
+          <a href="#daily-life">Daily Life</a>
+          <span aria-hidden="true"> · </span>
+          <a href="#tools">Tools &amp; Controls</a>
+          <span aria-hidden="true"> · </span>
+          <a href="#metrics">Metrics of Merit</a>
+          <span aria-hidden="true"> · </span>
+          <a href="#risks">Risks &amp; Remediation</a>
+          <span aria-hidden="true"> · </span>
+          <a href="#lyra">Lyra’s Perspective</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="definition">
+      <h1>Definition</h1>
+      <p>An <strong>Authority Student</strong> is a child enrolled in the state-regulated education network overseen by the Central Authority. From birth, each student is integrated into a learning system designed primarily for <em>conformity, efficiency, and loyalty</em>; children are treated as <em>assets in development</em>—future administrators, engineers, or data custodians tasked with upholding stability.</p>
+    </section>
+
+    <section class="card" id="system">
+      <h2>Education System</h2>
+      <ul>
+        <li><strong>Central Curriculum:</strong> Directed by the <em>Cognitive Governance Directorate</em>, which defines subject matter, emotional tone, and moral framing.</li>
+        <li><strong>Standardized Instructors:</strong> Holo-teachers and administrative AIs ensure uniform instruction across worlds.</li>
+        <li><strong>Emotional Modulation:</strong> Acceptable affect ranges are taught alongside facts; doubt and rebellion are pathologized.</li>
+      </ul>
+    </section>
+
+    <div class="grid">
+      <section class="card" id="daily-life">
+        <h2>Daily Life</h2>
+        <ul>
+          <li>Pristine, climate-neutral classrooms with harmonic ambient tones to maintain focus.</li>
+          <li>Synchronized movement between lessons; brief, monitored breaks.</li>
+          <li>Friendships permitted but regulated; excessive attachment triggers recalibration.</li>
+          <li>Non-Authority media and unsanctioned history are blocked by gateway filters.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="tools">
+        <h2>Tools &amp; Controls</h2>
+        <ul>
+          <li><strong>Neuro-bands:</strong> Adaptive learning bands deliver micro-rewards for compliant responses and suppress undesirable patterns.</li>
+          <li><strong>Behavioral Analytics:</strong> Eye-track, posture, and pulse metrics feed stability scores.</li>
+          <li><strong>Content Gates:</strong> Curriculum streams and device permissions are keyed to clearance tiers.</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="grid">
+      <section class="card" id="metrics">
+        <h2>Metrics of Merit</h2>
+        <ul>
+          <li><strong>Compliance Efficiency:</strong> prioritizes consistency and rule adherence over originality.</li>
+          <li><strong>Retention Index:</strong> measures data recall and replication speed.</li>
+          <li><strong>Emotional Stability Score:</strong> tracks regulation within acceptable ranges.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="risks">
+        <h2>Risks &amp; Remediation</h2>
+        <ul>
+          <li><strong>Flagging:</strong> Students outside affect thresholds are flagged for counseling or recalibration.</li>
+          <li><strong>Sanctions:</strong> Access restrictions, extracurricular bans, or reassignment to corrective cohorts.</li>
+          <li><strong>Remediation:</strong> Neural tuning sessions to restore target compliance profiles.</li>
+        </ul>
+        <div class="callout" role="note">On Caelion, the appearance of calm competence is a survival skill even for children.</div>
+      </section>
+    </div>
+
+    <section class="card" id="lyra">
+      <h2>Lyra’s Perspective</h2>
+      <p>At age ten, <strong>Lyra</strong> begins as a bright, compliant Authority student who believes obedience equals safety. Yet beneath the engineered calm, she feels an irrepressible curiosity the system cannot fully suppress. Her encounter with <strong>Kor</strong> reframes learning itself—from obedience to awakening.</p>
+      <div class="callout" role="note">Cross-link suggestions: <code class="inline">Caelion</code>, <code class="inline">Cognitive Governance Directorate</code>, <code class="inline">Administrative AIs</code>, <code class="inline">Neural Conditioning</code>.</div>
+    </section>
+
+    <div class="actions">
+      <a class="btn" href="#" onclick="history.back(); return false;" aria-label="Go back to previous page">⟵ Go Back</a>
+      <a class="btn" href="#top" aria-label="Jump to top">↑ Back to Top</a>
+    </div>
+
+    <footer>
+      <p><strong>The First Dreamer — Lore Archive</strong><br/>
+      This page is part of the worldbook for <em>The First Dreamer</em>. © Your Name. All rights reserved.</p>
+    </footer>
+  </main>
+</body>
+</html>
