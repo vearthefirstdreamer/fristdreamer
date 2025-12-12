@@ -644,7 +644,7 @@
         <script>
           function startPreview(container) {
            const gif = container.querySelector(".preview-gif");
-           gif.style.opacity = 1;
+           gif.style.opacity = gif.style.opacity === "1" ? 0 : 1;
           }
         </script>
         </section>
