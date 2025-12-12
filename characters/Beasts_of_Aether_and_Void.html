@@ -303,16 +303,17 @@
         </div>
         <p></p>
         <p></p>
-        <div id="Crellyan" class="profile">
-            <div class="portrait">
-                <img src="../images/Crellyan.png" alt="Crellyan" />
-            </div>
+
             <script>
                 function startPreview() {
                     document.getElementById("gifPreview").style.opacity = 1;
                 }
             </script>
-}
+
+         <div id="Crellyan" class="profile">
+            <div class="portrait">
+                <img src="../images/Crellyan.png" alt="Crellyan" />
+            </div>
             <div class="bio">
                 <h2>The Crellyan</h2>
                 <p>
@@ -450,11 +451,15 @@
             </div>
         </div>
         <p></p>
-        <div class="profile">
-            <div class="bio">
-                <div class="portrait">
-                    <img src="../images/The Pit Beast.png" alt="The Pit Beast" />
+        <div class="profile"> 
+            <div class="portrait">
+                <div class="preview-container" onclick="startPreview()">
+                    <!-- Static first frame -->
+                    <img src="../images/monster_thumbnai.png"  alt="monster_thumbnai" width="500" height="600" class="preview-still">
+                    <!-- GIF overlay -->
+                    <img src="../images/monster_thumbnai.gif" class="preview-gif" alt="monster_thumbnail_gif" width="500" height="600" id="gifPreview">
                 </div>
+            </div>
                 <div class="bio">
                     <h2>Pit Beast</h2>
                     <p>
@@ -483,6 +488,11 @@
                 </div>
             </div>
         </div>
+         <script>
+                function startPreview() {
+                    document.getElementById("gifPreview").style.opacity = 1;
+                }
+        </script>
         <p></p>
         <div class="profile">
             <div class="bio">
