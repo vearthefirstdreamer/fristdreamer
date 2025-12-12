@@ -116,30 +116,7 @@
             font-size: 0.9rem;
         }
  </script>       
- <style>
-        .preview-container {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-        }
-        .preview-still, .preview-gif {
-            width: 500px; /* adjust size as needed */
-            height: auto;
-            display: block;
-            border-radius: 6px;
-        }
-        
-        /* GIF starts invisible, on top of the still */
-        .preview-gif {
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-          }
-        
-</script>
+
 </head>
 <head>
     <meta charset="utf-8" />
@@ -179,6 +156,29 @@
         .chips {
             margin-top: 8px
         }
+      
+        .preview-container {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .preview-still, .preview-gif {
+            width: 500px; /* adjust size as needed */
+            height: auto;
+            display: block;
+            border-radius: 6px;
+        }
+        
+        /* GIF starts invisible, on top of the still */
+        .preview-gif {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+          }
+        
     </style>
         <link rel="icon" type="image/png" href="../images/favicon.png">
 </head>
