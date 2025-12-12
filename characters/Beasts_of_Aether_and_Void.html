@@ -115,6 +115,28 @@
             color: #666;
             font-size: 0.9rem;
         }
+.preview-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.preview-still, .preview-gif {
+  width: 250px; /* adjust size as needed */
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* GIF starts invisible, on top of the still */
+.preview-gif {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
     </style>
     <link rel="icon" type="image/png" href="../images/favicon.png">
 </head>
@@ -245,12 +267,19 @@
             </div>
         </div>
         <p></p>
-        <div class="profile">
-         <div class="portrait">
+  
+            <div class="portrait">
                 <img src="../images/Drayven_thumbnail.png"
                 alt="Drayven_thumbnail" width="500" height="600"
                  onclick="this.outerHTML='<iframe width=600 height=338 src=../images/Drayven_thumbnail.gif></iframe>'">
+             <div class="preview-container" onclick="startPreview()">
+              <!-- Static first frame -->
+              <img src="../images/Drayven_thumbnail.png"  alt="Drayven_thumbnail" width="500" height="600" class="preview-still">
+
+               <!-- GIF overlay -->
+              <img src="../images/Drayven_thumbnail.gif" class="preview-gif" alt="Drayven_thumbnail" width="500" height="600" id="gifPreview">
             </div>
+          
             <div class="bio">
                 <h2>Drayven – The Great Horned Mounts of Edson</h2>
                 <p>
