@@ -115,32 +115,29 @@
             color: #666;
             font-size: 0.9rem;
         }
-.preview-container {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
 
-.preview-still, .preview-gif {
-  width: 250px; /* adjust size as needed */
-  height: auto;
-  display: block;
-  border-radius: 6px;
-}
-
-/* GIF starts invisible, on top of the still */
-.preview-gif {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
+        .preview-container {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .preview-still, .preview-gif {
+            width: 250px; /* adjust size as needed */
+            height: auto;
+            display: block;
+            border-radius: 6px;
+        }
         
-function startPreview() {
-  document.getElementById("gifPreview").style.opacity = 1;
-}
+        /* GIF starts invisible, on top of the still */
+        .preview-gif {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+          }
+        
 </script>
     <link rel="icon" type="image/png" href="../images/favicon.png">
 </head>
@@ -309,6 +306,12 @@ function startPreview() {
             <div class="portrait">
                 <img src="../images/Crellyan.png" alt="Crellyan" />
             </div>
+            <script>
+                function startPreview() {
+                    document.getElementById("gifPreview").style.opacity = 1;
+                }
+            </script>
+}
             <div class="bio">
                 <h2>The Crellyan</h2>
                 <p>
