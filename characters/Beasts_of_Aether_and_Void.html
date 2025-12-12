@@ -137,7 +137,11 @@
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
-    </style>
+        
+function startPreview() {
+  document.getElementById("gifPreview").style.opacity = 1;
+}
+</script>
     <link rel="icon" type="image/png" href="../images/favicon.png">
 </head>
 <head>
@@ -268,16 +272,12 @@
         </div>
         <p></p>
   
-            <div class="portrait">
-                <img src="../images/Drayven_thumbnail.png"
-                alt="Drayven_thumbnail" width="500" height="600"
-                 onclick="this.outerHTML='<iframe width=600 height=338 src=../images/Drayven_thumbnail.gif></iframe>'">
              <div class="preview-container" onclick="startPreview()">
               <!-- Static first frame -->
               <img src="../images/Drayven_thumbnail.png"  alt="Drayven_thumbnail" width="500" height="600" class="preview-still">
 
                <!-- GIF overlay -->
-              <img src="../images/Drayven_thumbnail.gif" class="preview-gif" alt="Drayven_thumbnail" width="500" height="600" id="gifPreview">
+              <img src="../images/Drayven_thumbnail.gif" class="preview-gif" alt="Drayven_thumbnail_gif" width="500" height="600" id="gifPreview">
             </div>
           
             <div class="bio">
