@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beasts of Aether and Void | The First Dreamer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Architecture</title>
+
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+
     <style>
         body {
             margin: 0;
@@ -115,16 +121,6 @@
             color: #666;
             font-size: 0.9rem;
         }
-    </style>
-    <link rel="icon" type="image/png" href="../images/favicon.png">
-</head>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Beasts of Aether and Void | The First Dreamer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
-    <style>
         /* Small page-specific helpers (reuses your global palette) */
         .crumb {
             display: inline-block;
@@ -156,6 +152,27 @@
         .chips {
             margin-top: 8px
         }
+        .preview-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.preview-still, .preview-gif {
+  width: 500px;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+.preview-gif {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
     </style>
 </head>
 <body>
@@ -180,8 +197,7 @@
         </nav>
     </header>
 
-    <section>
-        
+    <section>  
         <div class="hero" style="padding-top:28px">
             <h1>Relics of the Dreamer’s Age</h1>
             <p class="muted">
