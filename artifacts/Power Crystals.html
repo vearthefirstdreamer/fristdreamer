@@ -400,11 +400,16 @@
         </div>
         </div>
         <p></p>
-
-            <div id="Gray_Crystal" class="profile">
-                <div class="portrait">
-                    <img src="../images/Gray Crystal.png" alt="Gray Crystal" />
+            <div id="Gray_Crystal" class="profile"> 
+            <div class="portrait">
+                <div class="preview-container" onclick="startPreview(this)">
+                    <!-- Static first frame -->
+                    <img src="../images/Gray Crystal.png"  alt="Gray Crystal" width="500" height="600" class="preview-still">
+                    <!-- GIF overlay -->
+                    <img src="../images/Gray Crystal.gif" class="preview-gif" alt="Drayven_thumbnail_gif" width="500" height="600" id="preview-gif">
                 </div>
+            </div>
+                            
                 <div class="bio">
                     <h2>"Gray Crystal – The Crystal of Paradox</h2>
                     Affinity: Mind-interface, temporal prediction, partial time-folding.
