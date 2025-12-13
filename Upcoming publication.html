@@ -191,12 +191,27 @@
                 <a href="secret-page.html" style="display:none;">Hidden link</a>
                 <h2> Upcoming publication in The Kor Cycle series </h2>
                 <script>
-                    const password = prompt("Enter password to view this page:");
+                    const password = prompt(
+                        "Listen, Traveler.\n\n"
+                        + "This path is sealed.\n"
+                        + "What lies beyond is not meant for all eyes.\n\n"
+                        + "A key is required to enter a hidden realm of future events yet untold.\n"
+                        + "Speak the key, and the way may open."
+                    );
                     if (password !== "MyBooks123") {
-                        document.body.innerHTML = "<h1>Access Denied</h1>";
-                    }
-                    else { pages / book2.html }
-                </script>
+                        document.body.innerHTML = `
+                        <h1>Access Denied</h1>
+                        <p>
+                        Listen, Traveler.<br><br>
+                        The key was not correct.<br>
+                        The future remains veiled.<br>
+                        Return when understanding has found you.
+                        </p>
+        `;
+    } else {
+        window.location.href = "pages/book2.html";
+    }
+</script>
                 <!-- Hidden link -->
                 <a href="pages/book2.html.html" style="display:none;">Hidden link</a>
                 <a href="pages/book2.html">Book Two</a>
@@ -219,6 +234,7 @@
     </body>
 
     </html>
+
 
 
 
