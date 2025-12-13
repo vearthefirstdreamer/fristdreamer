@@ -505,11 +505,23 @@
             </div>
         </div>
         <p></p>
-        <script>
+        <!-- <script>
           function startPreview(container) {
            const gif = container.querySelector(".preview-gif");
            gif.style.opacity = gif.style.opacity === "1" ? 0 : 1;
           }
+        </script>-->
+        <script>
+            function startPreview(container) {
+                const gif = container.querySelector(".preview-gif");
+
+                // Make sure GIF is visible
+                gif.style.opacity = 1;
+                // Reset the GIF animation by reloading it
+                const src = gif.src;
+                gif.src = "";
+                gif.src = src;
+            }
         </script>
         </section>
 
