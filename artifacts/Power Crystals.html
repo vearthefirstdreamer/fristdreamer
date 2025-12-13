@@ -155,6 +155,28 @@
         .chips {
             margin-top: 8px
         }
+             
+        .preview-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.preview-still, .preview-gif {
+  width: 500px;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+.preview-gif {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
     </style>
     <link rel="icon" type="image/png" href="../images/favicon.png">
 </head>
