@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Rulie — Blue Crystal Wielders</title>
+    <style>
+        :root {
+            --bg: #0b0b0f;
+            --card: #12121a;
+            --text: #e9e9f2;
+            --muted: #b7b7c9;
+            --blue: #4da3ff;
+            --line: #262638;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            background: radial-gradient(900px 500px at 20% 0%, rgba(77,163,255,.14), transparent 60%), radial-gradient(900px 500px at 80% 100%, rgba(77,163,255,.08), transparent 60%), var(--bg);
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        .wrap {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 32px 16px 56px;
+        }
+
+        header {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(18,18,26,.7);
+            backdrop-filter: blur(6px);
+            font-weight: 700;
+            letter-spacing: .2px;
+        }
+
+            .badge .dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: var(--blue);
+                box-shadow: 0 0 18px rgba(77,163,255,.55);
+            }
+
+        h1 {
+            margin: 10px 0 6px;
+            font-size: clamp(26px, 3.2vw, 40px);
+            line-height: 1.15;
+        }
+
+        .sub {
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px;
+            max-width: 78ch;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 18px;
+            margin-top: 22px;
+        }
+
+        @media (max-width: 880px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .card {
+            background: rgba(18,18,26,.82);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.35);
+        }
+
+            .card h2 {
+                margin: 0 0 10px;
+                font-size: 18px;
+                letter-spacing: .2px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+        .rule {
+            height: 1px;
+            background: linear-gradient(to right, rgba(77,163,255,.35), transparent);
+            margin: 12px 0 14px;
+        }
+
+        /* Image placeholder */
+        .imgbox {
+            border-radius: 16px;
+            border: 1px dashed rgba(77,163,255,.45);
+            background: linear-gradient(180deg, rgba(77,163,255,.12), transparent 55%), rgba(0,0,0,.25);
+            padding: 14px;
+        }
+
+        .imgph {
+            border-radius: 12px;
+            aspect-ratio: 4 / 5;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            background: radial-gradient(260px 180px at 50% 35%, rgba(77,163,255,.18), transparent 65%), rgba(10,10,16,.65);
+            border: 1px solid rgba(255,255,255,.06);
+            overflow: hidden;
+            position: relative;
+        }
+
+            .imgph span {
+                color: rgba(233,233,242,.78);
+                text-align: center;
+                padding: 10px 14px;
+                font-size: 14px;
+            }
+
+        .hint {
+            margin: 10px 0 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(77,163,255,.38);
+            color: rgba(200,225,255,.95);
+            background: rgba(77,163,255,.08);
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: .2px;
+            max-width: 60ch;
+        }
+
+        .meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        @media (max-width: 520px) {
+            .meta {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .meta .row {
+            border: 1px solid rgba(255,255,255,.06);
+            border-radius: 14px;
+            padding: 10px 12px;
+            background: rgba(0,0,0,.18);
+        }
+
+        .meta .k {
+            color: var(--muted);
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+
+        .meta .v {
+            font-weight: 650;
+            letter-spacing: .2px;
+        }
+
+        ul {
+            margin: 10px 0 0;
+            padding-left: 18px;
+        }
+
+        li {
+            margin: 6px 0
+        }
+
+        footer {
+            margin-top: 16px;
+            color: var(--muted);
+            font-size: 12.5px;
+        }
+
+        .quote {
+            margin: 0;
+            padding: 12px 14px;
+            border-left: 3px solid rgba(77,163,255,.55);
+            background: rgba(77,163,255,.06);
+            border-radius: 12px;
+            color: rgba(233,233,242,.92);
+        }
+
+        code {
+            color: rgba(200,225,255,.95)
+        }
+
+        header2 {
+            background: #0b0e1a;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1a1f33;
+        }
+
+        nav2 a {
+            margin-left: 1.5rem;
+            color: #9be7c4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .site-header .brand {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .site-header nav {
+            text-align: center;
+            margin-top: 200px;
+        }
+
+            .site-header nav a {
+                color: white;
+                text-decoration: none;
+                margin-right: 220px;
+                font-weight: 600;
+            }
+
+                .site-header nav a:hover {
+                    text-decoration: underline;
+                }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+            .brand .glyph {
+                width: 36px;
+                height: 36px;
+                background: radial-gradient(circle at 30% 30%, var(--accent-2), transparent 40%), linear-gradient(135deg, rgba(65,226,166,0.25), rgba(65,226,166,0) 60%), var(--panel);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                box-shadow: 0 0 22px rgba(65,226,166,0.18) inset;
+            }
+    </style>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+</head>
+
+<body>
+    <header2>
+        <div class="brand">
+            <div class="glyph" aria-hidden="true"></div>
+            <div>
+                <div class="muted smallcaps">The Kor Cycle</div>
+                <strong>Vear – The Odyssey of the Dreamer</strong>
+            </div>
+        </div>
+        <nav2>
+            <a href="../index.html#home">Home</a>
+            <a href="../index.html#characters">Characters</a>
+            <a href="../index.html#world">Worlds</a>
+            <a href="../index.html#artifacts">Artifacts</a>
+            <a href="../index.html#time_ships">Temporal Vessals</a>
+            <a href="../index.html#timeline">Timeline</a>
+            <a href="../index.html#Temporal Law">Rule of Intent</a>
+            <a href="../index.html#Bonus Content">Bonus Content</a>
+            <a href="../index.html#comments">Comments</a>
+        </nav2>
+        </div>
+    </header2>
+    <div class="wrap">
+        <header>
+            <div>
+                <div class="badge"><span class="dot"></span> 🔵 Blue Crystal Wielders</div>
+                <h1>The Rulie — <span style="color:var(--blue)">Listeners of the Universe</span></h1>
+                <p class="sub">
+                    While others sought to master the universe, the Rulie chose to understand it — and in doing so, became part of it.
+                </p>
+            </div>
+            <div class="pill">Status: Unknown • Era: The Forgotten Era (-20,000 to -11,000 AE)</div>
+        </header>
+
+        <section class="grid">
+            <!-- LEFT: QUICK FACTS -->
+            <div class="card">
+                <h2>Profile</h2>
+                <div class="rule"></div>
+                <div class="meta">
+                    <div class="row">
+                        <div class="k">Species</div>
+                        <div class="v">Rulie (non-human)</div>
+                    </div>
+                    <div class="row">
+                        <div class="k">Era / Locale</div>
+                        <div class="v">Forgotten Era / Unknown</div>
+                    </div>
+                    <div class="row">
+                        <div class="k">Signature Tool</div>
+                        <div class="v">Staff of Resonance</div>
+                    </div>
+                    <div class="row">
+                        <div class="k">Crystal Affinity</div>
+                        <div class="v">Blue • Will / Resonance</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: IMAGE PLACEHOLDER -->
+            <aside class="card imgbox">
+                <h2>Portrait</h2>
+                <div class="rule"></div>
+
+                <!-- Replace this placeholder with your image:
+         
+    -->
+                <div class="imgph">
+                    <span>
+                        <img src="../images/Rulie.png" alt="Rulie with Staff of Resonance" style="width:100%; border-radius:12px; display:block;" /><br />
+                        (Rulie with Staff of Resonance)
+                    </span>
+                </div>
+
+                <p class="hint">
+                    (Rulie with Staff of Resonance)
+                </p>
+            </aside>
+
+            <!-- APPEARANCE -->
+            <div class="card">
+                <h2>Appearance</h2>
+                <div class="rule"></div>
+                <ul>
+                    <li><b>Height:</b> 5'10"–6'8", shorter than legends claim; many stoop slightly.</li>
+                    <li><b>Build:</b> Slender, long-limbed, elongated torso; movements slow and purposeful.</li>
+                    <li><b>Posture:</b> Characteristically hunched forward—like they are always listening.</li>
+                    <li><b>Skin:</b> Smooth pale violet or mist-silver, sometimes dappled like mineral veins.</li>
+                    <li><b>Head:</b> Elongated and solemn, wide downward brow; no nose—only slits and smooth contours.</li>
+                    <li><b>Eyes:</b> Large, ovular, fully black or glowing indigo; unblinking and reflective.</li>
+                    <li><b>Ears:</b> None—subtle ridges sense resonant frequencies.</li>
+                </ul>
+            </div>
+
+            <!-- CLOTHING & TOOLS -->
+            <div class="card">
+                <h2>Clothing &amp; Tools</h2>
+                <div class="rule"></div>
+                <p><b>Robes:</b> Silken layers woven from crystal threads and organic fibers; patterns ripple and shift near emotion or harmonic fields.</p>
+                <p><b>Staff of Resonance:</b></p>
+                <ul>
+                    <li>As tall as the Rulie; topped with a crescent moon design.</li>
+                    <li>A <b>blue crystal floats</b> inside the crescent, humming near sound, memory, or power.</li>
+                    <li>Used for sensing, healing, balancing energies—not combat.</li>
+                    <li>Soul-bonded; cannot be used by another.</li>
+                </ul>
+            </div>
+
+            <!-- BIOLOGY & COGNITION -->
+            <div class="card" style="grid-column: 1 / -1;">
+                <h2>Biological &amp; Cognitive Profile</h2>
+                <div class="rule"></div>
+                <ul>
+                    <li><b>Neurostructure:</b> Multi-phase quantum-organic matrices; thoughts expressed as harmonics rather than language.</li>
+                    <li><b>Time perception:</b> Nonlinear awareness—sensing echoes of future consequences (not full time travel).</li>
+                    <li><b>Memory:</b> Distributed—partly in their form, partly in harmonic fields linked to crystals and planetary systems.</li>
+                    <li><b>Communication:</b> Harmonic resonance—emotion-infused frequencies; “thinking” in tones, equations, and geometry at once.</li>
+                </ul>
+            </div>
+
+            <!-- RELATIONSHIP TO CRYSTALS -->
+            <div class="card">
+                <h2>Relationship to the Crystals</h2>
+                <div class="rule"></div>
+                <ul>
+                    <li>They <b>discovered</b> the Clear Crystal (did not create it)—a natural artifact of the universe’s first harmonic resonance.</li>
+                    <li>All colored crystals are <b>refractions</b> of the Clear Crystal—distorted but powerful principles.</li>
+                    <li>They forged the <b>Star Sword</b> using Blue Crystal, to channel Will without corruption.</li>
+                    <li>The <b>Black Crystal</b> is a paradox—raw potential without boundary—dangerous beyond measure.</li>
+                </ul>
+            </div>
+
+            <!-- RELATIONSHIP TO ELIAS -->
+            <div class="card">
+                <h2>Relationship to Elias’s Race</h2>
+                <div class="rule"></div>
+                <p>
+                    They are not enemies, but ideological opposites: Elias’s kind seeks mastery of energy and potential—even if it leads to
+                    manipulation. The Rulie seek resonance and surrender to pattern—even if it leads to obscurity.
+                </p>
+                <p class="quote">
+                    “Where one shapes, the other tunes. Where one questions, the other listens.”
+                </p>
+            </div>
+
+            <!-- NARRATIVE POSSIBILITIES -->
+            <div class="card" style="grid-column: 1 / -1;">
+                <h2>Narrative Possibilities (Book 2)</h2>
+                <div class="rule"></div>
+                <ul>
+                    <li>Vear encounters a Rulie holographic echo (or living elder) who senses him as a “discordant thread”—not a threat, but pivotal.</li>
+                    <li>The Star Sword reaches full potential when a Rulie harmonic key unlocks the last resonance inside the Blue Crystal.</li>
+                    <li>The Rulie and Elias may both approach Leia or Vear with conflicting truths about the Black Crystal—forcing a profound choice.</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            © The Kor Cycle — Crystal Wielders Reference (Rulie / Blue)
+        </footer>
+    </div>
+</body>
+</html>
+
+
+
+
+
+C
+
