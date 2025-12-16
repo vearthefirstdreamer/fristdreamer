@@ -469,10 +469,16 @@
             </div>
       
             <p></p>
-            <div article id="blackcrystal" class="profile">
-                <div class="portrait">
-                    <img src="../images/Black Crystal.png" alt="Black Crystal" />
+            <div id="blackcrystal" class="profile"> 
+            <div class="portrait">
+                <div class="preview-container" onclick="startPreview(this)">
+                    <!-- Static first frame -->
+                    <img src="../images/Black Crystal.png"  alt="Black Crystal"  class="preview-still">
+                    <!-- GIF overlay -->
+                    <img src="../images/Black Crystal.gif" class="preview-gif" alt="Drayven_thumbnail_gif"  id="preview-gif">
                 </div>
+            </div>
+                
                 <div class="bio">
                     <h2>The Black Crystal – The Crystal of Corruption (Origin Theory)</h2>
                     Affinity: Devours possibility, appearing to collapse futures into nothingness.
