@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Elias — Gray Crystal Wielder</title>
+    <style>
+        :root {
+            --bg: #0b0b0f;
+            --card: #12121a;
+            --text: #e9e9f2;
+            --muted: #b7b7c9;
+            --gray: #c7c7d6;
+            --line: #262638;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            background: radial-gradient(900px 500px at 20% 0%, rgba(199,199,214,.14), transparent 60%), radial-gradient(900px 500px at 80% 100%, rgba(199,199,214,.08), transparent 60%), var(--bg);
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        .wrap {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 32px 16px 56px;
+        }
+
+        header {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(18,18,26,.7);
+            backdrop-filter: blur(6px);
+            font-weight: 700;
+            letter-spacing: .2px;
+        }
+
+            .badge .dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: var(--gray);
+                box-shadow: 0 0 18px rgba(199,199,214,.45);
+            }
+
+        h1 {
+            margin: 10px 0 6px;
+            font-size: clamp(26px, 3.2vw, 40px);
+            line-height: 1.15;
+        }
+
+        .sub {
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px;
+            max-width: 82ch;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 18px;
+            margin-top: 22px;
+        }
+
+        @media (max-width: 880px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .card {
+            background: rgba(18,18,26,.82);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.35);
+        }
+
+            .card h2 {
+                margin: 0 0 10px;
+                font-size: 18px;
+                letter-spacing: .2px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+        .rule {
+            height: 1px;
+            background: linear-gradient(to right, rgba(199,199,214,.35), transparent);
+            margin: 12px 0 14px;
+        }
+
+        /* Image placeholder */
+        .imgbox {
+            border-radius: 16px;
+            border: 1px dashed rgba(199,199,214,.45);
+            background: linear-gradient(180deg, rgba(199,199,214,.10), transparent 55%), rgba(0,0,0,.25);
+            padding: 14px;
+        }
+
+        .imgph {
+            border-radius: 12px;
+            aspect-ratio: 4 / 5;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            background: radial-gradient(260px 180px at 50% 35%, rgba(199,199,214,.16), transparent 65%), rgba(10,10,16,.65);
+            border: 1px solid rgba(255,255,255,.06);
+            overflow: hidden;
+            position: relative;
+        }
+
+            .imgph span {
+                color: rgba(233,233,242,.78);
+                text-align: center;
+                padding: 10px 14px;
+                font-size: 14px;
+            }
+
+        .hint {
+            margin: 10px 0 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(199,199,214,.38);
+            color: rgba(240,240,255,.92);
+            background: rgba(199,199,214,.08);
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: .2px;
+            max-width: 62ch;
+        }
+
+        .meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        @media (max-width: 520px) {
+            .meta {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .meta .row {
+            border: 1px solid rgba(255,255,255,.06);
+            border-radius: 14px;
+            padding: 10px 12px;
+            background: rgba(0,0,0,.18);
+        }
+
+        .meta .k {
+            color: var(--muted);
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+
+        .meta .v {
+            font-weight: 650;
+            letter-spacing: .2px;
+        }
+
+        ul {
+            margin: 10px 0 0;
+            padding-left: 18px;
+        }
+
+        li {
+            margin: 6px 0
+        }
+
+        footer {
+            margin-top: 16px;
+            color: var(--muted);
+            font-size: 12.5px;
+        }
+
+        .quote {
+            margin: 0;
+            padding: 14px 14px;
+            border-left: 3px solid rgba(199,199,214,.55);
+            background: rgba(199,199,214,.06);
+            border-radius: 12px;
+            color: rgba(233,233,242,.92);
+            white-space: pre-wrap;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(199,199,214,.30);
+            background: rgba(199,199,214,.06);
+            color: rgba(240,240,255,.9);
+            letter-spacing: .2px;
+            font-weight: 650;
+        }
+
+        code {
+            color: rgba(240,240,255,.9)
+        }
+        header2 {
+            background: #0b0e1a;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1a1f33;
+        }
+
+        nav2 a {
+            margin-left: 1.5rem;
+            color: #9be7c4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .site-header .brand {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .site-header nav {
+            text-align: center;
+            margin-top: 200px;
+        }
+
+            .site-header nav a {
+                color: white;
+                text-decoration: none;
+                margin-right: 220px;
+                font-weight: 600;
+            }
+
+                .site-header nav a:hover {
+                    text-decoration: underline;
+                }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+            .brand .glyph {
+                width: 36px;
+                height: 36px;
+                background: radial-gradient(circle at 30% 30%, var(--accent-2), transparent 40%), linear-gradient(135deg, rgba(65,226,166,0.25), rgba(65,226,166,0) 60%), var(--panel);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                box-shadow: 0 0 22px rgba(65,226,166,0.18) inset;
+            }
+    </style>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+</head>
+
+<body>
+    <header2>
+        <div class="brand">
+            <div class="glyph" aria-hidden="true"></div>
+            <div>
+                <div class="muted smallcaps">The Kor Cycle</div>
+                <strong>Vear – The Odyssey of the Dreamer</strong>
+            </div>
+        </div>
+        <nav2>
+            <a href="../index.html#home">Home</a>
+            <a href="../index.html#characters">Characters</a>
+            <a href="../index.html#world">Worlds</a>
+            <a href="../index.html#artifacts">Artifacts</a>
+            <a href="../index.html#time_ships">Temporal Vessals</a>
+            <a href="../index.html#timeline">Timeline</a>
+            <a href="../index.html#Temporal Law">Rule of Intent</a>
+            <a href="../index.html#Bonus Content">Bonus Content</a>
+            <a href="../index.html#comments">Comments</a>
+        </nav2>
+        </div>
+    </header2>
+    <div class="wrap">
+        <header>
+            <div>
+                <div class="badge"><span class="dot"></span> ⚙️ Gray Crystal Wielder</div>
+                <h1>Elias — <span style="color:var(--gray)">Crystalsmith &amp; Temporal Adept</span></h1>
+                <p class="sub">
+                    Mysterious crystalsmith and temporal adept—an ageless being walking in human shape, speaking in memory and resonance.
+                </p>
+            </div>
+            <div class="pill">First Appearance: Book 1 — “The Starborn and the Sculptor”</div>
+        </header>
+
+        <section class="grid">
+            <!-- LEFT: QUICK FACTS -->
+            <div class="card">
+                <h2>Profile</h2>
+                <div class="rule"></div>
+                <div class="meta">
+                    <div class="row">
+                        <div class="k">Apparent Species</div>
+                        <div class="v">Human (projection)</div>
+                    </div>
+                    <div class="row">
+                        <div class="k">True Nature</div>
+                        <div class="v">Transcendent race / Council of Higher Minds</div>
+                    </div>
+                    <div class="row">
+                        <div class="k">Specialization</div>
+                        <div class="v">Crystalsmithing, temporal threading, energetic lattices</div>
+                    </div>
+                    <div class="row">
+                        <div class="k">Crystal Affinity</div>
+                        <div class="v">Gray • Resonance between light &amp; shadow</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: IMAGE PLACEHOLDER -->
+            <aside class="card imgbox">
+                <h2>Portrait</h2>
+                <div class="rule"></div>
+
+                <!-- Replace this placeholder with your image:
+                     <img src="PATH/FILE.jpg" alt="Elias in human form" style="width:100%; border-radius:12px; display:block;" />
+                -->
+                <div class="imgph">
+                    <span>
+                        <img src="../images/Elias.png" alt="Elias" style="width:100%; border-radius:12px; display:block;" /><br /><br />
+                        (Elias in human form — courteous, unreadable, never quite here)
+                    </span>
+                </div>
+
+                <p class="hint">
+                    (Elias in human form — courteous, unreadable, never quite here).
+                </p>
+            </aside>
+
+            <!-- APPEARANCE -->
+            <div class="card">
+                <h2>Appearance</h2>
+                <div class="rule"></div>
+                <ul>
+                    <li>Handsome human projection; sharp silver eyes; calm, melodic voice.</li>
+                    <li>Presence feels slightly out of step with time and space.</li>
+                    <li>Always composed; gestures precise and economical.</li>
+                </ul>
+            </div>
+
+            <!-- ABILITIES -->
+            <div class="card">
+                <h2>Abilities</h2>
+                <div class="rule"></div>
+                <ul>
+                    <li><b>Crystal Resonance:</b> Mastery of gray crystals (volatile, between light and shadow).</li>
+                    <li><b>Temporal Perception:</b> Senses threads across lost pasts and divergent futures.</li>
+                    <li><b>Energy Embodiment:</b> Phases through matter; survives vacuum; vanishes at will.</li>
+                    <li><b>Subtle Influence:</b> Guides through suggestion rather than command.</li>
+                </ul>
+            </div>
+
+            <!-- PERSONALITY -->
+            <div class="card">
+                <h2>Personality</h2>
+                <div class="rule"></div>
+                <ul>
+                    <li>Polite, elliptical, emotionally distant—without cruelty.</li>
+                    <li>Neither warm nor cold—alien in priorities and pacing.</li>
+                    <li>Appears neutral, yet every word lands with intent.</li>
+                </ul>
+            </div>
+
+            <!-- BELIEFS & WARNINGS -->
+            <div class="card">
+                <h2>Beliefs &amp; Warnings</h2>
+                <div class="rule"></div>
+                <ul>
+                    <li>Hints at the existence of the <b>Black Crystal</b>—raw potential beyond boundary.</li>
+                    <li>Suggests Vear might one day possess it… or become it.</li>
+                    <li>Notes that even his people fear the Black Crystal’s paradox.</li>
+                </ul>
+            </div>
+
+            <!-- RELATIONSHIP TO VEAR -->
+            <div class="card" style="grid-column: 1 / -1;">
+                <h2>Relationship to Vear</h2>
+                <div class="rule"></div>
+                <p>
+                    Elias takes an interest in Vear that hovers between mentorship and manipulation. He understands more of Vear’s path than
+                    he reveals, offering truths in fragments—enough to set a course, never enough to remove the cost.
+                </p>
+                <p>
+                    Elias isn’t the kind of figure who walks in and pushes events around openly. Instead, he’s a temporal gardener—nudging tiny,
+                    almost invisible details so that decades later, the shape of Vear’s life bends in a different direction.
+                </p>
+            </div>
+
+            <!-- THE STAR SWORD -->
+            <div class="card" style="grid-column: 1 / -1;">
+                <h2>The Star Sword</h2>
+                <div class="rule"></div>
+                <p>
+                    Forged by the Rulie using Blue Crystal and Resonant Compression, the blade was seeded beneath Edson to wait for the Dreamer
+                    whose soul carried the right tone. Elias created the song not as prophecy, but as memory—laid down long ago for this moment.
+                </p>
+                <p class="quote">
+                    “Bound in stone, the star-born flame,
+                    Forged in wrath, without a name.
+                    Hands of men shall tug in vainl.,
+                    For strength alone shall earn no gain.
+                    Only the soul who walks the storm,
+                    With heart made fire and spirit torn,
+                    Shall stir the blade and break the seal,
+                    When truth is found and wounds shall heal.
+                    Eyes veiled dark, yet vision wide,
+                    He comes with silence as his guide.
+                    Not born of time, nor bound by fate—
+                    He wakes the sword, and opens the gate.”
+                </p>
+            </div>
+
+            <!-- TAGS -->
+            <div class="card" style="grid-column: 1 / -1;">
+                <h2>Tags</h2>
+                <div class="rule"></div>
+                <div class="tags">
+                    <span class="tag" style="display:inline-block"><a href="../pages/crystalsmith_lore_page.html">Crystalsmith</a></span>
+                    <span class="tag" style="display:inline-block"><a href="../pages/The Council of Higher Minds.html">Council of Higher Minds</a></span>
+                    <span class="tag" style="display:inline-block"><a href="../artifacts/Star Swored.html">Star Sword</a></span>
+                    <span class="tag" style="display:inline-block"><a href="../artifacts/Power Crystals.html#Gray_Crystal">Gray Crystals</a></span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            © 2025 Nick Yost · The Kor Cycle
+        </footer>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+Chat
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
