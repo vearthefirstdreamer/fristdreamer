@@ -362,10 +362,16 @@
             </div>
         </div>
         <p></p>
-        <div id="Red_Crystal" class="profile">
+        <div id="Red_Crystal" class="profile"> 
             <div class="portrait">
-                <img src="../images/Red Crystal.png" alt="Red Crystal" />
+                <div class="preview-container" onclick="startPreview(this)">
+                    <!-- Static first frame -->
+                    <img src="../images/Red Crystal.png"  alt="Gray Crystal"  class="preview-still">
+                    <!-- GIF overlay -->
+                    <img src="../images/Red Crystal.gif" class="preview-gif" alt="Drayven_thumbnail_gif"  id="preview-gif">
+                </div>
             </div>
+            
             <div class="bio">
                 <h2>The Red Crystal – Dominion of the Void</h2>
                 Nature:
