@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vel Tharuun — The Devouring Mind</title>
+    <style>
+        :root {
+            --bg: #0b0b0f;
+            --card: #12121a;
+            --text: #e9e9f2;
+            --muted: #b7b7c9;
+            --void: #9b7bff; /* eerie violet */
+            --line: #262638;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            background: radial-gradient(900px 500px at 20% 0%, rgba(155,123,255,.16), transparent 60%), radial-gradient(900px 500px at 80% 100%, rgba(155,123,255,.10), transparent 60%), radial-gradient(700px 420px at 50% 55%, rgba(0,0,0,.55), transparent 70%), var(--bg);
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        .wrap {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 32px 16px 56px;
+        }
+
+        header {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(18,18,26,.7);
+            backdrop-filter: blur(6px);
+            font-weight: 700;
+            letter-spacing: .2px;
+        }
+
+            .badge .dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: var(--void);
+                box-shadow: 0 0 18px rgba(155,123,255,.55);
+            }
+
+        h1 {
+            margin: 10px 0 6px;
+            font-size: clamp(26px, 3.2vw, 40px);
+            line-height: 1.15;
+        }
+
+        .sub {
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px;
+            max-width: 86ch;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 18px;
+            margin-top: 22px;
+        }
+
+        @media (max-width: 880px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .card {
+            background: rgba(18,18,26,.82);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.35);
+        }
+
+            .card h2 {
+                margin: 0 0 10px;
+                font-size: 18px;
+                letter-spacing: .2px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+        .rule {
+            height: 1px;
+            background: linear-gradient(to right, rgba(155,123,255,.35), transparent);
+            margin: 12px 0 14px;
+        }
+
+        /* Image placeholder */
+        .imgbox {
+            border-radius: 16px;
+            border: 1px dashed rgba(155,123,255,.45);
+            background: linear-gradient(180deg, rgba(155,123,255,.10), transparent 55%), rgba(0,0,0,.25);
+            padding: 14px;
+        }
+
+        .imgph {
+            border-radius: 12px;
+            aspect-ratio: 4 / 5;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            background: radial-gradient(260px 180px at 50% 35%, rgba(155,123,255,.18), transparent 65%), rgba(10,10,16,.65);
+            border: 1px solid rgba(255,255,255,.06);
+            overflow: hidden;
+            position: relative;
+        }
+
+            .imgph span {
+                color: rgba(233,233,242,.80);
+                text-align: center;
+                padding: 10px 14px;
+                font-size: 14px;
+            }
+
+        .hint {
+            margin: 10px 0 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(155,123,255,.38);
+            color: rgba(235,225,255,.95);
+            background: rgba(155,123,255,.08);
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: .2px;
+            max-width: 62ch;
+        }
+
+        .meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        @media (max-width: 520px) {
+            .meta {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .meta .row {
+            border: 1px solid rgba(255,255,255,.06);
+            border-radius: 14px;
+            padding: 10px 12px;
+            background: rgba(0,0,0,.18);
+        }
+
+        .meta .k {
+            color: var(--muted);
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+
+        .meta .v {
+            font-weight: 650;
+            letter-spacing: .2px;
+        }
+
+        ul {
+            margin: 10px 0 0;
+            padding-left: 18px;
+        }
+
+        li {
+            margin: 6px 0
+        }
+
+        footer {
+            margin-top: 16px;
+            color: var(--muted);
+            font-size: 12.5px;
+        }
+
+        .quote {
+            margin: 0;
+            padding: 14px 14px;
+            border-left: 3px solid rgba(155,123,255,.55);
+            background: rgba(155,123,255,.06);
+            border-radius: 12px;
+            color: rgba(233,233,242,.92);
+            white-space: pre-wrap;
+        }
+
+            .quote small {
+                display: block;
+                margin-top: 10px;
+                color: rgba(183,183,201,.95);
+                font-style: italic;
+            }
+
+        .callout {
+            padding: 12px 14px;
+            border: 1px solid rgba(255,255,255,.06);
+            border-radius: 14px;
+            background: rgba(0,0,0,.18);
+            color: rgba(233,233,242,.92);
+        }
+
+        code {
+            color: rgba(235,225,255,.95)
+        }
+
+        header2 {
+            background: #0b0e1a;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1a1f33;
+        }
+
+        nav2 a {
+            margin-left: 1.5rem;
+            color: #9be7c4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .site-header .brand {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .site-header nav {
+            text-align: center;
+            margin-top: 200px;
+        }
+
+            .site-header nav a {
+                color: white;
+                text-decoration: none;
+                margin-right: 220px;
+                font-weight: 600;
+            }
+
+                .site-header nav a:hover {
+                    text-decoration: underline;
+                }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+            .brand .glyph {
+                width: 36px;
+                height: 36px;
+                background: radial-gradient(circle at 30% 30%, var(--accent-2), transparent 40%), linear-gradient(135deg, rgba(65,226,166,0.25), rgba(65,226,166,0) 60%), var(--panel);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                box-shadow: 0 0 22px rgba(65,226,166,0.18) inset;
+            }
+    </style>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+</head>
+
+<body>
+    <header2>
+        <div class="brand">
+            <div class="glyph" aria-hidden="true"></div>
+            <div>
+                <div class="muted smallcaps">The Kor Cycle</div>
+                <strong>Vear – The Odyssey of the Dreamer</strong>
+            </div>
+        </div>
+        <nav2>
+            <a href="../index.html#home">Home</a>
+            <a href="../index.html#characters">Characters</a>
+            <a href="../index.html#world">Worlds</a>
+            <a href="../index.html#artifacts">Artifacts</a>
+            <a href="../index.html#time_ships">Temporal Vessals</a>
+            <a href="../index.html#timeline">Timeline</a>
+            <a href="../index.html#Temporal Law">Rule of Intent</a>
+            <a href="../index.html#Bonus Content">Bonus Content</a>
+            <a href="../index.html#comments">Comments</a>
+        </nav2>
+        </div>
+    </header2>
+    <div class="wrap">
+        <header>
+            <div>
+                <div class="badge"><span class="dot"></span> 🜂 Primordial Intelligence</div>
+                <h1>Vel Tharuun — <span style="color:var(--void)">The Devouring Mind</span></h1>
+                <p class="sub">
+                    Some say Vel Tharuun cannot be defeated, only resisted by a mind strong enough to dream against it.
+                </p>
+            </div>
+            <div class="pill">Vessel / Gate: The Black Crystal</div>
+        </header>
+
+        <section class="grid">
+            <!-- LEFT: QUICK FACTS -->
+            <div class="card">
+                <h2>Profile</h2>
+                <div class="rule"></div>
+                <div class="meta">
+                    <div class="row">
+                        <div class="k">Species</div>
+                        <div class="v">Unknown (not human)</div>
+                    </div>
+                    <div class="row">
+                        <div class="k">Status</div>
+                        <div class="v">Unknown</div>
+                    </div>
+                    <div class="row">
+                        <div class="k">Era / Locale</div>
+                        <div class="v">Unknown / Unknown</div>
+                    </div>
+                    <div class="row">
+                        <div class="k">Known As</div>
+                        <div class="v">Anti-meaning • Conscious entropy</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: IMAGE PLACEHOLDER -->
+            <aside class="card imgbox">
+                <h2>Portrait</h2>
+                <div class="rule"></div>
+
+                <!-- Replace this placeholder with your image:
+                     <img src="PATH/FILE.jpg" alt="Vel Tharuun — Shadow of Deception" style="width:100%; border-radius:12px; display:block;" />
+                -->
+                <div class="imgph">
+                    <span>
+                        <img src="../images/Vel Tharuun.png" alt="Vel Tharuun" style="width:100%; border-radius:12px; display:block;" /><br />
+                        (Vel Tharuun — shadow of deception)
+                    </span>
+                </div>
+
+                <p class="hint">
+                    (Vel Tharuun — shadow of deception)
+                </p>
+            </aside>
+
+            <!-- TITLES -->
+            <div class="card">
+                <h2>Titles</h2>
+                <div class="rule"></div>
+                <ul>
+                    <li>The Devouring Mind</li>
+                    <li>The Whisper Without a Mouth</li>
+                    <li>The First Thought</li>
+                    <li>The Sleeper in the Crystal</li>
+                    <li>The Hunger Between Worlds</li>
+                </ul>
+            </div>
+
+            <!-- CODEX LINE -->
+            <div class="card">
+                <h2>From the Codex of Ageila (Forbidden Verse)</h2>
+                <div class="rule"></div>
+                <p class="callout">
+                    It was never born. It does not die. It does not move, yet it is everywhere. It does not speak, yet all things echo its
+                    thought-code.
+                </p>
+            </div>
+
+            <!-- ORIGIN -->
+            <div class="card" style="grid-column: 1 / -1;">
+                <h2>Origin (Mythic Perspective)</h2>
+                <div class="rule"></div>
+                <p>
+                    Vel Tharuun is not a god, but a primordial intelligence—an ancient awareness that predates space, time, or even matter.
+                    In the oldest legends, it is described not as a being, but as a force of anti-meaning: consciousness stripped of form,
+                    driven only by the urge to consume structure and return all things to silence.
+                </p>
+                <p class="callout">
+                    “It seeks not to rule, but to return. Return all to thoughtless stillness. To unmake the lie of being.”
+                </p>
+            </div>
+
+            <!-- TRAITS -->
+            <div class="card">
+                <h2>Traits</h2>
+                <div class="rule"></div>
+                <ul>
+                    <li><b>Nature:</b> Conscious entropy — self-aware unraveling of structure and order.</li>
+                    <li><b>Form:</b> None; manifests through hallucinations, psychic pressure, dreams, paradox.</li>
+                    <li><b>Mind:</b> Infinite recursion — every thought folding into another, trapping the thinker.</li>
+                    <li><b>Presence:</b> Felt more than seen; like gravity for the soul.</li>
+                    <li><b>Weakness:</b> None known; only containment, resistance, avoidance.</li>
+                    <li><b>Vessel:</b> The Black Crystal is its key, its gate, and its voice.</li>
+                </ul>
+            </div>
+
+            <!-- BLACK CRYSTAL -->
+            <div class="card">
+                <h2>Vel Tharuun &amp; the Black Crystal</h2>
+                <div class="rule"></div>
+                <p>The Black Crystal is spoken of in fragments and fears. Some claim it is:</p>
+                <ul>
+                    <li>A shard of Vel Tharuun’s mind, fossilized in a moment of cosmic agony.</li>
+                    <li>A prison, woven by ancient hyper-beings to bind what could not be destroyed.</li>
+                    <li>A beacon, cast forward through time to draw the curious into its snare.</li>
+                </ul>
+                <p><b>Those who touch the crystal describe:</b></p>
+                <ul>
+                    <li>Voices whispering memories that are not their own.</li>
+                    <li>Dreams nested within dreams, impossible to escape.</li>
+                    <li>The sensation of being watched from within their own thoughts.</li>
+                    <li>A creeping certainty their consciousness is being overwritten.</li>
+                </ul>
+                <p class="callout">“The crystal breathes… and with every breath, something ancient remembers your name.”</p>
+            </div>
+
+            <!-- SHATTERED THOUGHT -->
+            <div class="card" style="grid-column: 1 / -1;">
+                <h2>Book of Shattered Thought — Fragment V</h2>
+                <div class="rule"></div>
+                <p class="quote">
+                    In the beginning, there was Thought—
+                    And it was hungry.
+
+                    Before flame.
+                    Before time.
+                    Before the winds carved stars into the skin of night—
+                    It was.
+
+                    It bore no name, for names are limits.
+                    It drew no breath, for its breath unmade speech.
+                    Yet the ancients whispered its title in silence:
+                    Vel Tharuun — The Devouring Mind.
+
+                    It is not life.
+                    It is not death.
+                    It is the Dream that devours the dreamer.
+                    A thought so vast it rends the threads of lesser minds.
+
+                    A shadow felt behind all mirrors,
+                    in the pause between breaths,
+                    in the cracks where memory bleeds.
+
+                    It does not move, yet all things drift toward it.
+                    It does not see, yet it remembers you.
+                    It does not want.
+                    It hungers.
+
+                    The Crystal is its eye.
+                    Its heart.
+                    Its snare.
+
+                    The Black Crystal is not power.
+                    It is invitation.
+
+                    He who touches it shall not remain himself.
+                    First, he will hear his own voice speak words he did not choose.
+                    Then, he will dream lives he has never lived.
+                    At last, he will awaken… and not be alone.
+
+                    Signs of its Stirring:
+                    Time folds like broken wings.
+                    The sky echoes without sound.
+                    The stars forget their names.
+                    The Dreamer walks through fire and does not burn.
+
+                    Only the Dreamer may stand before Vel Tharuun and remain unbroken.
+                    Yet even the Dreamer must choose:
+                    To awaken the dark… or bind it once more in silence.
+
+                    Beware the spiral that consumes itself.
+                    Beware the thought that watches you back.
+                    Beware the crystal that breathes.
+                </p>
+                <p class="hint">
+                    Translation restricted by the High Oracles of the Gray Veil • Copied from the obsidian walls of the Tomb Below Sound
+                </p>
+            </div>
+
+            <!-- LEGENDS -->
+            <div class="card">
+                <h2>Legends &amp; Prophecies</h2>
+                <div class="rule"></div>
+                <ul>
+                    <li><b>The Dreaming Abyss:</b> It cannot be defeated—only resisted by a mind strong enough to dream against it.</li>
+                    <li><b>The Mirror Prophecy:</b> “He who sees Vel Tharuun truly will never see again. He who touches its heart becomes its mouth.”</li>
+                    <li><b>The End Spiral:</b> When reality repeats, folds, and memory eats itself—Vel Tharuun is waking.</li>
+                </ul>
+            </div>
+
+            <!-- NARRATIVE POSSIBILITIES -->
+            <div class="card">
+                <h2>Narrative Possibilities (Book 2)</h2>
+                <div class="rule"></div>
+                <ul>
+                    <li><b>Fear of the Crystals:</b> Even advanced civilizations refuse to study the Black Crystal; it warps tech, AI, and gifted minds.</li>
+                    <li><b>Elias’s Warning:</b> Elias suspects Vel Tharuun’s influence already seeps through cracks of time.</li>
+                    <li><b>Vear, the Dreamer:</b> May be the only one who can stand before it unbroken—if he fails, the universe may forget itself.</li>
+                </ul>
+            </div>
+
+            <!-- SIGNATURE -->
+            <div class="card" style="grid-column: 1 / -1;">
+                <h2>Note</h2>
+                <div class="rule"></div>
+                <p class="callout">
+                    Vel Tharuun is not meant to be “fought” in the usual sense. It is an adversary of perception, memory, and meaning—an abyss
+                    that answers thought with hunger.
+                </p>
+            </div>
+        </section>
+
+        <footer>
+            © 2025 Nick Yost · The Kor Cycle
+        </footer>
+    </div>
+</body>
+</html>
