@@ -215,11 +215,16 @@
     </section>
 
     <main>
-
-        <div Clear_Crystal class="profile">
+        <div Clear_Crystal class="profile"> 
             <div class="portrait">
-                <img src="../images/Clear Crystal.png" alt="Clear Crystals" />
+                <div class="preview-container" onclick="startPreview(this)">
+                    <!-- Static first frame -->
+                    <img src="../images/Clear Crystal.png"  alt="Clear Crystals"  class="preview-still">
+                    <!-- GIF overlay -->
+                    <img src="../images/Clear Crystal.gif" class="preview-gif" alt="Drayven_thumbnail_gif"  id="preview-gif">
+                </div>
             </div>
+            
             <div class="bio">
                 <h2>Clear Crystal – The Crystal of Potential</h2>
                 Affinity: Reflective resonance, latent amplification, unshaped possibility.
