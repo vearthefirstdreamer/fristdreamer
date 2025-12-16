@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Varkhûn — Dominion of the Void</title>
+    <style>
+        :root {
+            --bg: #0b0b0f;
+            --card: #12121a;
+            --text: #e9e9f2;
+            --muted: #b7b7c9;
+            --red: #ff3b3b;
+            --line: #262638;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            background: radial-gradient(900px 500px at 20% 0%, rgba(255,59,59,.12), transparent 60%), radial-gradient(900px 500px at 80% 100%, rgba(255,59,59,.08), transparent 60%), var(--bg);
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        .wrap {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 32px 16px 56px;
+        }
+
+        header {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(18,18,26,.7);
+            backdrop-filter: blur(6px);
+            font-weight: 700;
+            letter-spacing: .2px;
+        }
+
+            .badge .dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: var(--red);
+                box-shadow: 0 0 18px rgba(255,59,59,.6);
+            }
+
+        h1 {
+            margin: 10px 0 6px;
+            font-size: clamp(26px, 3.2vw, 40px);
+            line-height: 1.15;
+        }
+
+        .sub {
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px;
+            max-width: 70ch;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 18px;
+            margin-top: 22px;
+        }
+
+        @media (max-width: 880px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .card {
+            background: rgba(18,18,26,.82);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.35);
+        }
+
+            .card h2 {
+                margin: 0 0 10px;
+                font-size: 18px;
+                letter-spacing: .2px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+        .rule {
+            height: 1px;
+            background: linear-gradient(to right, rgba(255,59,59,.35), transparent);
+            margin: 12px 0 14px;
+        }
+
+        /* Image placeholder */
+        .imgbox {
+            border-radius: 16px;
+            border: 1px dashed rgba(255,59,59,.45);
+            background: linear-gradient(180deg, rgba(255,59,59,.12), transparent 55%), rgba(0,0,0,.25);
+            padding: 14px;
+        }
+
+        .imgph {
+            border-radius: 12px;
+            aspect-ratio: 4 / 5;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            background: radial-gradient(260px 180px at 50% 35%, rgba(255,59,59,.18), transparent 65%), rgba(10,10,16,.65);
+            border: 1px solid rgba(255,255,255,.06);
+            overflow: hidden;
+            position: relative;
+        }
+
+            .imgph span {
+                color: rgba(233,233,242,.75);
+                text-align: center;
+                padding: 10px 14px;
+                font-size: 14px;
+            }
+
+        .hint {
+            margin: 10px 0 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,59,59,.35);
+            color: rgba(255,190,190,.95);
+            background: rgba(255,59,59,.08);
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: .2px;
+        }
+
+        .prop {
+            font-size: 16px;
+            margin: 10px 0 0;
+        }
+
+            .prop b {
+                color: #ffd0d0
+            }
+
+        ul {
+            margin: 10px 0 0;
+            padding-left: 18px;
+        }
+
+        li {
+            margin: 6px 0
+        }
+
+        footer {
+            margin-top: 16px;
+            color: var(--muted);
+            font-size: 12.5px;
+        }
+
+        header2 {
+            background: #0b0e1a;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1a1f33;
+        }
+
+        nav2 a {
+            margin-left: 1.5rem;
+            color: #9be7c4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .site-header .brand {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .site-header nav {
+            text-align: center;
+            margin-top: 200px;
+        }
+
+            .site-header nav a {
+                color: white;
+                text-decoration: none;
+                margin-right: 220px;
+                font-weight: 600;
+            }
+
+                .site-header nav a:hover {
+                    text-decoration: underline;
+                }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+         .brand .glyph {
+            width: 36px;
+            height: 36px;
+            background: radial-gradient(circle at 30% 30%, var(--accent-2), transparent 40%), linear-gradient(135deg, rgba(65,226,166,0.25), rgba(65,226,166,0) 60%), var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 0 22px rgba(65,226,166,0.18) inset;
+         }
+    </style>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+</head>
+
+<body>
+    <header2>
+        <div class="brand">
+            <div class="glyph" aria-hidden="true"></div>
+            <div>
+                <div class="muted smallcaps">The Kor Cycle</div>
+                <strong>Vear – The Odyssey of the Dreamer</strong>
+            </div>
+        </div>
+        <nav2>
+            <a href="../index.html#home">Home</a>
+            <a href="../index.html#characters">Characters</a>
+            <a href="../index.html#world">Worlds</a>
+            <a href="../index.html#artifacts">Artifacts</a>
+            <a href="../index.html#time_ships">Temporal Vessals</a>
+            <a href="../index.html#timeline">Timeline</a>
+            <a href="../index.html#Temporal Law">Rule of Intent</a>
+            <a href="../index.html#Bonus Content">Bonus Content</a>
+            <a href="../index.html#comments">Comments</a>
+        </nav2>
+        </div>
+    </header2>
+    <div class="wrap">
+        <header>
+            <div>
+                <div class="badge"><span class="dot"></span> 🔴 Red Crystal Wielders</div>
+                <h1>The Varkhûn — <span style="color:var(--red)">Dominion of the Void</span></h1>
+                <p class="sub">
+                    A crystal order bound to entropy and endings—guardians of the lawful dissolution that all things owe the dark.
+                </p>
+            </div>
+            <div class="pill">Feared Title: Wardens of the Final Silence</div>
+        </header>
+
+        <section class="grid">
+            <!-- LEFT: TEXT CONTENT -->
+            <div class="card">
+                <h2>Crystal Property</h2>
+                <div class="rule"></div>
+                <p class="prop">
+                    <b>Dominion of the Void</b><br />
+                    Mastery over entropy and endings—the lawful dissolution that all things owe the dark.
+                </p>
+            </div>
+
+            <!-- RIGHT: IMAGE PLACEHOLDER -->
+            <aside class="card imgbox">
+                <h2>Image</h2>
+                <div class="rule"></div>
+
+                <!-- Replace this placeholder with your image:
+                     <img src="PATH/FILE.jpg" alt="Varkhûn warrior with red crystal spear" style="width:100%; border-radius:12px; display:block;" />
+                -->
+                <div class="imgph">
+                    <span>
+                        <img src="../images/Varkhûn.png" alt="Rulie with Staff of Resonance" style="width:100%; border-radius:12px; display:block;" /><br /><br />
+                        (Varkhûn with armor + red crystal spear tip)
+                    </span>
+                </div>
+
+                <p class="hint">
+                   (Varkhûn with armor + red crystal spear tip)
+                </p>
+            </aside>
+
+            <div class="card">
+                <h2>Species Description</h2>
+                <div class="rule"></div>
+                <p>
+                    The Varkhûn are reptilian and immense, their bodies plated in obsidian-scaled armor that absorbs light rather than reflects it.
+                    Their eyes glow faintly red, not with fire, but with the slow embers of dying stars. Native to collapsing systems and
+                    entropy-scarred worlds, they evolved alongside decay rather than resisting it.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>Philosophy &amp; Role</h2>
+                <div class="rule"></div>
+                <p>
+                    To the Varkhûn, destruction is not evil—it is obligation. They believe the universe must be allowed to end things properly.
+                    Civilizations that refuse to die, timelines stretched too long, beings that cheat death or time—these are violations of cosmic law.
+                </p>
+                <p><b>They do not conquer chaotically. They close chapters.</b></p>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <h2>Wielding the Red Crystal</h2>
+                <div class="rule"></div>
+                <ul>
+                    <li>Accelerate entropy in matter, cities, or even stars</li>
+                    <li>Collapse unstable timelines</li>
+                    <li>Unravel immortal beings by restoring “owed endings”</li>
+                </ul>
+                <p>
+                    Every use brings them closer to the Void they serve. Varkhûn elders eventually fade into nothing—not death, but completion.
+                </p>
+            </div>
+        </section>
+
+        <footer>
+            © The Kor Cycle — Crystal Wielders Reference (Varkhûn / Red)
+        </footer>
+    </div>
+</body>
+</html>
+
+
