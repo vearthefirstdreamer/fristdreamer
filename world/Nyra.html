@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyra</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(to right, #1a1a1a, #141414);
+        }
+
+            header h1 {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            header p {
+                max-width: 600px;
+                margin: 0 auto;
+                color: #ccc;
+            }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .profile {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+
+        .portrait {
+            flex: 1 1 250px;
+            background: #0d0d0d;
+            border-radius: 10px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .portrait img {
+                max-width: 100%;
+                max-height: 100%;
+                border-radius: 10px;
+            }
+
+        .bio {
+            flex: 2 1 400px;
+        }
+
+            .bio h2 {
+                margin-top: 0;
+                color: #e0e0e0;
+            }
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .fact {
+            background: #111;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+            .fact span {
+                display: block;
+                font-size: 0.9rem;
+                color: #aaa;
+            }
+
+            .fact strong {
+                display: block;
+                margin-top: 0.3rem;
+                font-size: 1.1rem;
+                color: #fff;
+            }
+
+        section {
+            margin-top: 2rem;
+        }
+
+        h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+</head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vear (Kor) — Character Profile | The Odyssey of the Dreamer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Small page-specific helpers (reuses your global palette) */
+        .crumb {
+            display: inline-block;
+            margin: 10px 0 6px;
+            color: var(--muted);
+            text-decoration: none
+        }
+
+            .crumb:hover {
+                color: var(--accent)
+            }
+
+        .facts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 0;
+            margin: 10px 0 0
+        }
+
+            .facts li {
+                list-style: none;
+                background: var(--panel-2);
+                border: 1px solid var(--border);
+                border-radius: 10px;
+                padding: 8px 10px
+            }
+
+        .chips {
+            margin-top: 8px
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="brand">
+            <div class="glyph" aria-hidden="true"></div>
+            <div>
+                <div class="muted smallcaps">The Kor Cycle</div>
+                <strong>Vear-The Odyssey of the Dreamer</strong>
+            </div>
+        </div>
+        <nav>
+            <a href="../index.html#home">Home</a>
+            <a href="../index.html#characters">Characters</a>
+            <a href="../index.html#world">Worlds</a>
+            <a href="../index.html#artifacts">Artifacts</a>
+            <a href="../index.html#time_ships">Temporal Vessals</a>
+            <a href="../index.html#timeline">Timeline</a>
+            <a href="../index.html#Temporal Law">Rule of Intent</a>
+            <a href="../index.html#comments">Comments</a>
+        </nav>
+    </header>
+
+    <section>
+        
+        <div class="hero" style="padding-top:28px">
+            <h1>Nyra</h1>
+            <p class="muted">
+                Nyra is a tidally locked world bound to a red star, split between molten fire 
+                and eternal ice, where only a narrow band of twilight offers any chance for life to endure.
+            </p>
+        </div>
+    </section>
+
+    <main>
+
+        <div class="profile">
+            <div class="portrait">
+                <img src="../images/Nyra.png" alt="Nyra" />
+            </div>
+            <div class="bio">
+                <h2>Description</h2>
+                <p>
+                    Status: Tidally locked
+                </p>
+                <p>
+                    Classification: Ribbon World
+                </p>
+                <p>
+                    Sun: Red Dwarf
+                </p>
+                <p>
+                    Moon: none
+                </p>
+                <p>
+                    Nyra is a world forever bound to its red star, locked in an eternal embrace that allows no dawn and no dusk—only
+                    permanence. One hemisphere faces the star without reprieve, its surface reduced to oceans of molten stone, fractured
+                    continents glowing with slow-moving rivers of fire beneath a sky stained crimson by constant solar fury. The opposite
+                    side lies in endless darkness, a frozen realm where temperatures never rise, where mountains of black ice and crystal
+                    frost stand silent beneath a starless void.
+                </p>
+                <p>
+                    Between these extremes lies Nyra’s only refuge: a narrow, unbroken band of twilight circling the planet like a scar of 
+                    fragile balance. Here, heat and cold wage a ceaseless but measured struggle, giving rise to turbulent winds, vast storms, 
+                    and fleeting pockets of stability. It is within this dim, perpetual dusk—neither fully day nor night—that liquid water may 
+                    persist, and where life, stubborn and adaptive, might cling to existence against all odds.
+                </p>
+            </div>
+        </div>
+
+        <section>
+            <div class="portrait">
+                <img src="../images/Hope.png" alt="The Ark" />
+            </div>
+            <h3>The Ark Above Nyra</h3>
+            <p>
+                Hope is a colossal interstellar vessel under construction in orbit above Nyra. Unfinished yet already immense, its skeletal frame
+                is bound to a vast lattice of superstructure—girders and support beams stretching outward like veins of steel cast against the void.
+                It is neither station nor city, but the foundation of a ship built for survival.
+            </p>
+            <p>
+                Scattered lights glimmer along its surface. Men and women in pressure suits move across exposed beams, their torches flaring as welders
+                scatter sparks into the darkness. They are dwarfed by the enormity of the vessel, yet their labor gives it purpose—survivors building not
+                for conquest or expansion, but for endurance.
+            </p>
+            <p>
+                Hope was conceived as an answer to inevitability. Nyra is not a permanent refuge. In one hundred and fifty years, Nyros will sweep close
+                to Aethera once more, and its solar flares will scour the planet clean. No shelter or adaptation can withstand that fire. Survival demands
+                departure.
+            </p>
+            <p>
+                Designed to carry an entire people beyond a dying sky, Hope’s unfinished ribs stretch for kilometers, each beam a promise of motion yet to
+                come. Even in its skeletal state, it stands as both monument and warning—a testament to desperation, memory, and resolve. Its construction
+                will span fifty years.
+            </p>
+            <p>
+                When completed, Hope will rise not as an escape from the past, but as the means by which it endures.
+            </p>
+            </p>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            © 2025 Nick Yost · The Kor Cycle
+        </footer>
+</body>
+</html>
