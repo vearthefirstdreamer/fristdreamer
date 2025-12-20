@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyra</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(to right, #1a1a1a, #141414);
+        }
+
+            header h1 {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            header p {
+                max-width: 600px;
+                margin: 0 auto;
+                color: #ccc;
+            }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .profile {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+
+        .portrait {
+            flex: 1 1 250px;
+            background: #0d0d0d;
+            border-radius: 10px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .portrait img {
+                max-width: 100%;
+                max-height: 100%;
+                border-radius: 10px;
+            }
+
+        .bio {
+            flex: 2 1 400px;
+        }
+
+            .bio h2 {
+                margin-top: 0;
+                color: #e0e0e0;
+            }
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .fact {
+            background: #111;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+            .fact span {
+                display: block;
+                font-size: 0.9rem;
+                color: #aaa;
+            }
+
+            .fact strong {
+                display: block;
+                margin-top: 0.3rem;
+                font-size: 1.1rem;
+                color: #fff;
+            }
+
+        section {
+            margin-top: 2rem;
+        }
+
+        h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+</head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Terafna </title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Small page-specific helpers (reuses your global palette) */
+        .crumb {
+            display: inline-block;
+            margin: 10px 0 6px;
+            color: var(--muted);
+            text-decoration: none
+        }
+
+            .crumb:hover {
+                color: var(--accent)
+            }
+
+        .facts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 0;
+            margin: 10px 0 0
+        }
+
+            .facts li {
+                list-style: none;
+                background: var(--panel-2);
+                border: 1px solid var(--border);
+                border-radius: 10px;
+                padding: 8px 10px
+            }
+
+        .chips {
+            margin-top: 8px
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="brand">
+            <div class="glyph" aria-hidden="true"></div>
+            <div>
+                <div class="muted smallcaps">The Kor Cycle</div>
+                <strong>Vear-The Odyssey of the Dreamer</strong>
+            </div>
+        </div>
+        <nav>
+            <a href="../index.html#home">Home</a>
+            <a href="../index.html#characters">Characters</a>
+            <a href="../index.html#world">Worlds</a>
+            <a href="../index.html#artifacts">Artifacts</a>
+            <a href="../index.html#time_ships">Temporal Vessals</a>
+            <a href="../index.html#timeline">Timeline</a>
+            <a href="../index.html#Temporal Law">Rule of Intent</a>
+            <a href="../index.html#comments">Comments</a>
+        </nav>
+    </header>
+
+    <section>
+        
+        <div class="hero" style="padding-top:28px">
+            <h1>Terafna</h1>
+            <p class="muted">
+                A distant world beneath a yellow sun, where living stone shapes mountains, oceans carve deep valleys, 
+                and the ancient Mother Stone births the MoRoc in a cycle older than memory.
+            </p>
+        </div>
+    </section>
+
+    <main>
+
+        <div class="profile">
+            <div class="portrait">
+                <img src="../images/Terafna.png" alt="Nyra" />
+            </div>
+            <div class="bio">
+                <h2>Description</h2>
+                <p>
+                    Status: Tidally locked
+                </p>
+                <p>
+                    Classification: Living World
+                </p>
+                <p>
+                    Sun: Yellow
+                </p>
+                <p>
+                    Moon: 1
+                </p>
+                <p>
+                    Terafna is a remote world beneath a gentle yellow sun, a planet shaped as much by living forces as by time itself. Here,
+                    stone is not inert—mountains rise as if grown rather than formed, and oceans carve valleys that seem to remember their
+                    own creation. At the heart of the world lies the Mother Stone, an ancient presence older than memory, from which the MoRoc—the
+                    Stoneborn—are brought forth in an endless cycle of emergence and return.
+                </p>
+                <p>
+                    The planet’s Living Water gives rise to the MoRaw, the Waterborn, beings shaped by current, tide, and flow, while the living
+                    essence of the land itself breathes life into the MoRem, the Lifeborn, whose cycle is as old as the world’s first dawn. These
+                    births are not acts of will, but of balance—natural rhythms that have endured long before names were spoken.
+                </p>
+                <p>
+                    Terafna is a realm that would feel familiar to those who still remember Earth. Blue skies stretch above landscapes rich with 
+                    flora, and a single moon rises each night to cast its pale light across forests, plains, and stone. It is a world that appears 
+                    tranquil on its surface, yet beneath it pulses a living system—ancient, patient, and profoundly alive.
+                </p>
+            </div>
+        </div>
+
+        <section>
+            <div class="portrait">
+                <img src="../images/Children of Terafna.png" alt="The Ark" />
+            </div>
+            <h3>The Three Children of Terafna</h3>
+            <p>
+                Terafna does not create life by chance.
+            <p>
+            <p>
+                It remembers.
+            <p>
+            <p>
+                From its deepest foundations rises the MoRoc, the Stoneborn—guardians shaped from living rock and time-worn patience. Though their 
+                forms resemble gargoyles of old myth, they are not creatures of wrath. The MoRoc are steady, contemplative beings, born of the Mother 
+                Stone to endure, to anchor, and to remember the long ages of the world. They move rarely, but when they do, mountains listen.
+            </p>
+            <p>
+                SWhere stone yields to flow, the MoRaw are born. The Waterborn emerge from Terafna’s Living Waters, taking shape as living currents given 
+                form and will. They are graceful and ever-changing, embodying motion, renewal, and memory carried forward. The MoRaw do not walk the land—they
+                dance through it, shaping valleys, feeding forests, and carrying the quiet wisdom of rivers that have never stopped moving.
+            </p>
+            <p>
+                From the breath of the land itself arise the MoRem, the Lifeborn. They step free of bark and leaf, revealing forms touched by moss, root, and forest shadow. 
+                Their green eyes hold the stillness of deep woods, and their presence binds the cycles of growth and decay. The MoRem are neither rulers nor servants of 
+                Terafna—they are its voice, walking where the world must be heard.
+            </p>
+            <p>
+                Designed to carry an entire people beyond a dying sky, Hope’s unfinished ribs stretch for kilometers, each beam a promise of motion yet to
+                come. Even in its skeletal state, it stands as both monument and warning—a testament to desperation, memory, and resolve. Its construction
+                will span fifty years.
+            </p>
+            <p>
+                Together, the Stoneborn, Waterborn, and Lifeborn exist not as separate species, but as expressions of a single living world. Their cycles predate written 
+                memory, their balance older than names. As long as Terafna endures beneath its yellow sun and solitary moon, its children will rise—again and again—to 
+                ensure the world remembers itself.
+            </p>
+            </p>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            © 2025 Nick Yost · The Kor Cycle
+        </footer>
+</body>
+</html>
