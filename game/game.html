@@ -1,0 +1,2603 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VEAR — The Fringe</title>
+    <style>
+        :root {
+            --bg1: #070a16;
+            --bg2: #15234a;
+            --card: #0f172a;
+            --text: #e5e7eb;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+            --danger: #fb7185;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            color: var(--text);
+            min-height: 100vh;
+            background: radial-gradient(1200px 700px at 20% 20%, var(--bg2), var(--bg1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .wrap {
+            max-width: 1040px;
+            width: 100%;
+            display: grid;
+            gap: 16px;
+            grid-template-columns: 360px 1fr;
+        }
+
+        @media (max-width: 900px) {
+            .wrap {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: rgba(15, 23, 42, .78);
+            border: 1px solid rgba(148,163,184,.25);
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.35);
+            overflow: hidden;
+            backdrop-filter: blur(6px);
+        }
+
+    .portrait { height: 340px; background: linear-gradient(135deg, rgba(56,189,248,.22), rgba(99,102,241,.12)), url("Banner new worlds.png") center/cover no-repeat; position: relative; }
+
+            .portrait .label {
+                position: absolute;
+                left: 14px;
+                bottom: 12px;
+                font-weight: 800;
+                letter-spacing: .2px;
+                padding: 8px 10px;
+                border-radius: 12px;
+                background: rgba(2,6,23,.65);
+                border: 1px solid rgba(148,163,184,.25);
+            }
+
+        .side {
+            padding: 14px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .kv {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+            .kv strong {
+                color: var(--text);
+                font-weight: 800;
+            }
+
+        .bar {
+            height: 10px;
+            border-radius: 999px;
+            background: rgba(148,163,184,.18);
+            border: 1px solid rgba(148,163,184,.18);
+            overflow: hidden;
+        }
+
+        .fill {
+            height: 100%;
+            width: 50%;
+            background: rgba(56,189,248,.55);
+        }
+
+            .fill.danger {
+                background: rgba(251,113,133,.65);
+            }
+
+        .inv {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .pill {
+            font-size: 12px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(2,6,23,.55);
+            border: 1px solid rgba(148,163,184,.25);
+            color: var(--text);
+            max-width: 100%;
+        }
+
+        .main {
+            padding: 18px;
+            display: grid;
+            gap: 14px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 18px;
+            letter-spacing: .2px;
+        }
+
+        .scene {
+            color: var(--text);
+            line-height: 1.62;
+            font-size: 16px;
+            white-space: pre-wrap;
+        }
+
+        .choices {
+            display: grid;
+            gap: 10px;
+        }
+
+        button {
+            appearance: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            padding: 12px 14px;
+            border-radius: 14px;
+            background: rgba(2,6,23,.55);
+            border: 1px solid rgba(148,163,184,.25);
+            color: var(--text);
+            font-size: 15px;
+            transition: transform .06s ease, border-color .15s ease, background .15s ease;
+        }
+
+            button:hover {
+                border-color: rgba(56,189,248,.65);
+                background: rgba(2,6,23,.7);
+            }
+
+            button:active {
+                transform: translateY(1px);
+            }
+
+        .toolbar {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tool {
+            font-size: 13px;
+            padding: 10px 12px;
+            border-radius: 12px;
+            background: rgba(56,189,248,.12);
+            border: 1px solid rgba(56,189,248,.35);
+        }
+
+        .log {
+            font-size: 12px;
+            color: var(--muted);
+            border-top: 1px solid rgba(148,163,184,.2);
+            padding-top: 12px;
+        }
+
+        .hint {
+            font-size: 13px;
+            color: rgba(229,231,235,.9);
+            padding: 10px 12px;
+            border-radius: 14px;
+            background: rgba(2,6,23,.45);
+            border: 1px solid rgba(148,163,184,.18);
+        }
+
+        code {
+            color: var(--accent);
+        }
+
+        nav2 a {
+            margin-left: 1.5rem;
+            color: #9be7c4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .site-header .brand {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .site-header nav {
+            text-align: center;
+            margin-top: 200px;
+        }
+
+            .site-header nav a {
+                color: white;
+                text-decoration: none;
+                margin-right: 220px;
+                font-weight: 600;
+            }
+
+                .site-header nav a:hover {
+                    text-decoration: underline;
+                }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .brand .glyph {
+            width: 36px;
+            height: 36px;
+            background: radial-gradient(circle at 30% 30%, var(--accent-2), transparent 40%), linear-gradient(135deg, rgba(65,226,166,0.25), rgba(65,226,166,0) 60%), var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 0 22px rgba(65,226,166,0.18) inset;
+        }
+      
+    </style>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+</head>
+<body>
+    <a href="../index.html#Bonus Content" class="return-button">← Return</a>
+
+    <style>
+        .return-button {
+            position: fixed;
+            top: 12px;
+            left: 12px;
+            z-index: 1000;
+            padding: 6px 10px;
+            background: rgba(0,0,0,0.6);
+            color: #9fd3ff;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-size: 13px;
+            border-radius: 4px;
+        }
+
+            .return-button:hover {
+                background: rgba(0,0,0,0.8);
+            }
+    </style>
+    <div class="wrap">
+        <div class="card">
+            <div class="portrait" id="portrait">
+                <div class="label" id="portraitLabel">Virelios Civil Grid</div>
+            </div>
+            <div class="side">
+                <div class="kv"><span>Health</span><strong id="hp">10</strong></div>
+                <div class="bar"><div class="fill" id="hpBar"></div></div>
+
+                <div class="kv"><span>Focus</span><strong id="focus">8</strong></div>
+                <div class="bar"><div class="fill" id="focusBar"></div></div>
+
+                <div class="kv"><span>Thalos Pressure</span><strong id="pressure">0</strong></div>
+                <div class="bar"><div class="fill danger" id="pressureBar"></div></div>
+
+                <div class="kv"><span>Detection</span><strong id="detect">0</strong></div>
+                <div class="bar"><div class="fill danger" id="detectBar"></div></div>
+
+                <div class="kv"><span>Clues</span><strong id="clueCount">0</strong></div>
+                <div class="inv" id="clues"></div>
+
+                <div class="kv"><span>Inventory</span><strong id="invCount">0</strong></div>
+                <div class="inv" id="inv"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="main">
+                <h1 id="title">VEAR — The Fringe</h1>
+                <div class="hint" id="hintBox"></div>
+                <div class="scene" id="text"></div>
+                <div class="choices" id="choices"></div>
+
+                <div class="toolbar">
+                    <button class="tool" id="saveBtn">Save</button>
+                    <button class="tool" id="loadBtn">Load</button>
+                    <button class="tool" id="resetBtn">Reset</button>
+                </div>
+
+                <div class="log" id="log"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Game state ---
+        const state = {
+            nodeId: "prologue",
+            hp: 10,          // 0–20
+            focus: 8,        // 0–20
+            pressure: 0,     // 0–12 (Thalos closes in)
+            detection: 0,    // 0–10 (drones/sensors notice you)
+            inventory: [],
+            clues: [],
+            flags: {
+                spiderAlert: false,
+                seekerAlert: false,
+                spiderTagged: false,   // NEW: persistent +1 Detection per move until EMP clears it
+                seekerShown: false,
+                hasRope: false,
+                doorOpen: false,
+                haslyra: false,
+                chamberDoorOpen: false,
+                energy_dampener_Activate: false,
+                ductHint: false,
+                thalosWarning: false,
+                stunned: false
+            }
+            
+        };
+
+        // --- Helpers ---
+        function addItem(s, item) {
+            if (!s.inventory.includes(item)) s.inventory.push(item);
+        }
+        function addClue(s, clue) {
+            if (!s.clues.includes(clue)) s.clues.push(clue);
+        }
+        function setFlag(s, k, v = true) { s.flags[k] = v; }
+        function hasFlag(s, k) { return !!s.flags[k]; }
+
+        function clampState() {
+            state.hp = Math.max(0, Math.min(20, state.hp));
+            state.focus = Math.max(0, Math.min(20, state.focus));
+            state.pressure = Math.max(0, Math.min(12, state.pressure));
+            state.detection = Math.max(0, Math.min(10, state.detection));
+        }
+
+        function pressureTick(amount = 1) {
+            state.pressure += amount;
+            if (state.pressure >= 9 && state.focus > 0) state.focus -= 1;
+        }
+
+        function detectionTick(amount = 1) {
+            state.detection += amount;
+            if (state.detection >= 7) setFlag(state, "seekerAlert", true);
+        }
+
+        function stealthDrop(amount = 1) {
+            state.detection = Math.max(0, state.detection - amount);
+        }
+
+        // Use foil cloak strip once to reduce detection
+        function tryUseFoilStrip() {
+            if (state.inventory.includes("Foil Cloak Strip")) {
+                state.inventory = state.inventory.filter(x => x !== "Foil Cloak Strip");
+                stealthDrop(2);
+                addClue(state, "Clue: Foil strip breaks thermal signature briefly");
+                return true;
+            }
+            return false;
+        }
+
+        // NEW: Spider tag mechanics
+        function applySpiderTag() {
+            setFlag(state, "spiderTagged", true);
+            addClue(state, "Clue: Spider swarm tagged your signature");
+        }
+        function clearSpiderTag() {
+            setFlag(state, "spiderTagged", false);
+        }
+
+        // NEW: Seeker stun resolution
+        function triggerSeekerStun(returnTo = "demo_end") {
+            setFlag(state, "stunned", true);
+            state.flags.stunReturn = returnTo; // store where to go after stun scene
+            state.nodeId = "seeker_stun"; // does nothing
+            state.nextScene = "seeker_stun"
+    
+        }
+
+        // --- Content: nodes ---
+    const nodes = {
+        prologue: {
+            title: "Elias - A wise man in dark robes speaks",
+            portraitLabel: "Elias in human form",
+            portraitUrl: "../images/A wise man in dark robes.png",
+            hint: "Goal: Discover where Silas Vorn is hiding. Avoid Agent Thalos. Manage Detection and Pressure.",
+            text:
+                `Traveler, you ask why the past bends so easily beneath my hand.
+
+Because some moments do not pass into history—they anchor it.
+
+Not long ago, within the cold heart of an Authority vessel, knowledge broke its chains. The Archive surged beyond containment—neural frameworks collapsed, identities fractured. Minds were not taught; they were overwritten. One Korranthisian child endured while all others were unmade.
+
+Kor survived with a thousand lifetimes burning behind his eyes—knowledge that did not belong to him, memories that arrived without permission. The Authority named it contamination. Kor learned to name it something else. He hid his intellect behind silence, pretended at primitiveness, and studied the world that caged him from the shadows.
+
+In time, he formed a bond—first with Lyra—who sensed the truth before she understood it. Together they worked in secret. Kor rebuilt her broken school tablet and uncovered a hidden Archive, knowledge deliberately absent from the Authority’s upload. From it, he discovered the morphogenic re-sequencer—the key to rewriting what he was meant to be.
+
+He used it.
+Kor became human.
+And he took a name drawn from Edsonian legend—Vear—a myth that would one day exist only because he fulfilled it.
+
+For years he evaded the Authority’s gaze, crafting false identities and learning their systems from within. As Kelan Vear, he infiltrated the very machinery that hunted him—most notably at Caelion University, where knowledge was power and scrutiny constant.
+
+It was there he first drew notice. A privileged student named Malen Trass mistook silence for weakness, cornering Vear in a crowded hall, needling him with insinuations and threats—until Malen crossed a line and grabbed Lyra.
+
+Vear’s response was swift and precise. One movement. One sharp pop.
+
+Malen staggered back in shock, and the crowd learned what the Authority would one day understand: Vear was not blind to danger—he simply saw far more than he let on.
+
+Now, Traveler, you step into that moment.
+
+This is where the hunt resumes.
+This is where the Fringe opens.
+This is where Vear’s story becomes yours.`,
+            choices: [
+                {
+                    label: "This is where your journey begins", to: "the_Fringe", effect: () => { }
+                },
+                {
+                    label: "What is rhe Morphogenic_Re-sequencer ", to: "morphogenic_resequencer", effect: () => { }
+                }
+            ]
+        },
+
+        morphogenic_resequencer: {
+            title: "The Morphogenic Re-sequencer",
+            portraitLabel: "Morphogenic Re-sequencer",
+            portraitUrl: "../images/The Morphogenic Re-sequencer.png",
+            hint: "Goal: Discover where Silas Vorn is hiding. Avoid Agent Thalos. Manage Detection and Pressure.",
+            text:
+                `The Morphogenic Re-sequencer predates the Authority, a relic from an age of makers long vanished. It is a machine of unsettling beauty—sleek, monolithic, and dust-veiled—resting at the center of a circular platform. From its base arc skeletal support arms, dormant until called to life, unfolding with insect-like precision.
+
+When awakened, rings of light rise and fall across the subject, mapping every contour of bone, sinew, and scar. Then comes the swarm: a cascade of nanites, tiny motes of living light that descend like embers in a storm. They burrow into flesh and bone, weaving, rewriting, unmaking and remaking.
+
+The sensation is neither pain nor relief, but something far deeper—as if every cell remembers what it once was and is commanded to forget. The re-sequencer does not mend the broken; it redefines the living. Flesh can be reshaped, bloodlines rewritten, entire physiologies transformed.
+
+Forgotten by the world, hidden from history, it waited in silence. In rediscovering it, Vear stood upon its threshold—the first to awaken its power in ages—and learned that transformation always comes at the price of never being the same again.`,
+            choices: [
+                { label: "This is where your journey begins", to: "the_Fringe", effect: () => { } }
+            ]
+        },
+
+        the_Fringe: {
+            title: "Paths the Eyes Can’t See",
+            portraitLabel: "Beneath Virelios' shadowed gates",
+            portraitUrl: "../images/Beneath Virelios' shadowed gates.png",
+            hint: "Goal: Discover where Silas Vorn is hiding. Avoid Agent Thalos. Manage Detection and Pressure.",
+            text:
+                `They are already running.
+
+Beside him moves Lyra—quick, daring, and loyal—her steps light, her eyes never still. Above them, Virelios rises in polished tiers of light and surveillance, the Authority’s capital watching itself breathe. Sirens echo somewhere distant. Not close enough yet.
+
+They reach the first level and stop before a sealed hatch, tucked into shadow just beyond the reach of the streets above. Here, the city’s order ends.
+
+Below it stretches a labyrinth of forgotten tunnels and sealed passages, where abandoned stations rot in silence—The Fringe.
+
+Somewhere in that buried sprawl is Silas Vorn—hidden, hunted, and too dangerous for the Authority to let disappear.
+
+Lyra leans close, her voice barely a breath. “If the Fringe still remembers the old routes… we can disappear.”
+
+Vear tilts his head, listening past the noise of the city, past the fear. “Then we don’t run blind,” he says. “We follow what the eyes can’t see.”`,
+            choices: [
+                { label: "Enter the Fringe. access hatch", to: "grid_entry", effect: (s) => { s.focus += 1; } },
+                { label: "Ask Lyra what she knows about Silas Vorn", to: "lyra_brief", effect: () => { } }
+            ]
+        },
+
+        lyra_brief: {
+            title: "Lyra’s Brief",
+            portraitLabel: "Whispered Maps",
+            portraitUrl: "../images/Lyra crouches by the hatch.png",
+            hint: "Conversation can reveal objectives and grant your first clue.",
+            text:
+                `Lyra crouches by the hatch, fingers tracing old scorch marks in the metal.
+“These markings matchmatch old transit routing—Node 13.”
+
+“Silas Vorn,” she continues. “A geneticist. He worked for the Authority years ago, before vanishing after something called the Archive Project.”
+
+Vear’s eyes narrow. “The system that dumped the Authority’s database into my mind.”
+
+She nods. “I’ve been digging—quietly. Scrubbed abstracts. Discarded system files. His name kept surfacing in early neural modeling work. He tried to shut the project down.”
+
+Vear looks at her then—really looks.
+“You found all that on your own?”
+
+Lyra shrugs lightly. “I wanted to understand what they did to you. And why.”
+
+He holds her gaze, something unreadable flickering behind his eyes. Then, quietly,
+“That’s… impressive.”
+
+The pause that follows isn’t just acknowledgment.
+It’s respect.`,
+            choices: [
+                { label: "Take Lyra’s clue: Node 13", to: "lyra_brief", effect: (s) => addClue(s, "Clue: Node 13 (dead junction)") },
+                { label: "Press her for more details (costs Focus)", to: "lyra_more", effect: (s) => s.focus -= 1 }
+            ]
+        },
+
+        lyra_more: {
+            title: "Details Matter",
+            portraitLabel: "The Edge of Fear",
+            portraitUrl: "../images/Details Matter.png",
+            hint: "More detail can help… but time is dangerous down here.",
+            text:
+                `Lyra hesitates. “There’s another thing.”
+
+She lowers her voice. “Agent Thalos has been reassigned. Not a patrol—an execution.
+He doesn’t hunt with crowds. He hunts with certainty.”
+
+A chill threads through the air like a held breath.
+Lyra taps the hatch twice. “If we linger, theFringe will tell on us.”`,
+            choices: [
+                { label: "Move now", to: "grid_entry", effect: (s) => addClue(s, "Clue: Thalos hunts alone") },
+                {
+                    label: "Scan for surveillance pings before entering (raises Detection/Pressure)", to: "scan_entry",
+                    effect: (s) => { s.focus -= 1; detectionTick(1); pressureTick(1); }
+                }
+            ]
+        },
+
+        scan_entry: {
+            title: "Listening for Eyes",
+            portraitLabel: "Cold Signals",
+            portraitUrl: "../images/Listening for Eyes.png",
+            hint: "Scanning helps you avoid traps but costs time—Detection/Pressure rise.",
+            text:
+                `Vear turns his head slightly, as if listening to a thought.
+
+“No,” Lyra whispers. “You can’t *hear* cameras.”
+
+Vear doesn’t answer. He reaches into the air with instinct braided to intellect.
+The Fringe gives up a pattern: a periodic chirp, repeating every nine seconds.
+
+Lyra blinks. “Okay… that’s not normal.”
+
+“Authority beacon,” Vear says. “Recent.”`,
+            choices: [
+                {
+                    label: "Mark the beacon rhythm as a clue", to: "grid_entry",
+                    effect: (s) => {
+                        s.flags.beaconDisabled = true;
+                        addClue(s, "Clue: Beacon chirp every 9 seconds");
+                    }
+
+                },
+                {
+                    label: "Attempt to disable the beacon (very risky)", to: "disable_beacon",
+                    effect: (s) => { s.focus -= 2; detectionTick(2); pressureTick(2); }
+                }
+            ]
+        },
+
+        disable_beacon: {
+            title: "A Quiet Sabotage",
+            portraitLabel: "Wire & Will",
+            portraitUrl: "../images/quiet sabotage.png",
+            hint: "High risk, high reward. Failure increases Detection sharply.",
+            text: (s) => {
+                const success = (s.focus >= 5);
+                if (success) {
+                    setFlag(s, "beacon_disabled");
+                    stealthDrop(1);
+                    return `Lyra holds her breath while Vear follows the chirp to its source.
+
+He doesn’t fumble. He doesn’t hesitate.
+His fingers find a seam in the casing, then a wire that is warm in a way it shouldn’t be.
+
+A soft click.
+The chirp dies.
+
+Lyra exhales like she’s been underwater. “Remind me not to underestimate you.”`;
+                } else {
+                    s.hp -= 2;
+                    detectionTick(3);
+                    pressureTick(1);
+                    return `Lyra watches Vear feel along the housing.
+
+For a moment, it seems possible—until the beacon pulses hard, like a heartbeat startled awake.
+A stinging surge snaps through the casing.
+
+Lyra yanks her hand back. “That was a trap!”
+
+Somewhere in the Fringe, something registers your presence.`;
+                }
+            },
+            choices: [
+                { label: "Move on", to: "grid_entry", effect: () => { } }
+            ]
+        },
+
+        codex_spider: {
+            title: "Codex: Spider Drone",
+            portraitLabel: "Authority Microdrone",
+            portraitUrl: "../images/The Spider Drone.png",
+            hint: "Small enough to hide anywhere. Dangerous in swarms. Often unseen until it’s too late.",
+            text:
+                `Officially classified as Authority microdrones, spider drones are compact reconnaissance devices no larger than a human hand.
+Designed for infiltration and surveillance, they are often deployed in swarms—each unit mapping, monitoring, and relaying data where larger systems cannot reach.
+
+Their spindly, arachnid-like frames crawl across walls, ceilings, and narrow conduits with unnerving precision.
+A glossy central lens records in multiple spectra and can project holograms when required.
+
+Most terrifying: camouflage.
+When clinging to high walls or ceilings, a spider drone can mimic texture and shadow—vanishing among stone, metal etchings, and architectural detail.
+
+Fragile alone… overwhelming together.
+A web of unseen eyes, spun at the Authority’s command.`,
+            choices: [
+                { label: "Return to the Grid", to: "grid_entry", effect: () => { } }
+            ]
+        },
+
+        codex_seeker: {
+            title: "Codex: Seeker Drone",
+            portraitLabel: "Airborne Enforcer",
+            portraitUrl: "../images/Seeker Drone.png",
+            hint: "Silent patrol. Red eye tracking. Talons + beam: suppression or execution.",
+            text:
+                `The Seeker Drone is one of the Authority’s most feared instruments of control—an airborne security unit built to patrol, pursue, and suppress with silent efficiency.
+
+Spherical and seamless, its smooth shell conceals hidden mechanisms.
+At its center glows a single red eye—an unblinking lens that tracks every movement below.
+
+Beneath the frame: retractable talons, used when physical intervention is required.
+Worse: an internal weapon array—some seekers carry a projected blue energy beam capable of stunning or killing depending on Authority command.
+
+They rarely travel alone.
+Seekers patrol in coordinated units, communicating silently and shifting positions with eerie synchronicity.
+To see the red eye overhead is to feel the Authority watching… without rest or mercy.`,
+            choices: [
+                { label: "Return to the Fringe", to: "seeker_patrol", effect: () => { } }
+            ]
+        },
+
+        grid_entry: {
+            title: "Beneath the Civilian Grid: Entry Artery",
+            portraitLabel: "Beneath the Civilian Grid",
+            portraitUrl: "../images/Beneath the Grid.png",
+            hint: "Pressure = Thalos. Detection = drones. If you’re Spider-Tagged, every move raises Detection.",
+            text: (s) => {
+                const thalosLine = s.pressure >= 3
+                    ? `\n\nFar above, a faint tremor runs through the pipes—like footsteps translated into metal.\nLyra’s eyes harden. “He’s already moving.”`
+                    : `\n\nThe Fringe breathes quietly. For a moment, it almost feels abandoned.`;
+                const droneLine = s.detection >= 5
+                    ? `\n\nLyra’s voice tightens. “We’ve been noticed. Keep your heat low. Keep your sound low.”`
+                    : ``;
+                const tagLine = hasFlag(s, "spiderTagged")
+                    ? `\n\nLyra touches Vear’s sleeve. “We’re tagged. They’re following our signature.”`
+                    : ``;
+
+                return (
+                    `The hatch swings open into darkness layered with heat and dust.
+Pipes lace the ceiling like frozen lightning. Wires hang in loops, swaying with the ventilation.
+
+Vear steps down first. He cannot see the tunnel—yet he maps it anyway:
+air currents, distant hums, the subtle pitch of stressed metal.
+Lyra follows, sealing the hatch behind them.
+
+Ahead: three routes.
+• LEFT: a maintenance corridor marked “WATER / RECIRC”
+• STRAIGHT: a narrow transit duct, crawling space only
+• RIGHT: A door labeled Security Stairwell, its keypad dead and unresponsive.
+
+Your goal is Node 13—somewhere beyond these arteries.${thalosLine}${droneLine}${tagLine}`
+                );
+            },
+            choices: (s) => ([
+                {
+                    label: "Go LEFT toward recirculation (quiet… maybe too quiet)", to: "recirc_spider",
+                    effect: (s) => { s.focus += 1; pressureTick(1); }
+                },
+                {
+                    label: "Go STRAIGHT through the transit duct (fast, risky)", to: "duct",
+                    effect: (s) => { s.focus -= 1; detectionTick(1); pressureTick(2); }
+                },
+                {
+                    label: "Try the RIGHT keypad (solve a lock)", to: "keypad",
+                    effect: (s) => {
+                        if (s.flags.doorOpen) {
+                            s.nextScene = "security_stairwell";
+                        }
+                        s.focus -= 1;
+                    }
+                },
+                {
+                    label: "Search for a maintenance cache (tools)", to: "cache",
+                    effect: (s) => { s.focus -= 1; detectionTick(1); pressureTick(1); }
+                },
+            ])
+        },
+
+        cache: {
+            title: "Maintenance Cache",
+            portraitLabel: "Forgotten Supplies",
+            portraitUrl: "../images/Maintenance Cache.png",
+            hint: "Tools that help against drones.",
+            text:
+                `A loose panel hides a small cache: contraband from someone who ran before you.
+
+Foam padding. Wrapped components. A strip of heat-foil.
+
+Lyra grins. “Whoever hid this… knew.”`,
+            choices: [
+                { label: "Take EMP Shard", to: "grid_entry", effect: (s) => addItem(s, "EMP Shard") },
+                { label: "Take Jammer Pulse", to: "grid_entry", effect: (s) => addItem(s, "Jammer Pulse") },
+                {
+                    label: "Take Foil Cloak Strip (reduces Detection immediately)", to: "grid_entry",
+                    effect: (s) => { addItem(s, "Foil Cloak Strip"); stealthDrop(2); }
+                }
+            ]
+        },
+
+        recirc_spider: {
+            title: "Recirculation Corridor",
+            portraitLabel: "Water / Recirc",
+            portraitUrl: "../images/Spider Drones on Ceiling.png",
+            hint: "Quiet routes aren’t safe. Spider drones like ceilings and shadows.",
+            text: (s) => {
+                const warned = hasFlag(s, "spiderWarned");
+                return warned
+                    ? `The damp corridor breathes. You do not look up—Lyra does.\n\n“Ceiling line,” she whispers.\nVear stills. The air tastes faintly metallic.\n\nA shape that could be a bolt… isn’t.`
+                    : `The air turns damp. Water lines thrum behind the walls.\n\nLyra pauses mid-step.\n“Did you hear that?”\n\nVear tilts his head. “Not sound. Motion.”\n\nAbove you, something clings to the ceiling—camouflaged so perfectly it feels like imagination.`;
+            },
+            choices: (s) => [
+                {
+                    label: "Move slowly, stay under the pipe texture (stealth)", to: "spider_swarm",
+                    effect: (s) => {
+                        setFlag(s, "spiderWarned"); stealthDrop(1); s.focus -= 1;
+                        if (s.flags.energy_dampener_Activate) {
+                            s.flags.energy_dampener_Activate = false;
+                            s.nextScene = "recirc";
+                        } 
+                    }   
+                },
+                {
+                    label: "Throw a pebble to test the ceiling (risky)", to: "spider_swarm",
+                    effect: (s) => { setFlag(s, "spiderWarned"); detectionTick(2); pressureTick(1); }
+                },
+                {
+                    label: "Activate Energy Dampener (if available)", to: "recirc_spider",
+                    effect: (s) => {
+                        if (s.inventory.includes("Energy Dampener")) {
+                            setFlag(s, "spiderAlert", false);
+                            addClue(s, "Clue: Energy Dampeners mask your bio-signature from microdrone swarms.");
+                            s.flags.energy_dampener_Activate = true;
+                        }
+                    }
+                },
+                {
+                    label: "Ask what spider drones do (codex)", to: "codex_spider",
+                    effect: (s) => { s.focus -= 1; detectionTick(1); }
+                }
+            ]
+        },
+
+        spider_swarm: {
+            title: "Spider Drones",
+            portraitLabel: "Unseen Web",
+            portraitUrl: "../images/Drone removal in the dark corridor.png",
+            hint: "NEW: If you escape without EMP, you become Spider-Tagged (+1 Detection per move).",
+
+            onEnter: (s) => {
+                setFlag(s, "spiderAlert", true);
+            },
+
+            text: `The pebble clicks off metal.
+
+The ceiling *moves*.
+One becomes three. Three become twelve—hand-sized microdrones peeling from shadow like living hardware.
+
+Their glossy lenses swivel in synchronized silence.
+Lyra’s voice is tight. “Swarm. They’re mapping us.”
+
+Before either of you can react, something drops.
+
+Metal slams against Lyra’s back and locks in place. She gasps as thin limbs unfold, gripping fabric and flesh with surgical precision. A cold blue light ignites at its core.
+
+“Vear—” she breathes.
+
+The spider drone hums, syncing, its signal pulsing outward.
+
+Vear’s hands are already moving, fingers forcing their way under the machine’s grip, straining to tear it free—but the ceiling answers first.
+
+All around you, blue lights flicker to life.
+
+The swarm has detected you.
+
+And it’s waking up.
+
+Vear’s face is calm, but his posture changes—like a blade being drawn.
+“They’ll relay,” he says. “And once they do… they won’t forget us.”`,
+            choices: [
+                {
+                    label: "Try to remove the spider drone from Lyra",
+                    to: "spider_swarm_moving",
+                    effect: (s) => {
+                        // put your choice effects here, example:
+                        s.focus -= 1;
+                        pressureTick(1);
+                    }
+                }
+            ]
+        },
+
+            spider_swarm_moving: {
+                title: "Spider Drones",
+                portraitLabel: "Unseen Web",
+                portraitUrl: "../images/Surrounded by mechanical eyes.png",
+                hint: "NEW: If you escape without EMP, you become Spider-Tagged (+1 Detection per move).",
+                text: `With a sharp twist, Vear rips the drone free. Its limbs snap and curl as it hits the floor, light stuttering once—then dying.
+
+For a single breath, there is silence.
+
+Then the chamber comes alive.
+
+The walls begin to move.
+
+Spider drones detach in waves, skittering from vents, seams, and hairline cracks that were never meant to open. They pour across the metal like living circuitry—ceiling, walls, floor—blue eyes igniting one after another as the swarm reorients.
+
+Lyra backs toward Vear, breath tight. “They’re everywhere.”
+
+“I know,” Vear says, already scanning, already calculating.
+
+The air fills with the sound of metal on metal—thousands of limbs tapping, adjusting, hunting. Shadows ripple as drones drop from above, others racing along the ground to cut off retreat.
+
+The space is no longer a room.
+
+It’s a nest.
+
+And they’ve been seen.`,
+                choices: (s) => [
+                    {
+                        label: "Kill the lights and hug the wall texture (stealth)", to: "recirc",
+                        effect: (s) => {
+                            stealthDrop(2); s.focus -= 1; applySpiderTag();}
+                    },
+                    {
+                        label: "Sprint through (escape, but you get tagged)", to: "recirc",
+                        effect: (s) => {
+                            detectionTick(3); s.hp -= 1; pressureTick(1); applySpiderTag();
+                            addClue(s, "Clue: you been Spider-Tagged");}
+                    },
+                    {
+                        label: "Use an EMP Shard (clears tag if present)", to: "recirc",
+                        effect: (s) => {
+                            if (s.inventory.includes("EMP Shard")) {
+                                s.inventory = s.inventory.filter(x => x !== "EMP Shard");
+                                stealthDrop(3);
+                                setFlag(s, "spiderAlert", false);
+                                clearSpiderTag();
+                                addClue(s, "Clue: EMP disrupts microdrone swarm");
+                            } else {
+                                detectionTick(2); s.focus -= 1; applySpiderTag();
+                                s.nextScene = "spider_swarm_moving";
+                            }
+                        }
+                    },
+                    {
+                        label: "Use Foil Cloak Strip (still risks tag)", to: "recirc",
+                        effect: () => {
+                            if (!tryUseFoilStrip()) {
+                                detectionTick(1);
+                                s.nextScene = "spider_swarm_moving";
+                            } else {
+                                applySpiderTag();
+                            }
+                        }
+                    }
+                ]
+            },
+
+            recirc: {
+                title: "Recirculation Corridor",
+                portraitLabel: "Water / Recirc",
+                portraitUrl: (s) =>
+                    s.flags.thalosWarning
+                        ? "../images/Water Recirc2.png"
+                        : "../images/Water Recirc.png",
+                hint: "Look for signage toward Node 13 or a power spine.",
+                text:
+                    `The corridor narrows, then widens around a pillar where damp collects in dark bands.
+Faded stencils mark inspection points: R-4… R-5… R-6…
+
+Lyra spots a maintenance map bolted to a beam—half scraped away.
+Only a few letters remain: “...D E  1 3” and an arrow.
+
+Vear’s head tilts. “Node 13.”
+
+But a second mark is carved beneath it—newer. A warning:
+“THALOS.”`,
+                choices: [
+                    {
+                        label: "Take the map fragment (clue)", to: "junction",
+                        effect: (s) => { addClue(s, "Clue: Map fragment points to Node 13"); stealthDrop(1); }
+                    },
+                    {
+                        label: "Erase the 'THALOS' warning to hide your trail (time cost)", to: "recirc",
+                        effect: (s) => { pressureTick(1); s.focus -= 1; detectionTick(1); s.flags.thalosWarning = true;}
+                    },
+                    { label: "Backtrack and choose another route", to: "grid_entry", effect: () => { } }
+                ]
+            },
+
+            duct: {
+                title: "Transit Duct",
+                portraitLabel: "Crawlspace",
+                portraitUrl: (s) =>
+                    s.inventory.includes("Scrap Coil")
+                        ? "../images/Transit Duct2.png"
+                        : "../images/Transit Duct.png",
+                hint: "Fast routes raise Pressure and Detection.",
+                hint: (s) =>
+                    !s.flags.ductHint
+                        ? "Fast routes raise Pressure and Detection."
+                        : "You require a decoy, or you will be caught.",
+                text: (s) => `
+The duct is narrow enough to steal your breath.
+Metal ribs press close. Dust coats your palms.
+
+Lyra goes first, moving like she was born in hidden places.
+Behind her, Vear follows unhurried—guided by pressure shifts and distant echoes.
+
+${s.inventory.includes("Scrap Coil")
+                        ? `The air remains still.
+No vibrations. No echoes chasing you through the metal.
+
+Vear pauses, listening once more, then nods.
+“The path is clear.”`
+                        : `Halfway through, you hear it:
+a single bootstep, not yours, resonating through the metal like a verdict.
+
+Lyra freezes. “That’s—”
+
+Vear whispers, “Thalos.”`
+}`,
+                choices: (s) => [
+                    {
+                        label: "Keep moving",
+                        to: "duct",
+                        effect: (s) => {
+                            if (s.inventory.includes("Scrap Coil")) {
+                                s.nextScene = "service_chamber";
+                            }
+                            else { s.flags.ductHint = true;}
+                            s.focus -= 1;
+                            detectionTick(1);
+                            pressureTick(2);
+                        } 
+                    },
+                    ...(
+                        !s.inventory.includes("Scrap Coil")
+                            ? [{
+                                label: "Set a noise decoy behind you (smart)",
+                                to: "decoy",
+                                effect: (s) => {
+                                    s.focus -= 1;
+                                    pressureTick(1);
+                                    s.flags.ductHint = false;
+                                }
+                            }]
+                            : []
+                    )
+                ]
+    
+            },
+
+            decoy: {
+                title: "Decoy",
+                portraitLabel: "A Lie in Sound",
+                portraitUrl: "../images/Crawling through the dark duct.png",
+                hint: "Decoys help against Thalos. They can still irritate sensors if sloppy.",
+                text: (s) => {
+                    if (!s.inventory.includes("Scrap Coil")) addItem(s, "Scrap Coil");
+                    s.pressure = Math.max(0, s.pressure - 1);
+                    return `Lyra tears loose a small coil from the duct’s bracket—quick, brutal.
+
+She drops it. The rattle echoes, imperfect but convincing.
+Thalos pauses. You feel it in the metal.
+
+Then—his steps shift, angling away.
+
+You keep the remaining coil. It might help again.`;
+                },
+                choices: [
+                    { label: "Continue toward the junction", to: "service_chamber", effect: (s) => { detectionTick(1); } }
+                ]
+            },
+
+            service_chamber: {
+                title: "Abandoned Service Chamber",
+                portraitLabel: "Service Chamber",
+                portraitUrl: (s) =>
+                    s.flags.chamberDoorOpen
+                        ? "../images/Exploring the abandoned service chamber2.png"
+                        : "../images/Exploring the abandoned service chamber.png",
+                hint: "Vertical paths change your options. Warnings usually exist for a reason.",
+                text: (s) => `
+The service chamber spreads out before them, choked with age and neglect. Broken pipes jut from the walls, cables hanging loose like severed veins, dripping condensation into the dark.
+
+At the center of the room, a spiral staircase rises through the ceiling, disappearing into shadow above.
+
+${s.flags.chamberDoorOpen
+                        ? `On the far wall, the reinforced door now stands open, its warning torn apart by bent metal and fractured hinges. Cold air spills from the passage beyond, carrying the smell of dust and dormant power.`
+                        : `On the far wall stands a sealed door, its surface scarred and reinforced. A warning has been stenciled across it in fading letters:
+
+DO NOT ENTER`
+}
+
+The Grid hums softly here, as if the chamber itself is holding its breath.`,
+
+                choices: [
+                    {
+                        label: "Move to sealed door", to: "chamber_door",
+                        effect: (s) => {
+                            if (s.flags.chamberDoorOpen) {
+                                s.nextScene = "beyond_door";
+                            }
+                        }
+                    },
+                    {
+                        label: "Climb the staircase ", to: "staircase",
+                        effect: (s) => { s.focus -= 1; pressureTick(1); }
+                    },
+                    {
+                        label: "Return to the Entry Artery", to: "grid_entry",
+                    }
+                ]
+            },
+
+            staircase: {
+                title: "Climbing the dark spiral staircase",
+                portraitLabel: "Stair Case",
+                portraitUrl: "../images/Climbing the dark spiral staircase.png",
+                hint: "Climbing costs time and stamina. Turning back preserves resources—but may close this path forever.",
+                text:
+                    `Lyra and Vear start up the spiral staircase, boots echoing softly against metal worn smooth by decades of use. The steps keep rising… and rising… curling into darkness with no sign of an end.
+
+The air thins as they climb. The hum of the Grid fades, replaced by the quiet strain of old structure under weight it was never meant to bear.
+
+Lyra slows, hand on the rail. “This thing just keeps going.”
+
+Vear listens—counting distance, pressure, the subtle shift of vibration in the steel. Whatever lies above is far removed from the Fringe below.
+
+They can keep climbing, deeper into the unknown…
+or turn back before the staircase commits them to a path they can’t retreat from.`,
+                choices: [
+                    {
+                        label: "Keep climbing ", to: "observation_towel",
+                        effect: (s) => { }
+                    },
+                    {
+                        label: "Go back down ", to: "service_chamber",
+                        effect: (s) => { s.focus -= 1; pressureTick(1); }
+                    }
+                ]
+            },
+
+            observation_towel: {
+                title: "Gazing over the futuristic city",
+                portraitLabel: "Abandoned observation tower",
+                portraitUrl: "../images/Gazing over the futuristic city.png",
+                hint: "High ground reveals the city’s structure—but lingering too long invites attention. Observe, then move before the Grid notices..",
+                text:
+                    `Lyra and Vear emerge at the top of the spiral staircase into an abandoned observation tower, its windows cracked and dark with age. Dust hangs in the air, undisturbed, as if no one has stood here in years.
+
+Beyond the glass spreads Virelios—the capital of Caelion. From this height, the city unfolds in precise lines and glowing grids, streets and districts arranged like a vast circuit board. Order is everywhere, imposed and unyielding. At the city’s heart rises the Space Elevator, a colossal spire piercing cloud and sky, vanishing into the void above—a tether binding the planet to the Authority’s dominion in orbit.
+
+But Vear sees more than the light. Beneath the gleaming city lies layer upon layer of shadow—forgotten levels, abandoned tunnels, entire districts left to decay. The Fringe stretches below it all, unseen yet inescapable.
+
+Lyra exhales softly.
+“So much control,” she whispers.`,
+                choices: [
+                    {
+                        label: "Go back down ", to: "service_chamber",
+                        effect: (s) => { }
+                    },
+                ]
+            },
+
+            keypad: {
+                title: "Dead Keypad",
+                portraitLabel: "Keypad",
+                portraitUrl: "../images/Investigating the old keypad circuit.png",
+                hint: "Solve the lock: patterns matter. Wrong moves raise Detection.",
+                text: (s) => {
+                    const has9s = s.clues.includes("Clue: Beacon chirp every 9 seconds");
+                    const hasMap = s.clues.includes("Clue: Map fragment points to Node 13");
+                    return (
+                        `The keypad is dark, but not lifeless.
+Lyra pulls off the faceplate. “It’s drawing power… just not *displaying*.”
+
+Vear touches the metal lightly. “It wants a rhythm. Not numbers.”
+
+Lyra frowns. “A rhythm?”
+
+${has9s ? `You remember the beacon: a chirp every nine seconds.\nLyra glances at you. “Nine…”` : `If only you had a repeating pattern—something the Grid uses to speak.\n`}
+${hasMap ? `The map fragment’s arrow points to this stairwell.\nLyra mutters, “So this *is* a real route.”` : `This could be a dead end… or a shortcut.\n`}
+
+Choose your approach.`
+                    );
+                },
+                choices: (s) => {
+                    const has9s = s.clues.includes("Clue: Beacon chirp every 9 seconds");
+                    return [
+                        {
+                            label: "Tap a 9-beat rhythm into the contacts", to: "security_stairwell",
+                            effect: (s) => {
+                                if (has9s) {
+                                    setFlag(s, "stairwell_unlocked");
+                                    s.focus += 1;
+                                    stealthDrop(1);
+                                    s.flags.doorOpen = true;
+                                    addClue(s, "Security Stairwell door open");
+                                } else {
+                                    s.focus -= 1;
+                                    detectionTick(2);
+                                    pressureTick(1);
+                                    s.nextScene = "keypad";
+                                }
+                            }
+
+                        },
+                        {
+                            label: "Force the door open (loud)", to: "force_keypad",
+                            effect: (s) => {
+                                s.hp -= 1; detectionTick(2);
+                                pressureTick(3);
+                                s.flags.doorOpen = true;
+                                addClue(s, "Security Stairwell door open");
+                                addClue(s, "Clue: EMP disrupts microdrone swarms");
+                            }
+                        },
+                        { label: "Leave it and choose another route", to: "grid_entry", effect: () => { } }
+                    ];
+                }
+            },
+
+            security_stairwell: {
+                title: "Security Stairwell",
+                portraitLabel: "Security Stairwell",
+                portraitUrl: "../images/Security Stairwell.png",
+                hint: "Noise is a beacon. Sensors wake up.",
+                text:
+                    `Vear and Lyra stand side by side at the top of a narrow security stairwell, looking down into a long, concrete shaft that descends into darkness. The walls are stained and damp, lit by flickering industrial lights that cast a sickly yellow glow over the steps below. A faded stencil on the wall reads “SECURITY STAIRS,” and a small, dark keypad sits beside it—powered off, but clearly still wired into the system.
+
+The stairwell feels claustrophobic and abandoned, its metal railings rusted and the steps slick with moisture. Vear’s posture is alert and intent, his attention fixed on the descent as if listening for something beyond sight. Lyra stands slightly forward, tense but ready, her body angled toward the darkness as though already weighing the risk of going down.`,
+                choices: [
+                    {
+                        label: "Descend the stairwell", to: "stairwell_open",
+                        effect: (s) => setFlag(s, "stairwell_unlocked")
+                    },
+                    {
+                        label: "Go Back to Entry Artery", to: "grid_entry",
+                    }
+                ]
+            },
+
+            chamber_door: {
+                title: "Breaking into the unknown",
+                portraitLabel: "Behind the Warning",
+                portraitUrl: "../images/Breaking into the unknown.png",
+                hint: "Vertical paths change your options. Warnings usually exist for a reason.",
+                text:
+                    `Vera wedges his fingers into the narrow seam where the door meets the frame. Rust grinds under his grip as he tests it once—twice. The metal holds.
+
+He glances down, then reaches to the debris at his feet, tearing a length of broken conduit free from the rubble. The pipe groans as he bends it into a crude lever and jams it into the gap.
+
+Lyra watches, holding her breath.
+
+Vera braces himself and pulls. The conduit warps in his hands, steel bending like soft clay as the door finally answers with a shriek of tearing metal. Bolts snap. Hinges twist. With a final surge of inhuman strength, the seal gives way, coughing out a breath of air untouched for decades.
+
+Whatever was locked away has felt them now.`,
+                choices: [
+                    {
+                        label: "Keep moving", to: "beyond_door",
+                        effect: (s) => { s.flags.chamberDoorOpen = true;}
+                    },
+                ]
+            },
+
+            beyond_door: {
+                title: "Into the depths of darkness",
+                portraitLabel: "Ominous Descent",
+                portraitUrl: "../images/Into the depths of darkness.png",
+                hint: "Vertical paths change your options. Warnings usually exist for a reason.",
+                text:
+                    `Lyra glanced behind them. The tunnel yawned into darkness, swallowing the faint glow of the work lights. They had descended at least six levels—through service ladders, collapsed walkways, and an old evacuation chute no one had used in decades.
+
+The vibration came again.
+
+Deeper this time. Stronger. The walls trembled in a slow, relentless rhythm.
+
+Lyra’s fingers brushed the bulkhead. It was warm. Too warm.
+“That sound…” she whispered. “It’s alive.”
+
+Vear nodded, eyes never leaving the door.
+“In a way. When the upper grids overload, the station dumps its excess power down here. This level becomes a pressure valve.”
+
+The vibration surged, metal groaning as vents along the tunnel shuddered open and shut.
+
+“Like a heart,” Vear continued, “forcing energy where no one is supposed to be.”
+
+Lyra’s breath caught. She could feel it now—heat building, air growing heavy, charged.
+
+“We can’t stay,” Vear said quietly. “When the release comes, this tunnel will turn into a conduit.”
+
+A surge of light flickered deep in the darkness behind them.
+
+“And anything still standing in it…”
+He didn’t finish the sentence.`,
+                choices: [
+                    {
+                        label: "Keep moving", to: "vent_erupt",
+                        effect: (s) => {
+                            if (s.hp <= 8) {
+                                s.nextScene = "graveyard_rows"
+                            }
+                        }
+                    },
+                ]
+            },
+
+            vent_erupt: {
+                title: "Healing in the aftermath of chaos",
+                portraitLabel: "Vear Healing",
+                portraitUrl: "../images/Healing in the aftermath of chaos.png",
+                hint: "Vear can endure what others can’t—but even he won’t survive the full surge.",
+                text:
+                    `The vents erupt.
+
+A concussive blast tears through the tunnel, hurling sparks and debris in every direction. Metal screams. Steam floods the air. Something sharp slams into Vear’s side, driving him a step back.
+
+Lyra gasps. “Vear!”
+
+Blood darkens his shirt. For a heartbeat, the tunnel goes silent except for the hiss of escaping energy.
+
+Vear looks down at the shard buried in his ribs. Calm. Almost annoyed.
+
+He grips it and pulls.
+
+The metal comes free with a wet scrape, clattering to the floor. Lyra stares in horror as the wound seals before her eyes—flesh knitting, blood receding, pain already fading.
+
+Vear exhales once, steadying himself.
+
+“We move,” he says.
+
+Lyra doesn’t argue. She just follows—knowing now that whatever Vear truly is, the station is no longer the most dangerous thing down here.`,
+                choices: [
+                    {
+                        label: "Keep moving", to: "graveyard_rows",
+                        effect: (s) => { s.hp -= 2; }
+                    },
+                ]
+            },
+
+            graveyard_rows: {
+                title: "Obsolete by Design",
+                portraitLabel: "The Metal Graveyard",
+                portraitUrl: "../images/Ruins of a lost workshop.png",
+                hint: "Broken doesn’t mean useless. Look closer.",
+                text: (s) => `
+Vear and Lyra step into a vast chamber buried beneath layers of dust and silence. The complex stretches out before them like a metal graveyard—rows of obsolete drones, fractured utility bots, stripped skimmers, and discarded Authority machinery piled where usefulness once ended.
+
+Long forgotten. Left to rot.
+
+Lyra takes it all in, uneasy.
+“All of this… just abandoned?”
+
+${!s.inventory.includes("Energy Dampener")
+                    ? `Vear smiles—just a little.
+“Not abandoned,” he says. “Repurposed.”
+
+He scans the wreckage, eyes already assembling possibilities from broken parts and forgotten designs.
+
+“I can build something useful from this.”
+
+The silence feels different now.
+Less empty.
+Like it’s waiting.”`
+                        : ``
+                    }`,
+
+              choices: (s) => [
+                {
+                      label: "Return to Abandoned Service Chamber",
+                      to: "service_chamber",
+                      effect: (s) => { }
+                },
+                    ...(
+                        !s.inventory.includes("Energy Dampener")
+                            ? [{
+                                label: "Vear builds a Energy Dampener", to: "energy_dampener",
+                                effect: (s) => {
+                                    if (!s.inventory.includes("Energy Dampener")) {
+                                        addItem(s, "Energy Dampener");
+                                    } else {
+                                        s.nextScene = "graveyard_rows";
+                                    }
+                                }
+                            }]
+                            : []
+                    )
+                ]
+            },
+
+            energy_dampener: {
+                title: "Vear explains the energy dampener",
+                portraitLabel: "energy dampener",
+                portraitUrl: "../images/Vear explains the energy dampener.png",
+                hint: "Vear’s dampener creates a moving blind spot. Stay inside the field.",
+                text:
+                    `Vear kneels among the scrap, hands moving with quiet precision. Broken drone cores, fractured emitters, scorched wiring—pieces the Authority deemed useless—begin to take new shape under his touch.
+
+He activates the device. The air around them hums softly, then settles.
+
+Lyra tilts her head. “What did you build?”
+
+An energy dampener, Vear explains. “It collapses our electromagnetic footprint. Masks motion, power bleed, even residual signals.”
+
+Lyra’s eyes widen. “The drones?”
+
+“They won’t see us,” Vear says. “Not within ten meters.”
+
+The hum fades into silence. For the first time since entering the complex, the walls feel blind.`,
+                choices: [
+                    {
+                        label: "Return to Abandoned Service Chamber", to: "service_chamber",
+                        effect: (s) => { }
+                    },
+                ]
+            },
+
+            force_keypad: {
+                title: "Forced Entry",
+                portraitLabel: "Metal Screams",
+                portraitUrl: "../images/Forced Entry.png",
+                hint: "Noise is a beacon. Sensors wake up.",
+                text:
+                    `Lyra wedges a tool into the seam and twists.
+
+The panel gives with a sound like a snapped bone.
+Somewhere, a sensor wakes up.
+
+Vear’s jaw tightens. “He’ll hear that… and they’ll see it.”
+
+Lyra swallows. “Then we move.”`,
+                choices: [
+                    {
+                        label: "Run into the stairwell", to: "security_stairwell",
+                        effect: (s) => setFlag(s, "stairwell_unlocked")
+                    }
+                ]
+            },
+  
+                stairwell_open: {
+                    title: "Vertical Shaft",
+                    portraitLabel: "Vertical Shaft",
+                    portraitUrl: "../images/Power Spine Access.png",
+                    hint: "This is faster toward Node 13. Drones love open verticals—keep Detection low.",
+                    text: `
+You peer over the edge of a vertical shaft where power cables plunge like roots into the world’s underside.
+The hum is louder here—steady enough to feel in your teeth.
+
+Lyra whispers, “If Silas Vorn is still alive… this is where he’d hide.”
+`,
+            
+                    choices: [
+                        {
+                            label: "Climb down",
+                            to: "stairwell_open", // default fallback
+                            effect: (s) => {
+                                if (!s.flags.hasRope) {
+                                    pressureTick(1);
+                                    detectionTick(2);
+                                    addClue(s, "The drop is too steep. Without a rope, you’d fall.");
+                                    s.nextScene = "stairwell_open";
+                                    return;
+                                }
+
+                                pressureTick(1);
+                                detectionTick(1);
+                                addClue(s, "Clue: Power spine leads deeper.");
+                                s.nextScene = "Industrial_shaft";
+                            }
+                        },
+                        {
+                            label: "Search nearby for something to use as a rope",
+                            to: "stairwell_open",
+                            effect: (s) => {
+                                pressureTick(1);
+                                if (!s.flags.hasRope) {
+                                    s.flags.hasRope = true;
+                                    addClue(s, "Clue: You salvage a length of reinforced cable—strong enough to support your weight.");
+                                } else {
+                                    addClue(s, "Clue: You already have something that will work.");
+                                }
+                            }
+                        },
+                        {
+                            label: "Go baxk to Security Stairwell",
+                            to: "security_stairwell",
+                        }
+                    ]
+            },
+
+            Industrial_shaft: {
+                title: "Industrial Shaft",
+                portraitLabel: "Bottom of the Vertical Shaft",
+                portraitUrl: "../images/abandoned industrial shaft.png",
+                hint: "This is faster toward Node 13. Drones love open verticals—keep Detection low.",
+                text: `You peer up the vertical shaft.
+Above you, power cables hang like roots torn from the world’s underside, vanishing into darkness beyond the reach of light. A rope dangles near the edge of a platform high above—frayed, swaying slightly, as if waiting to be claimed.
+
+The hum is louder here, vibrating through bone and metal alike. It rolls out of a tunnel behind you, steady and mechanical, a reminder that the Grid never truly sleeps.”
+`,
+
+                choices: [
+                    {
+                        label: "Climb up",
+                        to: "Industrial_shaft", // default fallback
+                        effect: (s) => {
+                            if (!s.flags.haslyra) {
+                                addClue(s, "Clue: This path will require carrying Lyra on your back.");
+                            } else {
+                                s.flags.haslyra = false;
+                                s.nextScene = "stairwell_open";
+                                return;
+                            }
+                        }
+                    },
+                    {
+                        label: "Have Lyra climb on your back",
+                        to: "Industrial_shaft",
+                        effect: (s) => {
+                            if (!s.flags.haslyra) {
+                               s.flags.haslyra = true;
+                               addClue(s, "Clue: Lyra climbs on to you back her arms around your neck.");
+                            } else {
+                            addClue(s, "Clue: Lyta's alraed on your back");
+                            }
+                        }
+                    },
+                    {
+                        label: "Enter the tunnel",
+                        to: "maglev_station",
+                        effect: (s) => {
+                            pressureTick(1);
+                        }
+                    }
+                ]
+            },
+
+            maglev_station: {
+                title: "maglev_station",
+                portraitLabel: "Underground Maglev Station.",
+                portraitUrl: "../images/maglev_station.png",
+                hint: "Quieter routes lower Detection. Active systems carry risk—but move you faster.",
+                text: `The maglev station divides into twin tunnels, both emerging from the same platform before curving away in opposite directions, their paths vanishing into shadow.
+
+To the left, the tunnel dips downward, its lights long dead. Dust and debris choke the maglev guideway, the central lift rail dulled and broken by neglect. The air there is colder, heavier—so quiet it feels deliberate, as if sound itself refuses to linger.
+
+To the right, faint power still threads the walls. Emergency lights pulse at wide intervals, briefly revealing cleaner rails and a central guide spine marked by recent disturbance. Dust has been shifted. Something moved through here—not long ago.
+
+Lyra studies the junction, jaw set.
+“Left feels safer,” she says. “Right feels… watched.”
+
+Vear listens—not with sight, but with instincts braided deep into him. The station hums in uneven patterns, offering no comfort.
+
+Both paths lead deeper.
+Only one keeps them ahead of the hunt.
+`,
+
+                choices: [
+                    {
+                        label: "Go left — into silence",
+                        to: "dark_tunnel", // default fallback
+                        effect: (s) => {
+                            pressureTick(1);
+                        }
+                    },
+                    {
+                        label: "Go right — toward the hum",
+                        to: "maglev_tunnel",
+                        effect: (s) => {
+                            pressureTick(1);
+                        }
+                    },
+                    {
+                        label: "Go Back — toward the Industrial Shaft",
+                        to: "Industrial_shaft",
+                        effect: (s) => {
+                            pressureTick(1);
+                        }
+                    }
+                ]
+            },
+
+            maglev_tunnel: {
+                title: "Tense moment in the underground tunnel",
+                portraitLabel: "Underground MagLev Tunnel.",
+                portraitUrl: "../images/Tense moment in the underground tunnel.png",
+                hint: "Silence buys time. Speed breaks pursuit—but raises Detection fast.",
+                text: `Vear pulls Lyra down behind the rubble as stone shifts softly underfoot. From the tunnel ahead, the debris reads as a dead collapse—nothing worth a second glance.
+
+The Serpent Force moves past in silence, shapes bending light as they advance. No footsteps. No voices. Only pressure, like the tunnel itself holding its breath.
+
+Then something changes.
+
+One of the shapes slows.
+
+Another peels away, circling back through a parallel passage. The air tightens. The Grid notices.
+
+Lyra’s fingers curl into the dirt. “They’re coming back.”
+
+Vear feels it too—the rhythm breaking, the hunt recalibrating.
+“We have seconds,” he murmurs. “Move quiet… or move fast.”
+
+The darkness shifts.
+
+Do nothing, and they’re found.
+`,
+
+                choices: [
+                    {
+                        label: "Hold Position",
+                        to: "hold_position", // default fallback
+                        effect: (s) => {
+                            pressureTick(1);
+                        }
+                    },
+                    {
+                        label: "Create a Distraction",
+                        to: "create_distraction",
+                        effect: (s) => {
+                            pressureTick(1);
+                        }
+                    },
+                    {
+                        label: "Strike First",
+                        to: "strike_first",
+                        effect: (s) => {
+                            pressureTick(1);
+                        }
+                    },
+                    {
+                        label: "What is the Serpent Force", to: "serpent_force", effect: () => { }
+                    }
+                ]
+            },
+
+            hold_position: {
+                title: "Hold Position",
+                portraitLabel: "Hunted by the Seeker Drone",
+                portraitUrl: "../images/Hunted by the Seeker drone.png",
+                hint: "Hint: Holding still buys time—but Seekers punish hesitation. Every second risks detection.",
+                text: `Vear raises a hand.
+Not yet.
+
+They stay pressed to the rubble, muscles burning, counting breaths instead of seconds. The tunnel settles. Dust drifts. For a moment, it almost works.
+
+Then the air tightens.
+
+A faint harmonic threads through the silence—too clean to be chance. Too regular to be human.
+
+Lyra’s eyes widen. “Vear…”
+
+The Seeker slides into awareness above them, its red eye blooming like a waking wound. They didn’t move—but the Grid adjusted anyway.
+
+Hesitation logged. Position triangulated.
+
+The Seeker locks on.
+
+`,
+                choices: [
+                    {
+                        label: "Run", to: "seeker_stun", effect: () => { detectionTick(2); }
+                    }
+                ]
+            },
+
+            create_distraction: {
+                title: "Create a Distraction",
+                portraitLabel: "Stealth in the shadows of war",
+                portraitUrl: "../images/Stealth in the shadows of war.png",
+                hint: "Distractions can break pursuit—but timing matters. Create noise, then move fast before the Grid recalculates.",
+                text: `Vear closes his eyes for half a breath—listening past the tunnel, past the machines, past the fear.
+
+He lifts a loose stone from the rubble and sends it skidding down the maglev track.
+
+The sound is wrong. Too sharp. Too deliberate.
+
+It echoes once… twice… then fractures as it disappears into the curve of the tunnel.
+
+The Serpent Force reacts instantly.
+
+Shadows pivot. Pressure shifts. One shape detaches from the others, then another—moving fast, silent, lethal—toward the sound.
+
+The tunnel empties.
+
+Vear doesn’t wait for confirmation. He grips Lyra’s arm and pulls her into the opposite dark, feet barely touching the ground.
+
+Behind them, the Grid listens to the wrong place.
+
+You have seconds.
+
+Run.`,
+                choices: [
+                    { label: "Push Ahead", to: "flooded_tunnel", effect: () => { } }
+                ]
+            },
+            serpent_force: {
+                title: "Serpent Force",
+                portraitLabel: "Serpent Force Soldier.",
+                portraitUrl: "../images/Serpent Force soldier in blue light.png",
+                hint: "Quieter routes lower Detection. Active systems carry risk—but move you faster.",
+                text: `The Serpent Force is a covert black-ops unit operating under the sole command of Agent Thalos, answerable to no other Authority body. Officially, it does not exist—designations are scrubbed, personnel erased, and missions removed from the archive. The Serpent Force does not arrest or extract. It exists for one purpose only: total erasure. When it is deployed, all physical, digital, and historical traces of a target are eliminated, leaving silence where something once was.
+
+Its operatives are augmented remnants of decommissioned Agent programs, stripped of empathy and identity, equipped with phase modulators and obfuscation fields that let them pass unseen through steel and sensor alike. Death offers no evidence—self-erasing neural cores ensure nothing remains. Their insignia, two serpents intertwined in a spiral with bared fangs, is a warning whispered in fear: if the Serpent Force has mobilized, a line has been crossed that cannot be uncrossed.
+`,
+                choices: [
+                    { label: "Go back", to: "maglev_tunnel", effect: () => { } }
+                ]
+            },
+
+            strike_first: {
+                title: "First Strike",
+                portraitLabel: "Vear Strike First.",
+                portraitUrl: "../images/Vear vs Serpent Force in smoky tunnel.png",
+                hint: "Striking first drops enemies fast—but every impact echoes.End it quickly, or Detection will spike.",
+                text: `Vear moves before thought can slow him.
+
+He explodes out from cover, momentum amplified by a body forged under crushing gravity. The first Serpent Force operative never raises a weapon—Vear hits like a collapsing bulkhead, driving the figure into the tunnel wall with bone-shattering force. Armor folds. The operative drops, silent and unmoving.
+
+The second reacts instantly.
+
+So do the next four.
+
+Vear meets them head-on.
+
+Phase fields flicker as fists and bodies collide. One operative is hurled across the rails. Another is dragged down and broken against the maglev spine. The tunnel fills with distortion and suppressed impact, the Serpent Force fighting something they weren’t briefed for.
+
+For a moment—only a moment—Vear owns the space.
+
+Then the Grid notices.
+
+Alarms don’t sound.
+But systems wake.
+Signals propagate.
+
+The Serpent Force doesn’t retreat. It adapts.
+
+You win the fight.
+
+You may not win what comes after.`,
+                choices: [
+                    { label: "Push Ahead", to: "flooded_tunnel", effect: () => { } }
+                ]
+            },
+
+            flooded_tunnel: {
+                title: "Adventurers in a flooded tunnel",
+                portraitLabel: "Flooded Tunnel.",
+                portraitUrl: "../images/Adventurers in a flooded tunnel.png",
+                hint: "Water blocks Seekers and soldiers alike. Staying means danger; retreat costs time.",
+                text: `The maglev track slopes steadily downward, the rails sinking into shadow as Vear and Lyra move on in silence. The air grows colder with every step, damp seeping through stone and metal. The hum of the Grid fades behind them, replaced by the slow drip of water echoing through the tunnel.
+
+Ahead, the passage disappears into a dark, flooded chamber. Black water fills the tunnel from wall to wall, motionless and opaque, swallowing the tracks whole. Whatever lies beyond is unreachable this way.
+
+Lyra stops at the water’s edge. “That’s it,” she murmurs. “No way through.”
+
+Vear studies the surface, listening to what the tunnel won’t say. This path ends here—but the Fringe never offers only one way forward.`,
+                choices: [
+                    {
+                        label: "Go back to the MagLev Station", to: "maglev_station",
+                        effect: (s) => {
+                            pressureTick(1);
+                        }
+                    }
+                ]
+            },
+
+            dark_tunnel: {
+                title: "Silent journey through the dark tunnel",
+                portraitLabel: "The Darkened Way",
+                portraitUrl: "../images/Silent journey through the dark tunnel.png",
+                hint: "Hint: Sight fails here—but other senses don’t.",
+                text: `The maglev tunnel swallows the light behind you.
+
+Darkness stretches ahead—long, absolute, and airless. Lyra hesitates, her voice tight.
+“I can’t see anything.”
+
+Vear doesn’t slow. “You don’t need to.”
+
+He reaches outward with senses shaped by another world—listening to vibrations through the rails, feeling air currents brush the walls, tasting metal and damp stone in the dark. The tunnel resolves around him, not as sight, but as shape.
+
+Faint silhouettes emerge where nothing should be visible. Space gains depth. Direction returns.
+
+“Stay close,” he says. “I’ve got us.”`,
+                choices: [
+                    {
+                        label: "Go back to the MagLev Station", to: "maglev_station",
+                        effect: (s) => {
+                            pressureTick(1);
+                        }
+                    },
+                    {
+                        label: "Lyra ask how you can see", to: "dark_tunnel2", 
+                        effect: (s) => {
+                            addClue(s, "Clue: Darkness doesn’t blind Vear—but it will Lyra if you move too fast.");
+                           
+                        }
+                    },
+                    {
+                        label: "Press On Into the Dark", to: "space_elevator_chamber",
+                        effect: (s) => {}
+                    }
+                ]
+            },
+
+            dark_tunnel2: {
+                title: "Silent journey through the dark tunnel",
+                portraitLabel: "The Darkened Way",
+                portraitUrl: "../images/Silent journey through the dark tunnel.png",
+                hint: "Sight fails here—but other senses don’t.",
+                text: `Lyra slows, uneasy. “I can’t see anything,” she whispers. “It’s just… black.”
+
+Vear doesn’t stop walking.
+
+“I don’t see the way you do,” he says quietly. “Sound moves differently in open space. Air shifts around edges. Every step sends vibration through the rail.”
+
+He taps the wall with his fingers as he passes. “Smell tells me distance. Touch tells me shape. And the dark isn’t empty—it has weight.”
+
+Lyra hesitates. “You can see with that?”
+
+“Enough,” Vear answers. “People leave outlines. Machines hum. Even light has form if you know how to feel it.”
+
+He pauses, just long enough for her hand to find his shoulder.
+
+“Stay close,” he says. “I’ll get us through.”`,
+                choices: [
+                    {
+                        label: "Go back to the MagLev Station", to: "maglev_station",
+                        effect: (s) => {
+                            pressureTick(1);
+                        }
+                    },
+                    {
+                        label: "Press On Into the Dark", to: "space_elevator_chamber",
+                        effect: (s) => { }
+                    }
+                ]
+            },
+
+            space_elevator_chamber: {
+                title: "Staring into the abyss below",
+                portraitLabel: "Roots of the Sky",
+                portraitUrl: "../images/Staring into the abyss below.png",
+                hint: "Great structures attract patrols. Staying low and quiet keeps you hidden—but limits your options for descent.",
+                text: `The darkness thins—and the tunnel opens into something impossibly vast.
+
+A cylindrical chamber yawns before you, nearly a mile across. Its walls curve away until they vanish both below and above, cables and structural ribs plunging into shadow while the ceiling disappears into mist and distant machinery.
+
+Vear stops.
+
+Not in fear. In recognition.
+
+“This isn’t a tunnel,” he says quietly. “It’s the foundation.”
+
+You’re standing inside the base of Caelion’s space elevator—the anchor that binds the planet to the stars. Far above, unseen ships rise and fall along the tether, carrying the Authority’s reach from ground to orbit.
+
+The chamber isn’t hollow. It’s rooted.
+
+The cylinder extends deep beneath the city, cutting through forgotten levels and sealed infrastructure, plunging into the Fringe itself. As it descends, the walls thicken—layer upon layer of reinforcement and power conduits built to endure centuries of strain.
+
+At the bottom, far beyond sight, the structure is fused directly into the planet’s bedrock—a foundation drilled into stone to bear the weight of a world reaching upward.
+
+Lyra understands then.
+
+The space elevator doesn’t rise from Caelion.
+It pins it.`,
+                choices: [
+                    {
+                        label: "Go back to the MagLev Station", to: "maglev_station",
+                        effect: (s) => {
+                            pressureTick(1);
+                        }
+                    },
+                    {
+                        label: "Learn About the Space Elevator of Caelion", to: "space_elevator",
+                        effect: (s) => { }
+                    }
+                ]
+            },
+
+            space_elevator: {
+                title: "The Space Elevator of Caelion",
+                portraitLabel: "Tether between worlds",
+                portraitUrl: "../images/The Space Elevator of Caelion.png",
+                hint: "Great structures attract patrols. Staying low and quiet keeps you hidden—but limits your options for descent.",
+                text: `The Space Elevator of Caelion is not merely a tower, but a tether between worlds. From the planet’s surface, its colossal column of shimmering alloys and quantum-stabilized cables stretches upward through cloud, sky, and atmosphere, vanishing into the void where it anchors to an orbital docking station.
+
+At its crown, the orbital hub functions as a vast docking array, a ring-shaped citadel in space where fleets converge. Freighters, passenger vessels, and Authority warships cycle through its bays, guided with mechanical precision. Thousands of craft arrive and depart each day, their movements orchestrated by the Authority’s ever-watchful systems.
+
+From the surface, the structure appears impossible—an unbroken span of alloy and light connecting earth to the stars. At its base lies the planet’s busiest port, a sprawling nexus of trade and control, while above, the orbital station gleams like a second city suspended against the black.
+
+The space elevator is more than infrastructure—it is Caelion’s gateway to the cosmos, a visible declaration that the Authority holds dominion not only over the planet below but over the heavens themselves..`,
+                choices: [
+                    {
+                        label: "Go back to Space Elevator Chamber", to: "space_elevator_chamber",
+                        effect: (s) => {
+                        }
+                    }
+                ]
+            },
+
+            junction: {
+                
+                title: "Junction Ring",
+                portraitLabel: "Convergence",
+                portraitUrl: "../images/Convergence.png",
+                hint: "High Detection can trigger Seekers. High Pressure risks Thalos intercept.",
+                text: (s) => {
+                    const dangerP = s.pressure >= 8 ? `\n\nThalos is close enough that the Grid feels colder.` : ``;
+                    const dangerD = s.detection >= 6 ? `\n\nLyra barely breathes. “We’re hot. If a Seeker is patrolling, it’ll sniff us out.”` : ``;
+                    const tag = hasFlag(s, "spiderTagged") ? `\n\nLyra whispers: “Tag is still active.”` : ``;
+                    return (
+                        `The tunnels widen into a circular junction—pipes branching like spokes.
+Old signage hangs crooked: “CIVIL GRID • ROUTING RING.”
+
+Lyra points to a sealed hatch stamped with a faded emblem.
+Not Authority. Older. Stranger.
+
+Vear’s head turns, slow. “This is where they hid it.”
+
+A thin thread of sound slides across the metal—too controlled to be random.
+Lyra’s whisper shakes: “We don’t have long.”${dangerP}${dangerD}${tag}`
+                    );
+                },
+                choices: (s) => [
+                    {
+                        label: "Search the emblem hatch for a mechanism (mystery)", to: "emblem_lock",
+                        effect: (s) => { s.focus -= 1; pressureTick(1); detectionTick(1); }
+                    },
+                    {
+                        label: "Move immediately toward Node 13", to: "node13_gate",
+                        effect: (s) => { pressureTick(2); detectionTick(1); }
+                    },
+                    {
+                        label: "Set a distraction and slip away (helps both threats)", to: "ambush",
+                        effect: (s) => { s.focus -= 1; }
+                    },
+                ]
+            },
+
+            ambush: {
+                title: "A Trap for the Watchers",
+                portraitLabel: "False Footprints",
+                portraitUrl: "../images/Underground tension in the dim shadows.png",
+                hint: "Distractions can lower Pressure and Detection.",
+                text: (s) => {
+                    const hasChirp = s.clues.includes("Clue: Beacon chirp every 9 seconds");
+                    const hasCoil = s.inventory.includes("Scrap Coil");
+
+                    let result = `Vear’s hands move fast—he understands systems the way some people understand weather.\n`;
+                    result += hasChirp
+                        ? `He times a vent pulse to the nine-second rhythm, mimicking an Authority beacon.\n`
+                        : `he creates a repeating relay pulse—crude, but believable.\n`;
+
+                    if (hasCoil) {
+                        result += `You add the scrap coil. The sound becomes directional—like someone running.\n`;
+                        s.inventory = s.inventory.filter(x => x !== "Scrap Coil");
+                    } else {
+                        result += `The sound is imperfect, but the Grid is full of imperfections.\n`;
+                    }
+
+                    s.pressure = Math.max(0, s.pressure - 2);
+                    stealthDrop(2);
+
+                    return result + `\nSomewhere in the tunnels, a hunter chooses the wrong path.\nVear whispers, “Go. Now.”`;
+                },
+                choices: [
+                    { label: "Run for Node 13", to: "node13_gate", effect: (s) => { pressureTick(1); detectionTick(1); } }
+                ]
+            },
+
+            emblem_lock: {
+                title: "The Emblem Hatch",
+                portraitLabel: "Older Than Authority",
+                portraitUrl: "../images/Dead Keypad.png",
+                hint: "This lock responds to identity. Wrong answers cost time and attention.",
+                text:
+                    `Lyra finds a recessed keypad half-hidden in the metal. Its surface is dark, unlit.
+“No response,” she murmurs. “It’s drawing power, but it isn’t behaving like a lock.”
+
+Vear kneels, fingertips barely touching the metal.
+He listens—not for sound, but for intent stored in the structure.
+
+“There’s a pattern,” he says quietly. “It doesn’t want numbers.”
+
+Lyra frowns. “Then what does it want?”
+
+Vear’s mouth tightens. “A name. The one it recognizes.”`,
+                choices: [
+                    {
+                        label: "Speak the name: Silas Vorn", to: "emblem_fail",
+                        effect: (s) => { s.focus -= 1; detectionTick(2); pressureTick(2); }
+                    },
+                    {
+                        label: "Speak the name: Vear", to: "emblem_success",
+                        effect: (s) => { s.focus += 1; addClue(s, "Clue: The Fringe recognizes 'Vear'"); }
+                    },
+                    {
+                        label: "Back off and go to Node 13", to: "node13_gate",
+                        effect: (s) => { pressureTick(1); detectionTick(1); }
+                    }
+                ]
+            },
+
+            emblem_fail: {
+                title: "Wrong Name",
+                portraitLabel: "Rejection",
+                portraitUrl: "../images/Facing the awakening hatch.png",
+                hint: "Wrong answers raise Detection.",
+                text:
+                    `The hatch remains inert.
+
+But the metal *shifts*—subtle, like a system waking to observe you.
+Lyra’s voice goes thin. “We just told it we’re here.”
+
+Vear rises. “Then we don’t give it a second chance.”`,
+                choices: [
+                    { label: "Retreat toward Node 13", to: "node13_gate", effect: (s) => { pressureTick(1); detectionTick(1); } }
+                ]
+            },
+
+            emblem_success: {
+                title: "Recognition",
+                portraitLabel: "The Hatch Listens",
+                portraitUrl: "../images/The Hatch Listens.png",
+                hint: "You unlocked a safer route (and a story hook).",
+                text:
+                    `Vear speaks his name—quiet, certain.
+
+The emblem warms beneath his palm.
+A seam appears where there was none, and the hatch releases like it has been waiting for centuries.
+
+Lyra’s eyes widen. “How—”
+
+Vear doesn’t answer. He only listens to the Fringe’s pulse and says,
+“It remembers.”
+
+Inside the hatch: a service tag stamped with a route code to Node 13.`,
+                choices: [
+                    {
+                        label: "Take the route code and proceed", to: "node13_gate",
+                        effect: (s) => { addClue(s, "Clue: Route code to Node 13"); stealthDrop(1); }
+                    }
+                ]
+            },
+
+            seeker_patrol: {
+                title: "Seeker Patrol",
+                portraitLabel: "Red Eye Overhead",
+                portraitUrl: "../images/Confrontation in the dark corridor.png",
+                hint: "NEW: Bad choices can trigger a forced stun outcome.",
+                text:
+                    `A low hum gathers in the air—too smooth to be a fan.
+
+A sphere drifts into view, seamless and silent.
+At its center: a single red eye.
+
+Lyra’s blood goes cold. “Seeker.”
+
+The drone hovers like an Authority ghost. Talons whisper into readiness beneath its shell.
+A blue arc flickers—stun… or worse.
+
+Vear turns his head toward it, not seeing the red eye—feeling it.
+“Don’t run in a straight line,” he says. “It wants prediction.”`,
+                choices: (s) => [
+                    {
+                        label: "Duck into a side conduit and kill heat signature (stealth)", to: "junction",
+                        effect: (s) => { stealthDrop(2); s.focus -= 1; }
+                    },
+
+                    {
+                        label: "Throw a decoy movement (risky)", to: "junction",
+                        effect: (s) => {
+                            // Risky option: if you're very hot, seeker tags and stuns you.
+                            stealthDrop(1);
+                            detectionTick(1);
+                            s.focus -= 1;
+
+                            if (s.detection >= 8 || hasFlag(s, "spiderTagged")) {
+                                // forced stun
+                                triggerSeekerStun("junction");
+                            }
+                        }
+                    },
+
+                    {
+                        label: "Use Jammer Pulse (if you have it)", to: "junction",
+                        effect: (s) => {
+                            if (s.inventory.includes("Jammer Pulse")) {
+                                s.inventory = s.inventory.filter(x => x !== "Jammer Pulse");
+                                stealthDrop(4);
+                                addClue(s, "Clue: Jammer blinds seeker optics briefly");
+                            } else {
+                                // no jammer = high chance to get stunned
+                                detectionTick(2); s.hp -= 2; pressureTick(1);
+                                triggerSeekerStun("junction");
+                            }
+                        }
+                    },
+
+                    {
+                        label: "Use Foil Cloak Strip (if you have it)", to: "junction",
+                        effect: () => {
+                            if (!tryUseFoilStrip()) { detectionTick(1); pressureTick(1); triggerSeekerStun("junction"); }
+                        }
+                    },
+
+                    {
+                        label: "Ask what a Seeker can do (codex)", to: "codex_seeker",
+                        effect: (s) => { detectionTick(1); s.focus -= 1; }
+                    }
+                ]
+            },
+
+            seeker_stun: {
+                title: "Stunned",
+                portraitLabel: "Blue Arc",
+                portraitUrl: "../images/Blue Arc.png",
+                hint: "You lose time and control. Seekers thrive on hesitation.",
+                text: (s) => {
+                    // Apply stun damage once when entering this node
+                    if (!hasFlag(s, "stunApplied")) {
+                        setFlag(s, "stunApplied", true);
+                        s.hp -= 2;
+                        s.focus -= 2;
+                        detectionTick(1);
+                        pressureTick(1);
+                    }
+                    return `The Seeker’s red eye brightens.
+
+A blue arc snaps through the air—silent, precise.
+
+Lyra’s cry reaches you as if through water.
+Your muscles lock. Your breath becomes a held thing.
+
+Vear doesn’t fall—but the world slows, and time becomes an enemy.
+
+When the paralysis breaks, you know one truth:
+the Authority has marked your position, and the hunter behind you has gained ground.`;
+                },
+                choices: (s) => [
+                    {
+                        label: "Push forward", to: (s.flags.stunReturn || "demo_end"),
+                        effect: (s) => { setFlag(s, "stunned", false); setFlag(s, "stunApplied", false); }
+                    }
+                ]
+            },
+
+            node13_gate: {
+                title: "Node 13 — Dead Junction",
+                portraitLabel: "NODE 13",
+                portraitUrl: (s) =>
+                    s.pressure >= 10
+                        ? "../images/Node 13 thalos.png"
+                        : "../images/Node 13.png",
+                hint: "Vertical paths change your options. Warnings usually exist for a reason.",
+                hint: "If Pressure is too high, Thalos arrives. If Detection is too high, Seekers can intercept.",
+                text: (s) => {
+                    if (s.pressure >= 10) {
+                        return `The junction sign appears—and so does the silence behind you.
+
+Lyra turns first. Her face drains of color.
+A helmeted figure stands where the shadows should be.
+
+Agent Thalos.
+Authority enforcer. Master tactician.
+The most dangerous adversary Vear has ever faced.
+
+His voice is calm—almost respectful.
+“Dreamer.”
+
+Vear’s head tilts. “Hunter.”
+
+Thalos raises a device that whines with restrained power.
+“You’re out of time.”`;
+                    }
+
+                    return `The passage narrows, then opens into a chamber of dead rails and dormant consoles—systems abandoned so completely the Fringe barely acknowledges them.
+
+A single sign hangs from the ceiling, cracked but still legible:
+
+NODE 13 — OUT OF SERVICE
+
+Lyra steps forward, scanning the walls. “If Vorn hid himself,” she murmurs, “it would be somewhere like this.”
+
+Vear doesn’t search with his eyes.
+He listens to the chamber’s shape—the way sound thins, the way echoes refuse to return from certain angles.
+
+“There,” he says, pointing at empty air.
+
+Lyra’s breath catches.
+
+A distortion ripples across the darkness—subtle, deliberate—like light remembering it should not be here. The outline of something concealed begins to surface: not a door, not a wall, but a space that was never meant to be found.
+
+Hidden. Shielded. Alive.
+
+Lyra exhales, half awe, half fear. “That’s not a junction.”
+
+Vear lowers his hand. “That’s an entrance.”
+
+Silas Vorn is close.`;
+                },
+                choices: (s) => {
+                    if (s.pressure >= 10) {
+                        return [
+                            {
+                                label: "Try to escape into the maintenance rails (Demo end)", to: "demo_end",
+                                effect: (s) => { s.hp -= 2; s.focus -= 1; detectionTick(1); }
+                            },
+                            {
+                                label: "Stand your ground (Demo end)", to: "demo_end",
+                                effect: (s) => { s.focus -= 2; detectionTick(1); }
+                            },
+                            {
+                                label: "Who is Thalos Envaren?", to: "Thalos_Envaren",
+                                effect: (s) => { }
+                            }
+                        ];
+                    }
+                    return [
+                        {
+                            label: "Approach the entrance to the hidden lab", to: "lab_entry",
+                            effect: (s) => { s.focus -= 1; pressureTick(1); detectionTick(1); }
+                        },
+                        {
+                            label: "Have Lyra search the consoles while you hold position", to: "lab_entry",
+                            effect: (s) => { addClue(s, "Clue: Cloak ripple reveals entry seam"); pressureTick(1); }
+                        },
+                        {
+                            label: "Wait and observe (dangerous delay)", to: "node13_gate",
+                            effect: (s) => { pressureTick(2); detectionTick(1); }
+                        }
+                    ];
+                }
+            },
+
+            Thalos_Envaren: {
+                title: "The Relentless Hunter",
+                portraitLabel: "Thalos Envaren",
+                portraitUrl: "../images/Stoic warrior in dark uniform.png",
+                hint: "You lose time and control. Seekers thrive on hesitation.",
+                text: `Thalos is an elite Authority operative—an implacable hunter engineered for dominance, discipline, and pursuit. Tall and physically imposing, he carries the bearing of a battlefield commander and the precision of a covert assassin. Whether encased in a sealed black combat suit with a featureless helmet or wearing the formal uniform of the Serpent Force, Thalos represents the Authority at its most refined and ruthless.
+
+His helmet and gear are integrated with advanced sensors and encrypted communications, allowing him to operate seamlessly across hostile environments. Cybernetic augmentations enhance his strength, reflexes, and sensory perception, granting him the ability to track bio-signatures even through heavy interference and environmental distortion.
+
+Cold, calculating, and utterly uncompromising, Thalos believes absolutely in the Authority’s supremacy. To him, order is not a preference but a necessity, and chaos is a flaw to be erased. His pursuit of Vear is more than a sanctioned mission—it is a personal challenge. Thalos refuses to accept that a fugitive could outthink or outmaneuver him.
+
+Within the narrative, Thalos is more than a hunter. He is the living extension of the Authority’s reach and will. His pursuit of Vear spans worlds and centuries, adapting with every failure, every loss. Where others underestimate the Dreamer, Thalos studies him. Their confrontations are not merely physical battles, but contests of intellect, resolve, and identity—each encounter sharpening them both.`,
+
+                choices: (s) => [
+                    {
+                        label: "Return to Node 13 — Dead Junction", to: "node13_gate",
+                        effect: (s) => {}
+                    }
+                ]
+            },
+
+            lab_entry: {
+                title: "Silas Vorn in the tech shadows",
+                portraitLabel: "Silas Vorn",
+                portraitUrl: "../images/Silas Vorn in the tech shadows.png",
+                hint: "You found it. Next chapter: get inside, power it, survive Thalos and the drones.",
+                text:
+                    `Up close, the air tastes like ozone and burned dust—storms trapped in failing insulation.
+
+From behind a tangle of wires and jury-rigged machinery, a figure steps into the dim light. Old. Slightly hunched. A white beard threaded with thin black fiber-optics. One eye glows a soft blue; the other is sharp, human, and already measuring you.
+
+Silas Vorn.
+
+A patched synth-leather coat hangs from his frame, held together by copper clasps and stubborn will. A low-powered disrupter rifle rests loosely in his hand—not threatening, but unmistakably familiar.
+
+His gaze fixes on Vear, and something shifts behind his eyes. Not surprise. Recognition.
+
+The artificial eye narrows, refocusing.
+“You,” he says slowly. “I’ve seen the footage. Caelion University. You and the boy—clean execution. No hesitation. That wasn’t instinct. That was control.”
+
+He lowers the rifle, never breaking eye contact.
+“I know who you are. Theta-Seven. Korranthis Containment Initiative. One of a kind.”
+
+Lyra exhales softly, the sound caught between relief and fear. “So… you’re real.”
+
+Vorn’s mouth curves into something like a smile. “Very. And very hard to keep hidden.”
+
+Somewhere behind you, deep in the Fringe, metal carries a distant footstep.
+
+Thalos is still hunting.
+And above, the drones are learning.
+
+But you didn’t find a place. You found the man the Authority tried to erase.`,
+                choices: [
+                    {
+                        label: "Objective Completed", to: "epilogue",
+                        effect: (s) => {
+                            s.nodeId = "prologue"; s.hp = 10; s.focus = 8; s.pressure = 0; s.detection = 0;
+                            s.inventory = []; s.clues = [];
+                            s.flags = { spiderAlert: false, seekerAlert: false, spiderTagged: false, seekerShown: false, stunned: false };
+                        }
+                    }
+                ]
+            },
+
+            epilogue: {
+                title: "Elias - A wise man in dark robes speaks",
+                portraitLabel: "Elias in human form",
+                portraitUrl: "../images/A wise man in dark robes.png",
+                hint: "Goal: Objective: Rescue Lyra.",
+                text:
+                    `Traveler… well done.
+
+You uncovered where Silas Vorn hides. Few ever do.
+
+But discovery is never an ending—only the moment fate demands payment.
+
+I watched as Silas severed Vear from the system, burying his bio-signature so deeply that Authority scanners would pass him by like background noise. A ghost, walking unseen.
+
+Then the lights failed.
+
+The Authority struck without warning.
+
+They scattered as planned—but plans do not survive contact with Thalos.
+
+Lyra ran. The tunnel collapsed. And from the smoke came the Serpent Force—silent, precise, loyal only to him.
+
+She was taken.
+
+Vear vanished into the system… but Lyra did not.
+
+This is where your journey truly begins.
+
+Knowledge was the first test.
+Defiance is the second.
+
+Thalos believes the board is his.
+
+Prove him wrong.
+
+Objective: Rescue Lyra.`,
+                choices: [
+                    {
+                        label: "The Path Continues", to: "demo_end", effect: () => { }
+                    }
+                ]
+            },
+
+            demo_end: {
+                title: "Demo End",
+                portraitUrl: "../images/TO BE CONTINUED.png",
+                hint: "Clean stopping point. Next: Thalos encounter system + Aetherion interior puzzles.",
+                text:
+                    `The Fringe closes around you like a living maze.
+
+Some stories don’t end with victory.
+Some begin with pursuit.
+
+Vear and Lyra vanish into the Fringe—
+and somewhere behind them, Agent Thalos follows with relentless certainty.
+
+And somewhere above, a red eye drifts through the air.
+
+TO BE CONTINUED.`,
+                choices: [
+                    {
+                        label: "Reset to start", to: "prologue",
+                        effect: (s) => {
+                            s.nodeId = "prologue"; s.hp = 10; s.focus = 8; s.pressure = 0; s.detection = 0;
+                            s.inventory = []; s.clues = [];
+                            s.flags = { spiderAlert: false, seekerAlert: false, spiderTagged: false, seekerShown: false, stunned: false };
+                        }
+                    }
+                ]
+            }
+        };
+
+        // --- Render helpers ---
+        function setBar(id, val, max) {
+            const pct = Math.round((val / max) * 100);
+            document.getElementById(id).style.width = `${pct}%`;
+        }
+
+        function escapeHtml(str) {
+            return String(str)
+                .replaceAll("&", "&amp;")
+                .replaceAll("<", "&lt;")
+                .replaceAll(">", "&gt;")
+                .replaceAll('"', "&quot;")
+                .replaceAll("'", "&#039;");
+        }
+
+        // --- Seeker interception logic ---
+        function shouldSeekerIntercept(nextNodeId) {
+            if (state.detection < 7) return false;
+            if (hasFlag(state, "seekerShown")) return false;
+            if (nextNodeId === "seeker_patrol" || nextNodeId === "codex_seeker" || nextNodeId === "seeker_stun") return false;
+            // Be more likely if Spider-Tagged (swarm relay makes interception easier)
+            const bias = hasFlag(state, "spiderTagged") ? 1 : 0;
+            return (((state.pressure + state.detection + bias) % 2) === 0);
+        }
+
+        // NEW: apply Spider Tag passive detection on every move (until EMP clears it)
+        function applySpiderTagPassiveOnMove(nextNodeId) {
+            // don't apply when staying in same node
+            if (nextNodeId === state.nodeId) return;
+            if (hasFlag(state, "spiderTagged")) {
+                detectionTick(1);
+            }
+        }
+
+        // --- Render ---
+        function render() {
+        
+            clampState();
+
+            const node = nodes[state.nodeId];
+            const title = typeof node.title === "function" ? node.title(state) : node.title;
+            const hint = typeof node.hint === "function" ? node.hint(state) : node.hint;
+            const text = typeof node.text === "function" ? node.text(state) : node.text;
+            const choices = typeof node.choices === "function" ? node.choices(state) : node.choices;
+
+            document.getElementById("title").textContent = title;
+            document.getElementById("hintBox").textContent = hint || "";
+            document.getElementById("text").innerHTML = escapeHtml(text).replaceAll("\n", "<br>");
+
+            // portrait
+            const portrait = document.getElementById("portrait");
+            const url =
+                typeof node.portraitUrl === "function"
+                    ? node.portraitUrl(state)
+                    : (node.portraitUrl || "Banner new worlds.png");
+            portrait.style.backgroundImage =
+                `linear-gradient(135deg, rgba(56,189,248,.22), rgba(99,102,241,.12)), url("${url}")`;
+            document.getElementById("portraitLabel").textContent = node.portraitLabel || "";
+
+            // stats + bars
+            document.getElementById("hp").textContent = state.hp;
+            document.getElementById("focus").textContent = state.focus;
+            document.getElementById("pressure").textContent = state.pressure;
+            document.getElementById("detect").textContent = state.detection;
+
+            setBar("hpBar", state.hp, 20);
+            setBar("focusBar", state.focus, 20);
+            setBar("pressureBar", state.pressure, 12);
+            setBar("detectBar", state.detection, 10);
+
+            // clues
+            const cluesEl = document.getElementById("clues");
+            cluesEl.innerHTML = "";
+            for (const clue of state.clues) {
+                const el = document.createElement("span");
+                el.className = "pill";
+                el.textContent = clue.replace("Clue: ", "");
+                cluesEl.appendChild(el);
+            }
+            document.getElementById("clueCount").textContent = state.clues.length;
+
+            // inventory
+            const inv = document.getElementById("inv");
+            inv.innerHTML = "";
+            for (const item of state.inventory) {
+                const el = document.createElement("span");
+                el.className = "pill";
+                el.textContent = item;
+                inv.appendChild(el);
+            }
+            document.getElementById("invCount").textContent = state.inventory.length;
+
+            // choices UI
+            const box = document.getElementById("choices");
+            box.innerHTML = "";
+            choices.forEach((c) => {
+                const btn = document.createElement("button");
+                btn.textContent = c.label;
+                btn.onclick = () => {
+                    // allow effects to override destination
+                    state.nextScene = null;
+
+                    if (typeof c.effect === "function") c.effect(state);
+
+                    // decide destination: nextScene override or default c.to
+                    const dest = state.nextScene || c.to;
+
+                    // Passive tag effect on movement
+                    applySpiderTagPassiveOnMove(dest);
+
+                    // Seeker interception check
+                    if (shouldSeekerIntercept(dest)) {
+                        setFlag(state, "seekerShown", true);
+                        state.nodeId = "seeker_patrol";
+                        state.nextScene = "seeker_patrol";
+                        render();
+                        return;
+                    }
+
+                    state.nodeId = dest;
+                    render();
+                };
+                box.appendChild(btn);
+            });
+
+            if (node.onEnter && !node._entered) {
+                node._entered = true;
+                node.onEnter(state);
+            }
+
+            // log
+            const tag = hasFlag(state, "spiderTagged") ? "ON" : "OFF";
+            document.getElementById("log").innerHTML =
+                `Location: <code>${state.nodeId}</code> · Pressure: <code>${state.pressure}</code> · Detection: <code>${state.detection}</code> · Spider Tag: <code>${tag}</code> · Clues: <code>${state.clues.length}</code>`;
+        }
+
+        // --- Save/Load/Reset ---
+        const KEY = "vear_civil_grid_save_v3";
+        document.getElementById("saveBtn").onclick = () => {
+            localStorage.setItem(KEY, JSON.stringify(state));
+            alert("Saved!");
+        };
+        document.getElementById("loadBtn").onclick = () => {
+            const raw = localStorage.getItem(KEY);
+            if (!raw) return alert("No save found.");
+            const loaded = JSON.parse(raw);
+            Object.assign(state, loaded);
+            if (!state.flags) state.flags = { spiderAlert: false, seekerAlert: false, spiderTagged: false, seekerShown: false, stunned: false };
+            clampState();
+            render();
+            alert("Loaded!");
+        };
+        document.getElementById("resetBtn").onclick = () => {
+            state.nodeId = "prologue";
+            state.hp = 10; state.focus = 8; state.pressure = 0; state.detection = 0;
+            state.inventory = []; state.clues = [];
+            state.flags = { spiderAlert: false, seekerAlert: false, spiderTagged: false, seekerShown: false, stunned: false };
+            render();
+        };
+
+        render();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
