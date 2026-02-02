@@ -491,9 +491,13 @@
         </div>
         <p></p>
         <div class="profile">
-            <div class="bio">
-                <div class="portrait">
-                    <img src="../images/The Fangrel.png" alt="The Fangrel" />
+            <div class="portrait">
+                <div class="preview-container" onclick="startPreview(this)">
+                        <!-- Static first frame -->
+                        <img src="../images/The Fangrel.png" alt="The Fangrel" width="500" height="600" class="preview-still">
+                        <!-- GIF overlay -->
+                        <img src="../images/The Fangrel.gif" class="preview-gif" alt="monster_thumbnail_gif" width="500" height="600" id="preview-gif">
+                </div>
                 </div>
                 <div class="bio">
                     <h2>The Fangrel</h2>
