@@ -568,12 +568,16 @@
             </div>
         </div>
         <p></p>
-        <div class="profile">
-            <div class="bio">
-                <div class="portrait">
-                    <img src="../images/Seeker Drone.png" alt="Seeker Drone" />
+      <div class="profile"> 
+            <div class="portrait">
+                <div class="preview-container" onclick="startPreview(this)">
+                    <!-- Static first frame -->
+                    <img src="../images/Seeker Drone.png"  alt="Seeker Drone" width="500" height="600" class="preview-still">
+                    <!-- GIF overlay -->
+                    <img src="../images/Seeker Drone.gif" class="preview-gif" alt="Drayven_thumbnail_gif" width="500" height="600" id="preview-gif">
                 </div>
-                <div class="bio">
+            </div>
+          <div class="bio">
                     <h2>Seeker Drone</h2>
                     <p>
                         The Seeker Drone is one of the Authority’s most feared instruments of control—an airborne security unit designed to patrol,
