@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edson</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(to right, #1a1a1a, #141414);
+        }
+
+            header h1 {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            header p {
+                max-width: 600px;
+                margin: 0 auto;
+                color: #ccc;
+            }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .profile {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+
+        .portrait {
+            flex: 1 1 250px;
+            background: #0d0d0d;
+            border-radius: 10px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .portrait img {
+                max-width: 100%;
+                max-height: 100%;
+                border-radius: 10px;
+            }
+
+        .bio {
+            flex: 2 1 400px;
+        }
+
+            .bio h2 {
+                margin-top: 0;
+                color: #e0e0e0;
+            }
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .fact {
+            background: #111;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+            .fact span {
+                display: block;
+                font-size: 0.9rem;
+                color: #aaa;
+            }
+
+            .fact strong {
+                display: block;
+                margin-top: 0.3rem;
+                font-size: 1.1rem;
+                color: #fff;
+            }
+
+        section {
+            margin-top: 2rem;
+        }
+
+        h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vear (Kor) — Character Profile | The First Dreamer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Small page-specific helpers (reuses your global palette) */
+        .crumb {
+            display: inline-block;
+            margin: 10px 0 6px;
+            color: var(--muted);
+            text-decoration: none
+        }
+
+            .crumb:hover {
+                color: var(--accent)
+            }
+
+        .facts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 0;
+            margin: 10px 0 0
+        }
+
+            .facts li {
+                list-style: none;
+                background: var(--panel-2);
+                border: 1px solid var(--border);
+                border-radius: 10px;
+                padding: 8px 10px
+            }
+
+        .chips {
+            margin-top: 8px
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="brand">
+            <div class="glyph" aria-hidden="true"></div>
+            <div>
+                <div class="muted smallcaps">The Kor Cycle</div>
+                <strong>Vear-The First Dreamer</strong>
+            </div>
+        </div>
+        <nav>
+            <a href="../index.html#home">Home</a>
+            <a href="../index.html#characters">Characters</a>
+            <a href="../index.html#world">Worlds</a>
+            <a href="../index.html#artifacts">Artifacts</a>
+            <a href="../index.html#time_ships">Temporal Vessals</a>
+            <a href="../index.html#timeline">Timeline</a>
+            <a href="../index.html#Temporal Law">Rule of Intent</a>
+            <a href="../index.html#comments">Comments</a>
+        </nav>
+    </header>
+
+    <section>
+        
+        <div class="hero" style="padding-top:28px">
+            <h1>Zarnis</h1>
+            <p class="muted">
+                “Zarnis was once a luminous wetland world of floating cities and tide-shaped cultures, until the Authority reclassified it as a Collapsing Colony, drained its living swamps for priceless 
+                gems, and left its people repurposed and its wounded surface slowly crumbling beneath the weight of endless extraction.”
+            </p>
+        </div>
+    </section>
+
+    <main>
+
+        <div class="profile">
+            <div class="portrait">
+                <img src="../images/Zarnis.png" alt="Zarnis" />
+            </div>
+            <div class="bio">
+                <h2>Description</h2>
+                <p>
+                    Status: Collapsing Colony — a once-living wetland world now reduced to a jewel-rich mining planet, its drained surface slowly crumbling under the compounded weight of extraction and time’s own corruption.
+                </p>
+
+                <p>
+                    Suns: Yellow
+                </p>
+                <p>
+                    Moons: none
+                </p>
+                <p>
+                    Zarnis — Planetary Definition
+                </p>
+                <p>
+                    Zarnis was once a world of endless wetlands, where swamps stretched beyond the horizon and slow, braided rivers glowed at night with
+                    soft green bioluminescence. Amphibious civilizations thrived there, raising floating reed cities and elegant stone pylons from the water,
+                    their technology shaped not by fire and metal but by buoyancy, irrigation, and living architecture. Their culture moved with the rhythm of
+                    tides and seasons, valuing patience, balance, and continuity.
+                </p>
+                <p>
+                    Then the Authority arrived—and Zarnis was not conquered, but reclassified. Labeled a Collapsing Colony, the world was deemed economically
+                    valuable and environmentally expendable. Beneath the wetlands lay immense crystalline veins, and soon the swamps were drained, redirected,
+                    and poisoned to expose gemstones of extraordinary purity: diamonds like frozen light, rubies burning with inner fire, sapphires dark as
+                    midnight seas. Floating cities settled and sank. Waterways hardened into excavation trenches. What had once been a breathing water world
+                    became a planetary quarry, stripped but deliberately kept alive.
+                </p>
+                <div class="portrait">
+                    <img src="../images/Zarnis land.png" alt="Zarnis" />
+                </div>
+                <p>
+                    The Zarnisians themselves were not erased; they were repurposed. Some remained to mine the jewels beneath skies that no longer mirrored water,
+                    while others were exported across Authority space under the language of “relocation”—maintenance crews, aqueduct engineers, and resource stewards
+                    sent to sustain worlds that would never belong to them. Zarnis endures now as a wounded planet: drained, harvested, and quiet, its lost tides
+                    remembered only in the slow green glow that still lingers in the deepest surviving marshes.
+                </p>
+                <div class="portrait">
+                    <img src="../images/Zarnisian.png" alt="Zarnisian" />
+                </div>
+            </div>
+        </div>
+
+        
+ 
+        <!-- FOOTER -->
+        <footer>
+            © 2025 Nick Yost · The Kor Cycle
+        </footer>
+</body>
+</html>
