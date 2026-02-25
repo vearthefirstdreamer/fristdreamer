@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edson</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(to right, #1a1a1a, #141414);
+        }
+
+            header h1 {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            header p {
+                max-width: 600px;
+                margin: 0 auto;
+                color: #ccc;
+            }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .profile {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+
+        .portrait {
+            flex: 1 1 250px;
+            background: #0d0d0d;
+            border-radius: 10px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .portrait img {
+                max-width: 100%;
+                max-height: 100%;
+                border-radius: 10px;
+            }
+
+        .bio {
+            flex: 2 1 400px;
+        }
+
+            .bio h2 {
+                margin-top: 0;
+                color: #e0e0e0;
+            }
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .fact {
+            background: #111;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+            .fact span {
+                display: block;
+                font-size: 0.9rem;
+                color: #aaa;
+            }
+
+            .fact strong {
+                display: block;
+                margin-top: 0.3rem;
+                font-size: 1.1rem;
+                color: #fff;
+            }
+
+        section {
+            margin-top: 2rem;
+        }
+
+        h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vear (Kor) — Character Profile | The First Dreamer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Small page-specific helpers (reuses your global palette) */
+        .crumb {
+            display: inline-block;
+            margin: 10px 0 6px;
+            color: var(--muted);
+            text-decoration: none
+        }
+
+            .crumb:hover {
+                color: var(--accent)
+            }
+
+        .facts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 0;
+            margin: 10px 0 0
+        }
+
+            .facts li {
+                list-style: none;
+                background: var(--panel-2);
+                border: 1px solid var(--border);
+                border-radius: 10px;
+                padding: 8px 10px
+            }
+
+        .chips {
+            margin-top: 8px
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="brand">
+            <div class="glyph" aria-hidden="true"></div>
+            <div>
+                <div class="muted smallcaps">The Kor Cycle</div>
+                <strong>Vear-The First Dreamer</strong>
+            </div>
+        </div>
+        <nav>
+            <a href="../index.html#home">Home</a>
+            <a href="../index.html#characters">Characters</a>
+            <a href="../index.html#world">Worlds</a>
+            <a href="../index.html#artifacts">Artifacts</a>
+            <a href="../index.html#time_ships">Temporal Vessals</a>
+            <a href="../index.html#timeline">Timeline</a>
+            <a href="../index.html#Temporal Law">Rule of Intent</a>
+            <a href="../index.html#comments">Comments</a>
+        </nav>
+    </header>
+
+    <section>
+        
+        <div class="hero" style="padding-top:28px">
+            <h1>Elarra</h1>
+            <p class="muted">
+                “Elarra is a hidden crystalline world within the light-devouring Great Hollow — a planet of faceted brilliance and memory-born light, 
+                watched by fractured moons and serving as the secret sanctuary of the Crystal Wielders.”
+            </p>
+        </div>
+    </section>
+
+    <main>
+
+        <div class="profile">
+            <div class="portrait">
+                <img src="../images/Elarra.png" alt="Elarra" />
+            </div>
+            <div class="bio">
+                <h2>Description</h2>
+                <p>
+                    Status: Hidden Sanctuary of the Crystal Wielders
+                </p>
+
+                <p>
+                    Sun: Primary Star — Nytheris
+                </p>
+                <p>
+                    moons: 4
+                </p>
+                <p>
+                    Zarnis — Planetary Definition
+                </p>
+                <p>
+                    Elarra is a rare crystalline world hidden deep within the Great Hollow, a nebular void so dense it consumes most incoming light. From
+                    the outside, the region appears as a dark wound in the galaxy — an absence where stars seem to fail. Yet within this obscuring veil, Elarra endures.
+                </p>
+                <p>
+                    Unlike conventional planets, Elarra possesses no oceans, weather systems, or organic continents. Its surface is composed of immense faceted
+                    crystalline planes that refract distant starlight into vast, slow-moving auroral patterns. Mountain ranges rise like frozen waves of translucent
+                    mineral, while its valleys shimmer with drifting prismatic particulates — not mist, but suspended crystal dust carried on slow atmospheric currents.
+                </p>
+                <p>
+                    The planet emits no thermal glow.
+                </p>
+                <p>
+                    It shines with memory.
+                </p>
+                <p>
+                    Faint pulses of violet, pale blue, and muted gold travel across its surface in measured rhythms, suggesting processes that are neither geological
+                    nor fully understood. The illumination is ancient and deliberate, as though the world itself exists in a state of slow, patient awareness.
+                </p>
+                <p>
+                    Orbiting Elarra are several fractured moons — irregular spheres composed of massive crystalline shards held in perfect gravitational cohesion.
+                    Their edges remain razor-sharp yet perfectly stable. Some rotate slowly, revealing interiors of intricate lattice structures resembling frozen
+                    cathedrals; others remain motionless, as if rotation has long since become unnecessary. These moons function as silent sentinels, scattering
+                    ribbons of refracted light across the surrounding void.
+                </p>
+                <p>
+                    Elarra serves as the hidden sanctuary of the Council of Higher Minds, often referred to as the Crystal Wielders — an ancient collective whose
+                    connection to the planet appears both technological and deeply intrinsic.
+                    <div class="portrait">
+                        <img src="../images/Great Hollow view from the Aetherion bridge.png" alt="Great Hollow" />
+                    </div>
+                </p>
+                <p>
+                    Within the Great Hollow, where light itself struggles to survive, Elarra persists.
+                </p>
+                <p>
+                    a world of crystal, memory, and thought.
+                </p>
+                <p>
+                    Primary Star — Nytheris
+                <p>
+                    Elarra orbits an anomalous stellar object known as Nytheris, a rare gravitic-luminous star located deep within the obscuring density of the Great
+                    Hollow. Unlike conventional stars, Nytheris emits comparatively little broad-spectrum light. Instead, it radiates in narrow, highly coherent bands
+                    a world of crystal, memory, and thought.
+                    that interact strongly with crystalline matter.
+                </p>
+                <div class="portrait">
+                    <img src="../images/Nytheris cosmic star in nebula.png" alt="Nytheris" />
+                </div>
+                To most distant observers, Nytheris appears dim… almost starved.
+                <p>
+                    But within the Hollow, its influence is profound.
+                </p>
+                <p>
+                    The star produces slow, rhythmic pulses of polarized energy that resonate directly with Elarra’s crystalline crust. These pulses are believed
+                    to be responsible for the planet’s characteristic memory-glow — the faint waves of violet, pale blue, and muted gold that travel across its surface.
+                </p>
+                <p>
+                    Astrophysical scans suggest Nytheris is neither fully stable nor conventionally nuclear in its energy generation. Its core signatures indicate layered
+                    gravitic compression zones interwoven with exotic matter densities, leading some xenophysicists to classify it as a Resonant Phase Star — an extremely
+                    rare stellar state theorized but seldom confirmed.
+                </p>
+                <p>
+                    Notably, Nytheris emits minimal radiation hazardous to biological life, yet produces unusually strong coherence fields in the surrounding system. These fields are thought to:
+                </p>
+                <ul>
+                    <li>
+                        stabilize Elarra’s fractured moons
+                    </li>
+                    <li>
+                        maintain crystal lattice integrity on a planetary scale
+                    </li>
+                    <li>
+                        and possibly enhance psionic or consciousness-linked phenomena within the system
+                    </li>
+                </ul>
+                <p>
+                    Whether Nytheris formed naturally… or was engineered in a forgotten epoch… remains an open question among the few who know Elarra exists.
+                </p>
+            </div>
+        </div>
+
+        
+ 
+        <!-- FOOTER -->
+        <footer>
+            © 2025 Nick Yost · The Kor Cycle
+        </footer>
+</body>
+</html>
