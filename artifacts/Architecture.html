@@ -443,10 +443,14 @@
         </div>
         <p></p>
         <div class="profile">
-            <div class="bio">
                 <div class="portrait">
-                    <img src="../images/Castle Arden.png" alt="Castle Arden" />
+                <div class="preview-container" onclick="startPreview(this)">
+                    <!-- Static first frame -->
+                    <img src="../images/Castle Arden.png"  alt="Castle Arden" width="500" height="600" class="preview-still">
+                    <!-- GIF overlay -->
+                    <img src="../images/Castle Ardend.gif" class="preview-gif" alt="The Crystal Citadel" width="500" height="600" id="preview-gif">
                 </div>
+                  </div>
                 <div class="bio">
                     <h2>Castle Arden</h2>
                     <p>
