@@ -473,10 +473,14 @@
         </div>
         <p></p>
         <div class="profile">
-            <div class="bio">
-                <div class="portrait">
-                    <img src="../images/The Marauder Base.png" alt="The Marauder Base" />
+             <div class="portrait">
+                <div class="preview-container" onclick="startPreview(this)">
+                    <!-- Static first frame -->
+                    <img src="../images/The Marauder Base.png"  alt="The Marauder Base" width="500" height="600" class="preview-still">
+                    <!-- GIF overlay -->
+                    <img src="../images/The Marauder Base.gif" class="preview-gif" alt="The Marauder Base" width="500" height="600" id="preview-gif">
                 </div>
+                  </div>
                 <div class="bio">
                     <h2>The Marauder Base</h2>
                     <p>
