@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marcyra — Character Profile | The Odyssey of the Dreamer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+   <style>
+    .crumb{display:inline-block;margin:10px 0 6px;color:var(--muted);text-decoration:none}
+    .crumb:hover{color:var(--accent)}
+    .facts{display:flex;flex-wrap:wrap;gap:12px;padding:0;margin:10px 0 0}
+    .facts li{list-style:none;background:var(--panel-2);border:1px solid var(--border);border-radius:10px;padding:8px 10px}
+    .hero-flex{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+    .hero-flex .col{flex:1;min-width:280px}
+    .portrait{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--border)}
+    .caption{color:var(--muted);font-size:.9rem;margin-top:8px;text-align:center}
+    .chips{margin-top:8px}
+       .preview-container {
+           position: relative;
+           display: inline-block;
+           cursor: pointer;
+       }
+
+       .preview-still, .preview-gif {
+           width: 768px;
+           height:auto;
+           display: block;
+           border-radius: 6px;
+       }
+
+       .preview-gif {
+           position: absolute;
+           top: 0;
+           left: 0;
+           opacity: 0;
+           pointer-events: none;
+           transition: opacity 0.3s ease;
+       }
+  </style>
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="brand">
+            <div class="glyph" aria-hidden="true"></div>
+            <div>
+                <div class="muted smallcaps">The Kor Cycle</div>
+                <strong>Vear – The Odyssey of the Dreamer</strong>
+            </div>
+        </div>
+        <nav>
+            <a href="../index.html#home">Home</a>
+            <a href="../index.html#characters">Characters</a>
+            <a href="../index.html#world">Worlds</a>
+            <a href="../index.html#artifacts">Artifacts</a>
+            <a href="../index.html#time_ships">Temporal Vessals</a>
+            <a href="../index.html#timeline">Timeline</a>
+            <a href="../index.html#Temporal Law">Rule of Intent</a>
+            <a href="../index.html#comments">Comments</a>
+        </nav>
+    </header>
+
+    <main>
+        <a class="crumb" href="../index.html#characters">← Back to Characters</a>
+
+        <!-- HERO / OVERVIEW -->
+        <section class="hero" style="padding-top:28px">
+            <h1>Marcyra <span class="muted" style="font-weight:400">(Marcy)</span></h1>
+            <p class="muted">Marcyra is a nine-year-old hybrid child born outside the rules of Marracus—an unbounded conduit of mind and void who should not exist, yet does. </p>
+            <ul class="facts">
+                <li><strong>Species:</strong>Unclassified Hybrid (Milon–Lilon Variant)</li>
+                <li><strong>Status:</strong>A high-risk existence that violates established models of power and control.</li>
+                <li><strong>Era / Locale:</strong>The Dark Expansion Era (-30,000 AE)/homeworld—Marracus </li>
+            </ul>
+
+            <div class="col" style="text-align:center">
+                <div class="preview-container" onclick="startPreview(this)">
+                    <!-- Static first frame -->
+                    <img src="../images/Marcyra (Marcy).png" alt="Marcyra (Marcy)" class="portrait" loading="eager" width="768" height="1152" class="preview-still">
+                    <!-- GIF overlay -->
+                    <img src="../images/Marcyra (Marcy).gif" class="preview-gif" alt="Marcyra (Marcy)" class="portrait" loading="eager" width="768" height="1152" id="preview-gif">
+                    <div class="caption">Marcyra (Marcy)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DETAILS -->
+        <section class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:20px">
+            <article class="card">
+                <h2>Appearance</h2>
+                <ul class="dot-list">
+                    <li>Age: 9</li>
+                    <li>A small, pale child with light blue skin, violet hair, and deep, watchful eyes that seem to hold more than they should.</li>
+                    <li>She wears a simple, sleeveless dress of soft fabric, striped in bright rainbow colors that stand in quiet contrast to her pale skin and violet hair.</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h2>Personality Traits</h2>
+                <ul class="dot-list">
+                    <li>Quietly Observant</li>
+                    <li>Uncertain but Not Afraid</li>
+                    <li>Innocently Curious</li>
+                    <li>Emotionally Open</li>
+                    <li>Unaware of Her Own Impact</li>
+                    <li>Gentle Presence</li>
+                    <li>Trusting (Especially Toward Vear)</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h2>Legacy</h2>
+                <ul class="dot-list">
+                    <li>A fracture that forces a perfect system to change.</li>
+                    <li>Proof that something new can exist where none was allowed.</li>
+                    <li>The beginning of a change no system can contain.</li>
+                    <li>The moment certainty begins to fail.</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- orhers -->
+        <section class="card">
+            <h2>Profile:</h2>
+            <video width="640" height="360" controls>
+                <source src="../images/Marcyra (Marcy).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px">
+                <p>
+
+                    Marcyra, often called Marcy, is a nine-year-old convergence-born hybrid from Marracus, classified as a destabilizing
+                    variable and marked for removal, while the Galactic Council designates her an unbounded conduit entity. Small and pale
+                    with light blue skin, vivid violet hair, and deep, watchful eyes, she wears a simple sleeveless dress of bright, banded
+                    color that contrasts her quiet otherness. She is quietly observant, innocently curious, and emotionally open, with a
+                    gentle presence and a natural trust in others, particularly Vear, who sees only a child in need of protection rather
+                    than the threat others perceive. Unaware of her own impact, she possesses the rare ability to interface with the forces
+                    of mind and void without the need for a crystal, her power manifesting unconsciously in subtle distortions of light, sound,
+                    and perception. To Marracus, she is a flaw that must be erased; to the Council, she is a dangerous impossibility that challenges
+                    the foundation of controlled power; but in truth, she is something far more significant—a child born outside the rules of her world,
+                    whose very existence carries the potential to fracture certainty and force change.
+                </p>
+            </div>
+        </section>
+        <p></p>
+        <section class="card">
+            <h2>The Unpermitted Variable:</h2>
+            <p>
+                There are worlds that evolve, and there are worlds that repeat. Marracus is both, a system built on symmetry and sustained
+                through division, where order is preserved not through force, but through belief so deeply ingrained it no longer requires questioning.
+            </p>
+            <p>
+                Its people are not one, but neither are they truly separate. The population exists as a hybrid lineage—half-bred across two original races
+                whose distinctions have blurred over generations, yet never fully disappeared. Those races are known as the Milons and the Lilons.
+            </p>
+            <p>
+                To an untrained eye, they appear nearly identical, as though one were an echo of the other—two variations of the same design shaped by
+                time but never allowed to converge. The Milons bear soft purple skin, four fingers, and deep blue hair. The Lilons are darker in tone,
+                with five fingers and violet hair. The differences are minimal, yet within Marracus they are treated as absolute.
+            </p>
+            <p>
+                What began as biological variation became identity, and identity hardened into doctrine. Separation is not enforced through walls, but through
+                belief—quiet, constant, and unquestioned. The two peoples exist side by side, their distinctions preserved with careful precision, as though the
+                system itself depends on their continued division. Over time, difference became custom, and custom became something far more dangerous—certainty.
+            </p>
+            <p>Within such a system, there is no room for deviation.</p>
+            <p>And yet, Marcyra exists.</p>
+            <p>
+                She is no more than nine years old, small and slight, with the kind of quiet presence that children develop when they learn too early
+                that the world is watching them. She stands with her hands loosely gathered in front of her, fingers often twisting together without
+                realizing it, as though she is trying to hold onto something that has no shape. There is a softness to her movements, a hesitation not
+                born of fear, but of uncertainty, as if she is still learning how she is meant to exist.
+            </p>
+            <p>
+                At a distance, she could almost pass for one of Marracus’s own. Up close, the difference becomes impossible to ignore.
+            </p>
+            <p>
+                Her skin carries a pale, luminous quality that feels less like tone and more like something unfinished, as though her form has not fully
+                settled into the rules that define everyone else. Her hair falls in soft strands of vivid violet, catching the light in shifting gradients
+                that seem too deliberate to be natural, framing a face that is gentle, open, and quietly searching.
+            </p>
+            <p>
+                It is in her eyes that the illusion breaks completely. They are large, reflective, and impossibly deep—not with knowledge, but with awareness.
+                She watches everything with the kind of attention only a child gives the world when it still feels new and unexplainable, yet something behind
+                that innocence does not belong to Marracus. Light seems to linger in her gaze, drawn inward rather than reflected, as though her eyes are not
+                simply seeing the world, but holding pieces of it.
+            </p>
+            <p>
+                Her ears, delicately pointed, resemble those of Marracus’s people closely enough to avoid notice at first glance, but the proportions are just
+                slightly wrong—too refined, too precise, like an interpretation rather than the original form.
+            </p>
+            <p>
+                She speaks rarely unless spoken to. When she does, her voice is soft, steady, and unguarded in a way that reveals she does not yet understand why
+                others fear her. She asks simple questions, notices small things, and smiles sometimes—brief, uncertain, but genuine. There is nothing in her behavior
+                that suggests danger.
+            </p>
+            <p>
+                What defines her cannot be seen.
+            </p>
+            <p>
+                Across known civilizations, those who wield the forces of mind and void require crystals—structured conduits that allow thought to take form and space
+                itself to be shaped. These crystals do not grant power, but make it possible to control, measure, and limit it.
+            </p>
+            <p>
+                Marcyra has no such limitation.
+            </p>
+            <p>
+                The forces others must channel move through her freely, without structure or focus. She does not call upon them or even recognize them for what they are. Instead,
+                they manifest in quiet, unintended ways. The air shifts slightly when she becomes upset. Sound dulls when she is deep in thought. Light bends in subtle, almost
+                imperceptible ways when her attention lingers too long on something she does not understand. To her, these are not events, but simply how the world feels.
+            </p>
+            <p>
+                The world around her understands differently.
+            </p>
+            <p>
+                To Marracus, she is not a child in need of understanding, but a flaw in a system that cannot afford imperfection. Her existence introduces uncertainty,
+                and uncertainty is something Marracus was never designed to endure. The response is immediate and absolute, not out of cruelty, but from the belief that preserving
+                order requires the removal of anything that does not fit.
+            </p>
+            <p>
+                Beyond Marracus, the Galactic Council of Higher Minds observes with far greater concern. They understand what she represents, even if she does not. A being capable
+                of interfacing directly with the forces of mind and void without reliance on a crystal is not simply rare—it is impossible within every known model. If such power
+                can exist without constraint, then the systems built to contain it are no longer stable.
+            </p>
+            <p>
+                She cannot be categorized, controlled, or predicted.
+            </p>
+            <p>
+                Vear does not see any of this. He sees a child standing alone in a world that has already decided she should not exist. He sees the way her hands fidget when she is
+                unsure, the way her attention lingers on small, unimportant details, and the way she looks at him not with fear, but with quiet, unguarded trust. It is he who shortens
+                her name without thought, calling her Marcy, as though something so simple might make her easier to hold within a world that refuses to accept her.
+            </p>
+            <p>
+                In her, he recognizes something far more dangerous than power—not because of what she can do, but because of what she might become.
+            </p>
+            </div>
+        </section>
+        <p></p>
+        <!-- NARRATIVE & TAGS -->
+        <section class="card">
+            <!--<script>
+      function startPreview(container) {
+       const gif = container.querySelector(".preview-gif");
+       gif.style.opacity = gif.style.opacity === "1" ? 0 : 1;
+      }
+    </script>-->
+            <script>
+                function startPreview(container) {
+                    const gif = container.querySelector(".preview-gif");
+                    // Make sure GIF is visible
+                    gif.style.opacity = 1;
+                    // Reset the GIF animation by reloading it
+                    const src = gif.src;
+                    gif.src = "";
+                    gif.src = src;
+                }</script>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Nick Yost · The Kor Cycle
+    </footer>
+</body>
+
+</html>
+
+
+
+
