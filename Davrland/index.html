@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Davrland | Nick Yost</title>
+  <style>
+    :root {
+      --ink: #2d261c;
+      --paper: #f4ecd8;
+      --paper-dark: #e4d4af;
+      --forest: #263b2d;
+      --forest-light: #46654c;
+      --gold: #c7a96b;
+      --shadow: rgba(0, 0, 0, 0.22);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.45), transparent 30%),
+        linear-gradient(180deg, #eee4ca 0%, var(--paper) 50%, #e7d9b8 100%);
+      line-height: 1.65;
+    }
+
+    .banner {
+      min-height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px;
+      color: #fff8e7;
+      background:
+        linear-gradient(rgba(16, 27, 20, 0.42), rgba(16, 27, 20, 0.72)),
+        radial-gradient(circle at 50% 15%, #6f8b75 0%, #3e5a47 35%, #1f3025 75%);
+      border-bottom: 7px solid var(--gold);
+      box-shadow: 0 8px 22px var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner::before,
+    .banner::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border: 2px solid rgba(199, 169, 107, 0.38);
+      border-radius: 50%;
+      top: 40px;
+    }
+
+    .banner::before {
+      left: -120px;
+    }
+
+    .banner::after {
+      right: -120px;
+    }
+
+    .banner-inner {
+      max-width: 900px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .banner h1 {
+      margin: 0;
+      font-size: clamp(3.4rem, 10vw, 7.5rem);
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      text-shadow: 0 5px 18px rgba(0,0,0,0.55);
+    }
+
+    .banner p {
+      margin: 12px 0 0;
+      font-size: clamp(1.05rem, 2.5vw, 1.5rem);
+      letter-spacing: 0.08em;
+      color: #f0dfb7;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(38, 59, 45, 0.96);
+      border-bottom: 1px solid rgba(199, 169, 107, 0.55);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.18);
+    }
+
+    nav .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      padding: 12px 18px;
+    }
+
+    nav a {
+      color: #f4ecd8;
+      text-decoration: none;
+      font-size: 0.98rem;
+      letter-spacing: 0.04em;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    main {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 60px 22px 80px;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+    }
+
+    .intro h2,
+    section h2 {
+      color: var(--forest);
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .intro p {
+      font-size: 1.15rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin: 40px 0 70px;
+    }
+
+    .card {
+      background: rgba(255, 250, 235, 0.82);
+      border: 1px solid #cfbd93;
+      border-radius: 12px;
+      padding: 26px;
+      box-shadow: 0 8px 24px rgba(68, 51, 27, 0.10);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--forest);
+      font-size: 1.35rem;
+    }
+
+    section {
+      margin: 70px 0;
+      padding-top: 10px;
+    }
+
+    .quote {
+      margin: 45px auto;
+      max-width: 820px;
+      padding: 28px 34px;
+      border-left: 5px solid var(--gold);
+      background: rgba(255,255,255,0.45);
+      font-style: italic;
+      font-size: 1.25rem;
+    }
+
+    .door-panel {
+      background: linear-gradient(135deg, #263b2d, #152119);
+      color: #f5edd9;
+      padding: 38px;
+      border-radius: 14px;
+      border: 1px solid #8d784c;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+    }
+
+    .door-panel h2 {
+      color: #e2c888;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px 20px;
+      background: #1d2e22;
+      color: #d8cbaa;
+      border-top: 4px solid var(--gold);
+    }
+
+    @media (max-width: 780px) {
+      .banner {
+        min-height: 280px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        padding-top: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <div class="banner-inner">
+      <h1>DAVRLAND</h1>
+      <p>A world of wonder, fear, and impossible things</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#welcome">Welcome</a>
+      <a href="#world">The World</a>
+      <a href="#story">The Story</a>
+      <a href="#door">The Door</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="welcome" class="intro">
+      <h2>Welcome to Davrland</h2>
+      <p>
+        Beyond Blackwater Lake lies a world of silver forests, floating mountains,
+        impossible creatures, and cities that seem to have grown from the landscape itself.
+        Its people call the realm Avariel. One little girl gave it another name.
+      </p>
+    </section>
+
+    <div class="cards">
+      <article class="card">
+        <h3>Floating Mountains</h3>
+        <p>
+          Vast mountains drift among the clouds, carrying forests, cliffs, and waterfalls
+          that vanish into mist before reaching the ground.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Elarion</h3>
+        <p>
+          A city of white stone, silver trees, graceful bridges, gardens, and towers,
+          where the natural world and civilization seem to have grown together.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Dreams and Nightmares</h3>
+        <p>
+          In Avariel, imagination has consequences. Wonders can become real—
+          and sometimes fears learn to walk.
+        </p>
+      </article>
+    </div>
+
+    <section id="world">
+      <h2>The World Beyond the Lake</h2>
+      <p>
+        Davrland is the name Emily Parker gives to the realm known by its inhabitants as
+        Avariel. It is a place where the impossible feels strangely natural: enormous flowers
+        bloom beneath silver canopies, drifting lights move through the forests, and creatures
+        from fairy tales may be waiting around the next bend in the road.
+      </p>
+    </section>
+
+    <div class="quote">
+      “Some things here are born from fear. Unfortunately, some fears learn to walk.”
+    </div>
+
+    <section id="story">
+      <h2>The Story</h2>
+      <p>
+        Twenty years after eight-year-old Emily Parker vanished near Blackwater Lake,
+        Daniel Kane encounters a girl who should no longer be eight years old. His search
+        for answers leads him through the Door Between Worlds and into a realm where
+        imagination can shape reality itself.
+      </p>
+    </section>
+
+    <section id="door" class="door-panel">
+      <h2>The Door Between Worlds</h2>
+      <p>
+        Hidden among weathered standing stones is a doorway connecting Earth and Avariel.
+        On one side it appears ordinary: white-painted wood, a brass doorknob, and an
+        old-fashioned keyhole. On the other, it is weathered and unpainted, set within a
+        heavy stone frame.
+      </p>
+      <p>
+        The silver key was never meant to open the crossing. Its purpose was the opposite.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Davrland &mdash; a novel by Nick Yost</p>
+  </footer>
+
+</body>
+</html>
